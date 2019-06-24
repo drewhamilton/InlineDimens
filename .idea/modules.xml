@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Inline Dimens.iml" filepath="$PROJECT_DIR$/Inline Dimens.iml" group="Inline Dimens" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Inline Dimens/app" />
+      <module fileurl="file://$PROJECT_DIR$/dimens/dimens.iml" filepath="$PROJECT_DIR$/dimens/dimens.iml" group="Inline Dimens/dimens" />
+    </modules>
+  </component>
+</project>
