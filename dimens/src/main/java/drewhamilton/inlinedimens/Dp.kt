@@ -7,7 +7,7 @@ import android.util.DisplayMetrics
 /**
  * The floating-point representation of dp dimens.
  */
-inline class Dp(val value: Float)
+inline class Dp(override val value: Float) : Dimen
 
 /**
  * Convert [this] to an integer dp dimen.

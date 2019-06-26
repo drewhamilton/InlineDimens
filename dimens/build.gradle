@@ -47,7 +47,7 @@ apply from: 'publish.gradle'
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'com.google.truth:truth:0.45'
