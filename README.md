@@ -4,7 +4,15 @@ ensuring compile-time unit confidence without any runtime cost. `Resources` exte
 resources in the appropriate unit.
 
 ## Download
-Coming soon.
+[![Download](https://api.bintray.com/packages/drewhamilton/InlineDimens/InlineDimens/images/download.svg)](https://bintray.com/drewhamilton/InlineDimens)
+
+Inline Dimens is available in JCenter. It is experimental, and the API may undergo breaking changes before version
+1.0.0.
+
+To use Inline Dimens, include the following in your Gradle dependencies:
+```groovy
+implementation "drewhamilton.inlinedimens:inlinedimens:$version"
+```
 
 ## License
 ```
