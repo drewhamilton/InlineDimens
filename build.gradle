@@ -17,11 +17,19 @@ buildscript {
     }
 }
 
-allprojects {
+allprojects { project ->
     repositories {
         google()
         mavenCentral()
         jcenter()
+    }
+
+    //noinspection UnnecessaryQualifiedReference
+    project.plugins.withType(com.android.build.gradle.LibraryPlugin) {
+        project.android.libraryVariants.all { variant ->
+            // TODO WORKAROUND: replace with https://issuetracker.google.com/issues/72050365 once released.
+            variant.generateBuildConfigProvider.get().enabled = false
+        }
     }
 }
 
