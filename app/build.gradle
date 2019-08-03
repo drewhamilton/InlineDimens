@@ -7,7 +7,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "drewhamilton.inlinedimens.demo"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName libraryVersion
@@ -34,6 +34,8 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    implementation project(':dimens')
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'

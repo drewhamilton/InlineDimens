@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:padding="8dp">
+
+  <TextView
+      android:id="@+id/screenWidthView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+      tools:text="Screen width: 123px/456dp" />
+
+  <TextView
+      android:id="@+id/screenHeightView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+      tools:text="Screen height: 654px/987dp" />
+
+  <TextView
+      android:id="@+id/textSizeView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+      tools:text="Text size: 22px/44dp/66sp" />
 
 </LinearLayout>
