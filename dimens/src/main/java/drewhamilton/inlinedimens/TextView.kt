@@ -4,6 +4,11 @@ import android.util.TypedValue
 import android.widget.TextView
 import androidx.core.widget.TextViewCompat
 
+/**
+ * The size in px of the default text size of this [TextView].
+ */
+fun TextView.getTextSizePx(): Px = Px(textSize)
+
 //region setTextSize
 /**
  * Set the default text size to [size] in px.
