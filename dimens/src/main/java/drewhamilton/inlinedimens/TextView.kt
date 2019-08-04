@@ -5,32 +5,39 @@ import android.util.TypedValue
 import android.widget.TextView
 import androidx.core.widget.TextViewCompat
 
+//region Text size
 /**
  * The size in px of the default text size of this [TextView].
- */
-fun TextView.getTextSizePx(): Px = Px(textSize)
-
-//region setTextSize
-/**
- * Set the default text size to [size] in px.
  *
- * Note: if this TextView has the auto-size feature enabled than this function is no-op.
+ * Note: if this TextView has the auto-size feature enabled than setting this value is no-op.
  */
-fun TextView.setTextSize(size: Px) = setTextSize(TypedValue.COMPLEX_UNIT_PX, size.value)
+var TextView.textSizePx: Px
+    get() = Px(textSize)
+    set(size) {
+        setTextSize(TypedValue.COMPLEX_UNIT_PX, size.value)
+    }
 
 /**
- * Set the default text size to [size] in dp.
+ * The size in dp of the default text size of this [TextView].
  *
- * Note: if this TextView has the auto-size feature enabled than this function is no-op.
+ * Note: if this TextView has the auto-size feature enabled than setting this value is no-op.
  */
-fun TextView.setTextSize(size: Dp) = setTextSize(TypedValue.COMPLEX_UNIT_DIP, size.value)
+var TextView.textSizeDp: Dp
+    get() = textSizePx.toDp(context)
+    set(size) {
+        setTextSize(TypedValue.COMPLEX_UNIT_DIP, size.value)
+    }
 
 /**
- * Set the default text size to [size] in sp.
+ * The size in sp of the default text size of this [TextView].
  *
- * Note: if this TextView has the auto-size feature enabled than this function is no-op.
+ * Note: if this TextView has the auto-size feature enabled than setting this value is no-op.
  */
-fun TextView.setTextSize(size: Sp) = setTextSize(TypedValue.COMPLEX_UNIT_SP, size.value)
+var TextView.textSizeSp: Sp
+    get() = textSizePx.toSp(context)
+    set(size) {
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, size.value)
+    }
 //endregion
 
 //region setAutoSizeTextTypeUniformWithConfiguration
