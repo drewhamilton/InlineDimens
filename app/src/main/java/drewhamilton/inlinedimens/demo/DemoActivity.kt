@@ -18,6 +18,8 @@ import kotlinx.android.synthetic.main.demo.textSizeView
 
 class DemoActivity : AppCompatActivity() {
 
+    // TODO WORKAROUND: Using inline values without explicit Int type declaration causes a lint error
+    //  (File a bug for this somewhere)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.demo)
@@ -25,23 +27,19 @@ class DemoActivity : AppCompatActivity() {
         val screenSize = windowManager.defaultDisplay.getRealSize()
 
         val screenWidth = screenSize.x
-        screenWidthView.text = getString(
-            R.string.screenWidth,
-            screenWidth.value, screenWidth.toDp(this).toDpInt().value
-        )
+        val screenWidthPx: Int = screenWidth.value
+        val screenWidthDp: Int = screenWidth.toDp(this).toDpInt().value
+        screenWidthView.text = getString(R.string.screenWidth, screenWidthPx, screenWidthDp)
 
         val screenHeight = screenSize.y
-        screenHeightView.text = getString(
-            R.string.screenHeight,
-            screenHeight.value, screenHeight.toDp(this).toDpInt().value
-        )
+        val screenHeightPx: Int = screenHeight.value
+        val screenHeightDp: Int = screenHeight.toDp(this).toDpInt().value
+        screenHeightView.text = getString(R.string.screenHeight, screenHeightPx, screenHeightDp)
 
-        textSizeView.text = getString(
-            R.string.textSize,
-            textSizeView.textSizePx.toPxInt().value,
-            textSizeView.textSizeDp.toDpInt().value,
-            textSizeView.textSizeSp.toSpInt().value
-        )
+        val textSizePx: Int = textSizeView.textSizePx.toPxInt().value
+        val textSizeDp: Int = textSizeView.textSizeDp.toDpInt().value
+        val textSizeSp: Int = textSizeView.textSizeSp.toSpInt().value
+        textSizeView.text = getString(R.string.textSize, textSizePx, textSizeDp, textSizeSp)
     }
 
     private fun Display.getRealSize(): PxPoint {
