@@ -76,6 +76,8 @@ fun Display.getRealSize(outSize: PxPoint) {
  */
 inline class PxPoint(internal val point: Point) {
 
+    constructor() : this(Point())
+
     var x: PxInt
         get() = PxInt(point.x)
         set(x) {
@@ -93,6 +95,15 @@ inline class PxPoint(internal val point: Point) {
  * A [PxInt] unit-specific wrapper for [Rect].
  */
 inline class PxRect(internal val rect: Rect) {
+
+    constructor() : this(Rect())
+
+    constructor(
+        left: PxInt,
+        top: PxInt,
+        right: PxInt,
+        bottom: PxInt
+    ) : this(Rect(left.value, top.value, right.value, bottom.value))
 
     var left: PxInt
         get() = PxInt(rect.left)

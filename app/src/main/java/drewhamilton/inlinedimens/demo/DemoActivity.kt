@@ -1,10 +1,10 @@
 package drewhamilton.inlinedimens.demo
 
-import android.graphics.Point
 import android.os.Bundle
 import android.view.Display
 import androidx.appcompat.app.AppCompatActivity
-import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.PxPoint
+import drewhamilton.inlinedimens.getRealSize
 import drewhamilton.inlinedimens.getTextSizePx
 import drewhamilton.inlinedimens.toDp
 import drewhamilton.inlinedimens.toDpInt
@@ -23,13 +23,13 @@ class DemoActivity : AppCompatActivity() {
 
         val screenSize = windowManager.defaultDisplay.getRealSize()
 
-        val screenWidth = PxInt(screenSize.x)
+        val screenWidth = screenSize.x
         screenWidthView.text = getString(
             R.string.screenWidth,
             screenWidth.value, screenWidth.toDp(this).toDpInt().value
         )
 
-        val screenHeight = PxInt(screenSize.y)
+        val screenHeight = screenSize.y
         screenHeightView.text = getString(
             R.string.screenHeight,
             screenHeight.value, screenHeight.toDp(this).toDpInt().value
@@ -42,8 +42,8 @@ class DemoActivity : AppCompatActivity() {
         )
     }
 
-    private fun Display.getRealSize(): Point {
-        val size = Point()
+    private fun Display.getRealSize(): PxPoint {
+        val size = PxPoint()
         getRealSize(size)
         return size
     }
