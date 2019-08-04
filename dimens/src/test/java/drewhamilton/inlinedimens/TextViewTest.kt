@@ -13,10 +13,9 @@ import org.junit.Test
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 
-
 class TextViewTest {
 
-    private val mockTextView: TextView = mock()
+    private val mockTextView = mock<TextView>()
 
     //region getTextSizePx
     @Test fun `getTextSizePx gets text size as Px`() {
