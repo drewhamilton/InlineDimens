@@ -17,31 +17,31 @@ class TextViewTest {
 
     private val mockTextView = mock<TextView>()
 
-    //region getTextSizePx
+    //region textSizePx
     @Test fun `getTextSizePx gets text size as Px`() {
         whenever(mockTextView.textSize).thenReturn(22f)
-        assertEquals(Px(22f), mockTextView.getTextSizePx())
+        assertEquals(Px(22f), mockTextView.textSizePx)
     }
     //endregion
 
     //region setTextSize
-    @Test fun `setTextSize with Px sets px text size`() {
+    @Test fun `set textSizePx sets px text size`() {
         val px = Px(234.5f)
-        mockTextView.setTextSize(px)
+        mockTextView.textSizePx = px
         verify(mockTextView).setTextSize(TypedValue.COMPLEX_UNIT_PX, px.value)
         verifyNoMoreInteractions(mockTextView)
     }
 
-    @Test fun `setTextSize with Dp sets dp text size`() {
+    @Test fun `set textSizeDp sets dp text size`() {
         val dp = Dp(234.5f)
-        mockTextView.setTextSize(dp)
+        mockTextView.textSizeDp = dp
         verify(mockTextView).setTextSize(TypedValue.COMPLEX_UNIT_DIP, dp.value)
         verifyNoMoreInteractions(mockTextView)
     }
 
-    @Test fun `setTextSize with Sp sets sp text size`() {
+    @Test fun `set textSizeSp sets sp text size`() {
         val sp = Sp(234.5f)
-        mockTextView.setTextSize(sp)
+        mockTextView.textSizeSp = sp
         verify(mockTextView).setTextSize(TypedValue.COMPLEX_UNIT_SP, sp.value)
         verifyNoMoreInteractions(mockTextView)
     }

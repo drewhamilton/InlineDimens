@@ -5,11 +5,12 @@ import android.view.Display
 import androidx.appcompat.app.AppCompatActivity
 import drewhamilton.inlinedimens.PxPoint
 import drewhamilton.inlinedimens.getRealSize
-import drewhamilton.inlinedimens.getTextSizePx
+import drewhamilton.inlinedimens.textSizeDp
+import drewhamilton.inlinedimens.textSizePx
+import drewhamilton.inlinedimens.textSizeSp
 import drewhamilton.inlinedimens.toDp
 import drewhamilton.inlinedimens.toDpInt
 import drewhamilton.inlinedimens.toPxInt
-import drewhamilton.inlinedimens.toSp
 import drewhamilton.inlinedimens.toSpInt
 import kotlinx.android.synthetic.main.demo.screenHeightView
 import kotlinx.android.synthetic.main.demo.screenWidthView
@@ -35,10 +36,11 @@ class DemoActivity : AppCompatActivity() {
             screenHeight.value, screenHeight.toDp(this).toDpInt().value
         )
 
-        val textSize = textSizeView.getTextSizePx()
         textSizeView.text = getString(
             R.string.textSize,
-            textSize.toPxInt().value, textSize.toDp(this).toDpInt().value, textSize.toSp(this).toSpInt().value
+            textSizeView.textSizePx.toPxInt().value,
+            textSizeView.textSizeDp.toDpInt().value,
+            textSizeView.textSizeSp.toSpInt().value
         )
     }
 
