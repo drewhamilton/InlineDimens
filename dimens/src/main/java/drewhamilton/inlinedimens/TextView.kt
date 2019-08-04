@@ -1,3 +1,4 @@
+@file:JvmName("TextViewDimens")
 package drewhamilton.inlinedimens
 
 import android.util.TypedValue

@@ -1,3 +1,4 @@
+@file:JvmName("DpIntConversions")
 package drewhamilton.inlinedimens
 
 import android.content.Context

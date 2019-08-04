@@ -1,3 +1,4 @@
+@file:JvmName("DisplayDimens")
 package drewhamilton.inlinedimens
 
 import android.graphics.Point
