@@ -16,6 +16,30 @@ To use Inline Dimens, include the following in your Gradle dependencies:
 implementation "drewhamilton.inlinedimens:inlinedimens:$version"
 ```
 
+## Usage
+
+Ensure inline classes are enabled in your build.gradle file:
+```groovy
+android {
+    // ...
+    kotlinOptions {
+        // ...
+        freeCompilerArgs += ["-XXLanguage:+InlineClasses"]
+    }
+}
+```
+
+Then, work directly with unit-safe types in your code. For example, get a `TextView`'s text size in the unit of your
+choice:
+```kotlin
+val scaledTextSize = textView.textSizeSp
+```
+
+And convert between different units at will:
+```kotlin
+val textSizePx = scaledTextSize.toPx()
+```
+
 ## License
 ```
 Copyright 2019 Drew Hamilton
