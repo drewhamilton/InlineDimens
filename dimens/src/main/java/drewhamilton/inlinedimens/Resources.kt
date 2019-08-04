@@ -1,3 +1,4 @@
+@file:JvmName("ResourcesDimens")
 package drewhamilton.inlinedimens
 
 import android.content.res.Resources

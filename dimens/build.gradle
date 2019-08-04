@@ -40,6 +40,11 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
         freeCompilerArgs += ["-XXLanguage:+InlineClasses"]
     }
+
+    testOptions {
+        // Used for real Android instances of simple classes, e.g. Point and Rect
+        unitTests.includeAndroidResources = true
+    }
 }
 
 apply from: 'publish.gradle'
@@ -50,9 +55,10 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
 
     testImplementation 'junit:junit:4.12'
-    testImplementation 'com.google.truth:truth:0.45'
-    testImplementation 'org.mockito:mockito-inline:2.27.0'
+    testImplementation 'com.google.truth:truth:1.0'
+    testImplementation 'org.mockito:mockito-inline:2.28.2'
     testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0'
+    testImplementation 'org.robolectric:robolectric:4.3'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
