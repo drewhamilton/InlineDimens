@@ -55,5 +55,5 @@ fun Px.toSp(displayMetrics: DisplayMetrics) = toSp(displayMetrics.scaledDensity)
 /**
  * Convert [this] px value to sp based on the given [scaledDensity].
  */
-internal fun Px.toSp(scaledDensity: Float) = Dp(value / scaledDensity)
+internal fun Px.toSp(scaledDensity: Float) = Sp(value / scaledDensity)
 //endregion
