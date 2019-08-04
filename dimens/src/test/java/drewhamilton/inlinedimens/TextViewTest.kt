@@ -7,6 +7,8 @@ import androidx.appcompat.widget.AppCompatTextView
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
+import com.nhaarman.mockitokotlin2.whenever
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
@@ -14,9 +16,14 @@ import java.lang.reflect.Modifier
 
 class TextViewTest {
 
-    private val mockTextView: TextView = mock {
+    private val mockTextView: TextView = mock()
 
+    //region getTextSizePx
+    @Test fun `getTextSizePx gets text size as Px`() {
+        whenever(mockTextView.textSize).thenReturn(22f)
+        assertEquals(Px(22f), mockTextView.getTextSizePx())
     }
+    //endregion
 
     //region setTextSize
     @Test fun `setTextSize with Px sets px text size`() {
