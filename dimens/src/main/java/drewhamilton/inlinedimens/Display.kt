@@ -78,6 +78,8 @@ inline class PxPoint(internal val point: Point) {
 
     constructor() : this(Point())
 
+    constructor(x: PxInt, y: PxInt) : this (Point(x.value, y.value))
+
     var x: PxInt
         get() = PxInt(point.x)
         set(x) {
