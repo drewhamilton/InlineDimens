@@ -17,6 +17,11 @@ fun DpInt.toDpFloat() = Dp(value.toFloat())
 
 //region toPx
 /**
+ * Convert [this] dp value to px based on the system [Resources]' display metrics.
+ */
+fun DpInt.toPx() = toPx(Resources.getSystem())
+
+/**
  * Convert [this] dp value to px based on [context]'s display metrics.
  */
 fun DpInt.toPx(context: Context) = toPx(context.resources)
@@ -33,6 +38,11 @@ fun DpInt.toPx(displayMetrics: DisplayMetrics) = toDpFloat().toPx(displayMetrics
 //endregion
 
 //region toSp
+/**
+ * Convert [this] dp value to sp based on the system [Resources]' display metrics.
+ */
+fun DpInt.toSp() = toSp(Resources.getSystem())
+
 /**
  * Convert [this] dp value to sp based on [context]'s display metrics.
  */

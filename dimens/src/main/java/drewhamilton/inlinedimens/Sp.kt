@@ -17,6 +17,11 @@ fun Sp.toSpInt() = SpInt(value.toInt())
 
 //region toPx
 /**
+ * Convert [this] sp value to px based on the system [Resources]' display metrics.
+ */
+fun Sp.toPx() = toPx(Resources.getSystem())
+
+/**
  * Convert [this] sp value to px based on [context]'s display metrics.
  */
 fun Sp.toPx(context: Context) = toPx(context.resources)
@@ -38,6 +43,11 @@ internal fun Sp.toPx(scaledDensity: Float) = Px(value * scaledDensity)
 //endregion
 
 //region toDp
+/**
+ * Convert [this] sp value to dp based on the system [Resources]' display metrics.
+ */
+fun Sp.toDp() = toDp(Resources.getSystem())
+
 /**
  * Convert [this] sp value to dp based on [context]'s display metrics.
  */

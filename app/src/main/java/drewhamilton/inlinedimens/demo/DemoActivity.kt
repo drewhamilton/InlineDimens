@@ -28,12 +28,12 @@ class DemoActivity : AppCompatActivity() {
 
         val screenWidth = screenSize.x
         val screenWidthPx: Int = screenWidth.value
-        val screenWidthDp: Int = screenWidth.toDp(this).toDpInt().value
+        val screenWidthDp: Int = screenWidth.toDp().toDpInt().value
         screenWidthView.text = getString(R.string.screenWidth, screenWidthPx, screenWidthDp)
 
         val screenHeight = screenSize.y
         val screenHeightPx: Int = screenHeight.value
-        val screenHeightDp: Int = screenHeight.toDp(this).toDpInt().value
+        val screenHeightDp: Int = screenHeight.toDp().toDpInt().value
         screenHeightView.text = getString(R.string.screenHeight, screenHeightPx, screenHeightDp)
 
         val textSizePx: Int = textSizeView.textSizePx.toPxInt().value

@@ -17,6 +17,11 @@ fun PxInt.toPxFloat() = Px(value.toFloat())
 
 //region toDp
 /**
+ * Convert [this] px value to dp based on the system [Resources]' display metrics.
+ */
+fun PxInt.toDp() = toDp(Resources.getSystem())
+
+/**
  * Convert [this] px value to dp based on [context]'s display metrics.
  */
 fun PxInt.toDp(context: Context) = toDp(context.resources)
@@ -33,6 +38,11 @@ fun PxInt.toDp(displayMetrics: DisplayMetrics) = toPxFloat().toDp(displayMetrics
 //endregion
 
 //region toSp
+/**
+ * Convert [this] px value to sp based on the system [Resources]' display metrics.
+ */
+fun PxInt.toSp() = toSp(Resources.getSystem())
+
 /**
  * Convert [this] px value to sp based on [context]'s display metrics.
  */
