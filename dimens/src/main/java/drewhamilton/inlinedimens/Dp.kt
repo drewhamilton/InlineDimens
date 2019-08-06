@@ -17,6 +17,11 @@ fun Dp.toDpInt() = DpInt(value.toInt())
 
 //region toPx
 /**
+ * Convert [this] dp value to px based on the system [Resources]' display metrics.
+ */
+fun Dp.toPx() = toPx(Resources.getSystem())
+
+/**
  * Convert [this] dp value to px based on [context]'s display metrics.
  */
 fun Dp.toPx(context: Context) = toPx(context.resources)
@@ -38,6 +43,11 @@ internal fun Dp.toPx(density: Float) = Px(value * density)
 //endregion
 
 //region toSp
+/**
+ * Convert [this] dp value to sp based on the system [Resources]' display metrics.
+ */
+fun Dp.toSp() = toSp(Resources.getSystem())
+
 /**
  * Convert [this] dp value to sp based on [context]'s display metrics.
  */
