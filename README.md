@@ -37,7 +37,7 @@ val scaledTextSize = textView.textSizeSp
 
 And convert between different units at will:
 ```kotlin
-val textSizePx = scaledTextSize.toPx(context)
+val textSizePx = scaledTextSize.toPx()
 ```
 
 ## License
