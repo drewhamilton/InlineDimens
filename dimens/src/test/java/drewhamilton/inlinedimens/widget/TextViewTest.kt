@@ -1,4 +1,4 @@
-package drewhamilton.inlinedimens
+package drewhamilton.inlinedimens.widget
 
 import android.os.Build
 import android.util.TypedValue
@@ -8,6 +8,13 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
+import drewhamilton.inlinedimens.DimenInt
+import drewhamilton.inlinedimens.Dp
+import drewhamilton.inlinedimens.DpInt
+import drewhamilton.inlinedimens.Px
+import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.Sp
+import drewhamilton.inlinedimens.SpInt
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.lang.reflect.Field

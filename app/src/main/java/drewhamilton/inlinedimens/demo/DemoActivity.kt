@@ -3,11 +3,11 @@ package drewhamilton.inlinedimens.demo
 import android.os.Bundle
 import android.view.Display
 import androidx.appcompat.app.AppCompatActivity
-import drewhamilton.inlinedimens.PxPoint
+import drewhamilton.inlinedimens.view.PxPoint
 import drewhamilton.inlinedimens.getRealSize
-import drewhamilton.inlinedimens.textSizeDp
-import drewhamilton.inlinedimens.textSizePx
-import drewhamilton.inlinedimens.textSizeSp
+import drewhamilton.inlinedimens.widget.textSizeDp
+import drewhamilton.inlinedimens.widget.textSizePx
+import drewhamilton.inlinedimens.widget.textSizeSp
 import drewhamilton.inlinedimens.toDp
 import drewhamilton.inlinedimens.toDpInt
 import drewhamilton.inlinedimens.toPxInt

@@ -1,8 +1,10 @@
 @file:JvmName("ResourcesDimens")
-package drewhamilton.inlinedimens
+package drewhamilton.inlinedimens.content.res
 
 import android.content.res.Resources
 import androidx.annotation.DimenRes
+import drewhamilton.inlinedimens.Px
+import drewhamilton.inlinedimens.PxInt
 
 /**
  * Retrieve a dimensional in px for a particular resource [id]. If the dimen is specified in dp or sp, unit conversions
