@@ -1,9 +1,18 @@
 @file:JvmName("TextViewDimens")
-package drewhamilton.inlinedimens
+package drewhamilton.inlinedimens.widget
 
 import android.util.TypedValue
 import android.widget.TextView
 import androidx.core.widget.TextViewCompat
+import drewhamilton.inlinedimens.DimenInt
+import drewhamilton.inlinedimens.Dp
+import drewhamilton.inlinedimens.DpInt
+import drewhamilton.inlinedimens.Px
+import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.Sp
+import drewhamilton.inlinedimens.SpInt
+import drewhamilton.inlinedimens.toDp
+import drewhamilton.inlinedimens.toSp
 
 //region Text size
 /**

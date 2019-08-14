@@ -1,7 +1,10 @@
-package drewhamilton.inlinedimens
+package drewhamilton.inlinedimens.content.res
 
 import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockitokotlin2.whenever
+import drewhamilton.inlinedimens.Px
+import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.TestValues
 import org.junit.Test
 
 class ResourcesTest {

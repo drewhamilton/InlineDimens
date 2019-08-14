@@ -1,10 +1,11 @@
 @file:JvmName("DisplayDimens")
-package drewhamilton.inlinedimens
+package drewhamilton.inlinedimens.view
 
-import android.graphics.Point
-import android.graphics.Rect
 import android.view.Display
 import androidx.annotation.RequiresApi
+import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.graphics.PxPoint
+import drewhamilton.inlinedimens.graphics.PxRect
 
 /**
  * Fills [outSize] with the size of the display in [PxInt]. Value returned by this method does not necessarily represent
@@ -70,65 +71,4 @@ fun Display.getCurrentSizeRange(outSmallestSize: PxPoint, outLargestSize: PxPoin
 @RequiresApi(17)
 fun Display.getRealSize(outSize: PxPoint) {
     getRealSize(outSize.point)
-}
-
-/**
- * A [PxInt] unit-specific wrapper for [Point].
- */
-inline class PxPoint(internal val point: Point) {
-
-    constructor() : this(Point())
-
-    constructor(x: PxInt, y: PxInt) : this (Point(x.value, y.value))
-
-    var x: PxInt
-        get() = PxInt(point.x)
-        set(x) {
-            point.x = x.value
-        }
-
-    var y: PxInt
-        get() = PxInt(point.y)
-        set(y) {
-            point.y = y.value
-        }
-}
-
-/**
- * A [PxInt] unit-specific wrapper for [Rect].
- */
-inline class PxRect(internal val rect: Rect) {
-
-    constructor() : this(Rect())
-
-    constructor(
-        left: PxInt,
-        top: PxInt,
-        right: PxInt,
-        bottom: PxInt
-    ) : this(Rect(left.value, top.value, right.value, bottom.value))
-
-    var left: PxInt
-        get() = PxInt(rect.left)
-        set(left) {
-            rect.left = left.value
-        }
-
-    var top: PxInt
-        get() = PxInt(rect.top)
-        set(top) {
-            rect.top = top.value
-        }
-
-    var right: PxInt
-        get() = PxInt(rect.right)
-        set(right) {
-            rect.right = right.value
-        }
-
-    var bottom: PxInt
-        get() = PxInt(rect.bottom)
-        set(bottom) {
-            rect.bottom = bottom.value
-        }
 }

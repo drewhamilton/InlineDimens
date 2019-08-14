@@ -1,12 +1,13 @@
-package drewhamilton.inlinedimens
+package drewhamilton.inlinedimens.view
 
 import android.graphics.Point
 import android.graphics.Rect
 import android.view.Display
-import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
+import drewhamilton.inlinedimens.graphics.PxPoint
+import drewhamilton.inlinedimens.graphics.PxRect
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -55,40 +56,4 @@ class DisplayTest {
         verify(mockDisplay).getRealSize(point)
         verifyNoMoreInteractions(mockDisplay)
     }
-
-    //region PxPoint
-    @Test fun `PxPoint empty constructor uses Point empty constructor`() {
-        val point = Point()
-        val pxPoint = PxPoint()
-        assertThat(pxPoint.x.value).isEqualTo(point.x)
-        assertThat(pxPoint.y.value).isEqualTo(point.y)
-    }
-
-    @Test fun `PxPoint xy constructor uses Point xy constructor`() {
-        val point = Point(1, 2)
-        val pxPoint = PxPoint(PxInt(1), PxInt(2))
-        assertThat(pxPoint.x.value).isEqualTo(point.x)
-        assertThat(pxPoint.y.value).isEqualTo(point.y)
-    }
-    //endregion
-
-    //region PxRect
-    @Test fun `PxRect empty constructor uses Rect empty constructor`() {
-        val rect = Rect()
-        val pxRect = PxRect()
-        assertThat(pxRect.left.value).isEqualTo(rect.left)
-        assertThat(pxRect.top.value).isEqualTo(rect.top)
-        assertThat(pxRect.right.value).isEqualTo(rect.right)
-        assertThat(pxRect.bottom.value).isEqualTo(rect.bottom)
-    }
-
-    @Test fun `PxRect ltrb constructor uses Rect ltrb constructor`() {
-        val rect = Rect(1, 2, 3, 4)
-        val pxRect = PxRect(PxInt(1), PxInt(2), PxInt(3), PxInt(4))
-        assertThat(pxRect.left.value).isEqualTo(rect.left)
-        assertThat(pxRect.top.value).isEqualTo(rect.top)
-        assertThat(pxRect.right.value).isEqualTo(rect.right)
-        assertThat(pxRect.bottom.value).isEqualTo(rect.bottom)
-    }
-    //endregion
 }
