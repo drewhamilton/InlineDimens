@@ -92,8 +92,8 @@ val View.heightPx get() = PxInt(height)
 
 /**
  * Fill in [outRect] with the visible drawing bounds of your view. Fills in the output rectangle with the values from
- * [View.getScrollX], [View.getScrollY], [View.getWidth], and [View.getHeight]. These bounds do not account for any
- * transformation properties currently set on the view, such as [View.setScaleX] or [View.setRotation].
+ * [scrollXPx], [scrollYPx], [widthPx], and [heightPx]. These bounds do not account for any transformation properties
+ * currently set on the view, such as [View.setScaleX] or [View.setRotation].
  *
  * @param outRect The (scrolled) drawing bounds of the view.
  */
@@ -162,11 +162,11 @@ val View.leftPx get() = PxInt(left)
 val View.rightPx get() = PxInt(right)
 
 /**
- * The visual x position of this view, in px. This is equivalent to the [View.getTranslationX] property plus the current
- * [View.getLeft] property.
+ * The visual x position of this view, in px. This is equivalent to the [translationXPx] property plus the current
+ * [leftPx] property.
  *
  * Changing this value is equivalent to setting the [View.setTranslationX] property to be the difference between the x
- * value passed in and the current [View.getLeft] property.
+ * value passed in and the current [leftPx] property.
  */
 var View.xPx
     get() = Px(x)
@@ -175,11 +175,11 @@ var View.xPx
     }
 
 /**
- * The visual y position of this view, in px. This is equivalent to the [View.getTranslationY] property plus the current
- * [View.getTop] property.
+ * The visual y position of this view, in px. This is equivalent to the [translationYPx] property plus the current
+ * [topPx] property.
  *
  * Changing this value is equivalent to setting the [View.setTranslationY] property to be the difference between the y
- * value passed in and the current [View.getTop] property.
+ * value passed in and the current [topPx] property.
  */
 var View.yPx
     get() = Px(y)
@@ -188,11 +188,11 @@ var View.yPx
     }
 
 /**
- * The visual z position of this view, in px. This is equivalent to the [View.getTranslationZ] property plus the current
- * [View.getElevation] property.
+ * The visual z position of this view, in px. This is equivalent to the [translationZPx] property plus the current
+ * [elevationPx] property.
  *
  * Changing this value is equivalent to setting the [View.setTranslationZ] property to be the difference between the z
- * value passed in and the current [View.getElevation] property.
+ * value passed in and the current [elevationPx] property.
  */
 @get:RequiresApi(21)
 @set:RequiresApi(21)
@@ -212,4 +212,144 @@ var View.elevationPx
     set(elevation) {
         this.elevation = elevation.value
     }
+
+/**
+ * The horizontal location of this view relative to its [leftPx] position. This position is post-layout, in addition to
+ * wherever the object's layout placed it.
+ */
+var View.translationXPx
+    get() = Px(translationX)
+    set(translationX) {
+        this.translationX = translationX.value
+    }
+
+/**
+ * The vertical location of this view relative to its [topPx] position. This position is post-layout, in addition to
+ * wherever the object's layout placed it.
+ */
+var View.translationYPx
+    get() = Px(translationY)
+    set(translationY) {
+        this.translationY = translationY.value
+    }
+
+/**
+ * The depth location of this view relative to its [elevationPx].
+ */
+@get:RequiresApi(21)
+@set:RequiresApi(21)
+var View.translationZPx
+    get() = Px(translationZ)
+    set(translationZ) {
+        this.translationZ = translationZ.value
+    }
 //endregion
+
+/**
+ * Offset this view's vertical location by the specified number of pixels.
+ */
+fun View.offsetTopAndBottom(offset: PxInt) = offsetTopAndBottom(offset.value)
+
+/**
+ * Offset this view's horizontal location by the specified number of pixels.
+ */
+fun View.offsetLeftAndRight(offset: PxInt) = offsetLeftAndRight(offset.value)
+
+/**
+ * Move the scrolled position of your view by [x] px horizontally and [y] px vertically. This will cause a call to
+ * [View.onScrollChanged] and the view will be invalidated.
+ *
+ * [x] and [y] both default to 0 so you can choose a single axis along which to scroll.
+ */
+fun View.scrollBy(x: PxInt = PxInt(0), y: PxInt = PxInt(0)) = scrollBy(x.value, y.value)
+
+//region Padding
+/**
+ * The top padding of this view.
+ */
+val View.paddingTopPx get() = PxInt(paddingTop)
+
+/**
+ * The bottom padding of this view.
+ */
+val View.paddingBottomPx get() = PxInt(paddingBottom)
+
+/**
+ * The left padding of this view.
+ */
+val View.paddingLeftPx get() = PxInt(paddingLeft)
+
+/**
+ * The right padding of this view.
+ */
+val View.paddingRightPx get() = PxInt(paddingRight)
+
+/**
+ * The start padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
+ * this value may include the space required to display the scrollbars as well.
+ */
+@get:RequiresApi(17)
+val View.paddingStartPx get() = PxInt(paddingStart)
+
+/**
+ * The end padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
+ * this value may include the space required to display the scrollbars as well.
+ */
+@get:RequiresApi(17)
+val View.paddingEndPx get() = PxInt(paddingEnd)
+
+/**
+ * Sets the padding. The view may add on the space required to display the scrollbars, depending on the style and
+ * visibility of the scrollbars. So the values of [paddingLeftPx], [paddingTopPx], [paddingRightPx], and
+ * [paddingBottomPx] may be different from the values set in this call.
+ *
+ * Each parameter defaults to the current value, so a subset of sides can be padded easily.
+ */
+fun View.setPadding(
+    left: PxInt = paddingLeftPx,
+    top: PxInt = paddingTopPx,
+    right: PxInt = paddingRightPx,
+    bottom: PxInt = paddingBottomPx
+) = setPadding(left.value, top.value, right.value, bottom.value)
+
+/**
+ * Sets the relative padding. The view may add on the space required to display the scrollbars, depending on the style
+ * and visibility of the scrollbars. So the values returned from [paddingStartPx], [paddingTopPx], [paddingEndPx] and
+ * [paddingBottomPx] may be different from the values set in this call.
+ *
+ * Each parameter defaults to the current value, so a subset of sides can be padded easily.
+ */
+@RequiresApi(17)
+fun View.setPaddingRelative(
+    start: PxInt = paddingStartPx,
+    top: PxInt = paddingTopPx,
+    end: PxInt = paddingEndPx,
+    bottom: PxInt = paddingBottomPx
+) = setPaddingRelative(start.value, top.value, end.value, bottom.value)
+//endregion
+
+/**
+ * The minimum height of the view.
+ *
+ * When set, it is not guaranteed the view will be able to achieve this minimum height (for example, if its parent
+ * layout constrains it with less available height).
+ */
+@get:RequiresApi(16)
+var View.minimumHeightPx
+    get() = PxInt(minimumHeight)
+    set(minHeight) {
+        minimumHeight = minHeight.value
+    }
+
+/**
+ * The minimum width of the view.
+ *
+ * When set, it is not guaranteed the view will be able to achieve this minimum width (for example, if its parent layout
+ * constrains it with less available width).
+ */
+@get:RequiresApi(16)
+var View.minimumWidthPx
+    get() = PxInt(minimumWidth)
+    set(minWidth) {
+        minimumWidth = minWidth.value
+    }
