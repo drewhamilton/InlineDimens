@@ -98,3 +98,118 @@ val View.heightPx get() = PxInt(height)
  * @param outRect The (scrolled) drawing bounds of the view.
  */
 fun View.getDrawingRect(outRect: PxRect) = getDrawingRect(outRect.rect)
+
+/**
+ * The distance along the Z axis (orthogonal to the X/Y plane on which views are drawn) from the camera to this view.
+ * The camera's distance affects 3D transformations, for instance rotations around the X and Y axis. If the rotationX or
+ * rotationY properties are changed and this view is large (more than half the size of the screen), it is recommended to
+ * always use a camera distance that's greater than the height (X axis rotation) or the width (Y axis rotation) of this
+ * view.
+ *
+ * The distance of the camera from the view plane can have an affect on the perspective distortion of the view when it
+ * is rotated around the x or y axis. For example, a large distance will result in a large viewing angle, and there will
+ * not be much perspective distortion of the view as it rotates. A short distance may cause much more perspective
+ * distortion upon rotation, and can also result in some drawing artifacts if the rotated view ends up partially behind
+ * the camera (which is why the recommendation is to use a distance at least as far as the size of the view, if the view
+ * is to be rotated.)
+ *
+ * The distance is expressed in "depth pixels." The default distance depends on the screen density. For instance, on a
+ * medium density display, the default distance is 1280. On a high density display, the default distance is 1920.
+ *
+ * If you want to specify a distance that leads to visually consistent results across various densities, specify a value
+ * in dp before converting it to set this property:
+ *
+ * view.cameraDistancePx = Dp(distance).toPx()
+ */
+@get:RequiresApi(16)
+var View.cameraDistancePx: Px
+    get() = Px(cameraDistance)
+    set(distance) {
+        cameraDistance = distance.value
+    }
+
+//region Position
+/**
+ * Top position of this view relative to its parent.
+ *
+ * This property is not mutable because [View.setTop] is meant to be called by the layout system and should not
+ * generally be called otherwise, because the property may be changed at any time by the layout.
+ */
+val View.topPx get() = PxInt(top)
+
+/**
+ * Bottom position of this view relative to its parent.
+ *
+ * This property is not mutable because [View.setBottom] is meant to be called by the layout system and should not
+ * generally be called otherwise, because the property may be changed at any time by the layout.
+ */
+val View.bottomPx get() = PxInt(bottom)
+
+/**
+ * Left position of this view relative to its parent.
+ *
+ * This property is not mutable because [View.setLeft] is meant to be called by the layout system and should not
+ * generally be called otherwise, because the property may be changed at any time by the layout.
+ */
+val View.leftPx get() = PxInt(left)
+
+/**
+ * Right position of this view relative to its parent.
+ *
+ * This property is not mutable because [View.setRight] is meant to be called by the layout system and should not
+ * generally be called otherwise, because the property may be changed at any time by the layout.
+ */
+val View.rightPx get() = PxInt(right)
+
+/**
+ * The visual x position of this view, in px. This is equivalent to the [View.getTranslationX] property plus the current
+ * [View.getLeft] property.
+ *
+ * Changing this value is equivalent to setting the [View.setTranslationX] property to be the difference between the x
+ * value passed in and the current [View.getLeft] property.
+ */
+var View.xPx
+    get() = Px(x)
+    set(x) {
+        this.x = x.value
+    }
+
+/**
+ * The visual y position of this view, in px. This is equivalent to the [View.getTranslationY] property plus the current
+ * [View.getTop] property.
+ *
+ * Changing this value is equivalent to setting the [View.setTranslationY] property to be the difference between the y
+ * value passed in and the current [View.getTop] property.
+ */
+var View.yPx
+    get() = Px(y)
+    set(y) {
+        this.y = y.value
+    }
+
+/**
+ * The visual z position of this view, in px. This is equivalent to the [View.getTranslationZ] property plus the current
+ * [View.getElevation] property.
+ *
+ * Changing this value is equivalent to setting the [View.setTranslationZ] property to be the difference between the z
+ * value passed in and the current [View.getElevation] property.
+ */
+@get:RequiresApi(21)
+@set:RequiresApi(21)
+var View.zPx
+    get() = Px(z)
+    set(z) {
+        this.z = z.value
+    }
+
+/**
+ * The base elevation of this view relative to its parent, in px.
+ */
+@get:RequiresApi(21)
+@set:RequiresApi(21)
+var View.elevationPx
+    get() = Px(elevation)
+    set(elevation) {
+        this.elevation = elevation.value
+    }
+//endregion
