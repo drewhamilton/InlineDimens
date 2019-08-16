@@ -199,4 +199,34 @@ class ViewTest {
         verifyNoMoreInteractions(mockView)
     }
     //endregion
+
+    @Test fun `offsetTopAndBottom with PxInt forwards to offsetTopAndBottom with Int`() {
+        mockView.offsetTopAndBottom(PxInt(37))
+        verify(mockView).offsetTopAndBottom(37)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `offsetLeftAndRight with PxInt forwards to offsetLeftAndRight with Int`() {
+        mockView.offsetLeftAndRight(PxInt(38))
+        verify(mockView).offsetLeftAndRight(38)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `scrollBy with both parameters forwards to scrollBy with both Ints`() {
+        mockView.scrollBy(PxInt(39), PxInt(40))
+        verify(mockView).scrollBy(39, 40)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `scrollBy with x forwards to scrollBy with x Int and y 0`() {
+        mockView.scrollBy(x = PxInt(41))
+        verify(mockView).scrollBy(41, 0)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `scrollBy with y forwards to scrollBy with x 0 and y Int`() {
+        mockView.scrollBy(y = PxInt(42))
+        verify(mockView).scrollBy(0, 42)
+        verifyNoMoreInteractions(mockView)
+    }
 }
