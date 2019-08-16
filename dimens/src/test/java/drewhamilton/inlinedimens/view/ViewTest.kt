@@ -79,6 +79,28 @@ class ViewTest {
         whenever(mockView.height).thenReturn(12)
         assertThat(mockView.heightPx).isEqualTo(PxInt(12))
     }
+
+    @Test fun `minimumWidthPx returns from View minimumWidth`() {
+        whenever(mockView.minimumWidth).thenReturn(65)
+        assertThat(mockView.minimumWidthPx).isEqualTo(PxInt(65))
+    }
+
+    @Test fun `minimumWidthPx writes to View minimumWidth`() {
+        mockView.minimumWidthPx = PxInt(66)
+        verify(mockView).minimumWidth = 66
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `minimumHeightPx returns from View minimumHeight`() {
+        whenever(mockView.minimumHeight).thenReturn(67)
+        assertThat(mockView.minimumHeightPx).isEqualTo(PxInt(67))
+    }
+
+    @Test fun `minimumHeightPx writes to View minimumHeight`() {
+        mockView.minimumHeightPx = PxInt(68)
+        verify(mockView).minimumHeight = 68
+        verifyNoMoreInteractions(mockView)
+    }
     //endregion
 
     @Test fun `getDrawingRect with PxRect forwards to getDrawingRect with Rect`() {

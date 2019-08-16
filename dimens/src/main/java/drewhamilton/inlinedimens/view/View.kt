@@ -89,6 +89,32 @@ val View.widthPx get() = PxInt(width)
  * The height of your view, in px.
  */
 val View.heightPx get() = PxInt(height)
+
+/**
+ * The minimum width of the view.
+ *
+ * When set, it is not guaranteed the view will be able to achieve this minimum width (for example, if its parent layout
+ * constrains it with less available width).
+ */
+@get:RequiresApi(16)
+var View.minimumWidthPx
+    get() = PxInt(minimumWidth)
+    set(minWidth) {
+        minimumWidth = minWidth.value
+    }
+
+/**
+ * The minimum height of the view.
+ *
+ * When set, it is not guaranteed the view will be able to achieve this minimum height (for example, if its parent
+ * layout constrains it with less available height).
+ */
+@get:RequiresApi(16)
+var View.minimumHeightPx
+    get() = PxInt(minimumHeight)
+    set(minHeight) {
+        minimumHeight = minHeight.value
+    }
 //endregion
 
 /**
@@ -328,32 +354,6 @@ fun View.setPaddingRelative(
     bottom: PxInt = paddingBottomPx
 ) = setPaddingRelative(start.value, top.value, end.value, bottom.value)
 //endregion
-
-/**
- * The minimum height of the view.
- *
- * When set, it is not guaranteed the view will be able to achieve this minimum height (for example, if its parent
- * layout constrains it with less available height).
- */
-@get:RequiresApi(16)
-var View.minimumHeightPx
-    get() = PxInt(minimumHeight)
-    set(minHeight) {
-        minimumHeight = minHeight.value
-    }
-
-/**
- * The minimum width of the view.
- *
- * When set, it is not guaranteed the view will be able to achieve this minimum width (for example, if its parent layout
- * constrains it with less available width).
- */
-@get:RequiresApi(16)
-var View.minimumWidthPx
-    get() = PxInt(minimumWidth)
-    set(minWidth) {
-        minimumWidth = minWidth.value
-    }
 
 // TODO MISSING: Implement functions that mutate int arrays such as getLocationInWindow and dispatchNestedScroll
 
