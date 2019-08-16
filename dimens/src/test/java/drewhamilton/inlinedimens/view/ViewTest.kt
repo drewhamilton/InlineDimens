@@ -229,4 +229,78 @@ class ViewTest {
         verify(mockView).scrollBy(0, 42)
         verifyNoMoreInteractions(mockView)
     }
+
+    //region Padding
+    @Test fun `paddingTopPx returns from View paddingTop`() {
+        whenever(mockView.paddingTop).thenReturn(43)
+        assertThat(mockView.paddingTopPx).isEqualTo(PxInt(43))
+    }
+
+    @Test fun `paddingBottomPx returns from View paddingBottom`() {
+        whenever(mockView.paddingBottom).thenReturn(44)
+        assertThat(mockView.paddingBottomPx).isEqualTo(PxInt(44))
+    }
+
+    @Test fun `paddingLeftPx returns from View paddingLeft`() {
+        whenever(mockView.paddingLeft).thenReturn(45)
+        assertThat(mockView.paddingLeftPx).isEqualTo(PxInt(45))
+    }
+
+    @Test fun `paddingRightPx returns from View paddingRight`() {
+        whenever(mockView.paddingRight).thenReturn(46)
+        assertThat(mockView.paddingRightPx).isEqualTo(PxInt(46))
+    }
+
+    @Test fun `paddingStartPx returns from View paddingStart`() {
+        whenever(mockView.paddingStart).thenReturn(47)
+        assertThat(mockView.paddingStartPx).isEqualTo(PxInt(47))
+    }
+
+    @Test fun `paddingEndPx returns from View paddingEnd`() {
+        whenever(mockView.paddingEnd).thenReturn(48)
+        assertThat(mockView.paddingEndPx).isEqualTo(PxInt(48))
+    }
+
+    @Test fun `setPadding with all parameters forwards to setPadding with all Ints`() {
+        mockView.setPadding(PxInt(49), PxInt(50), PxInt(51), PxInt(52))
+        verify(mockView).setPadding(49, 50, 51, 52)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `setPadding with no parameters forwards to setPadding with all current values`() {
+        whenever(mockView.paddingLeft).thenReturn(53)
+        whenever(mockView.paddingTop).thenReturn(54)
+        whenever(mockView.paddingRight).thenReturn(55)
+        whenever(mockView.paddingBottom).thenReturn(56)
+        mockView.setPadding()
+
+        verify(mockView).paddingLeft
+        verify(mockView).paddingTop
+        verify(mockView).paddingRight
+        verify(mockView).paddingBottom
+        verify(mockView).setPadding(53, 54, 55, 56)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `setPaddingRelative with all parameters forwards to setPaddingRelative with all Ints`() {
+        mockView.setPaddingRelative(PxInt(57), PxInt(58), PxInt(59), PxInt(60))
+        verify(mockView).setPaddingRelative(57, 58, 59, 60)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `setPaddingRelative with no parameters forwards to setPaddingRelative with all current values`() {
+        whenever(mockView.paddingStart).thenReturn(61)
+        whenever(mockView.paddingTop).thenReturn(62)
+        whenever(mockView.paddingEnd).thenReturn(63)
+        whenever(mockView.paddingBottom).thenReturn(64)
+        mockView.setPaddingRelative()
+
+        verify(mockView).paddingStart
+        verify(mockView).paddingTop
+        verify(mockView).paddingEnd
+        verify(mockView).paddingBottom
+        verify(mockView).setPaddingRelative(61, 62, 63, 64)
+        verifyNoMoreInteractions(mockView)
+    }
+    //endregion
 }
