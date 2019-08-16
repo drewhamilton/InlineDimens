@@ -34,7 +34,7 @@ allprojects { project ->
 }
 
 ext {
-    libraryVersion = '0.4.0'
+    libraryVersion = '0.5.0'
 
     keystore = project.hasProperty('personalKeystore') ? personalKeystore : 'dummy'
     keystorePassword = project.hasProperty('personalKeystorePassword') ? personalKeystorePassword : 'dummy'
