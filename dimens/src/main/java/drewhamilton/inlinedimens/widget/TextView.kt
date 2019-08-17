@@ -31,7 +31,7 @@ var TextView.textSizePx: Px
  * Note: if this TextView has the auto-size feature enabled than setting this value is no-op.
  */
 var TextView.textSizeDp: Dp
-    get() = textSizePx.toDp(context)
+    get() = textSizePx.toDp(resources)
     set(size) {
         setTextSize(TypedValue.COMPLEX_UNIT_DIP, size.value)
     }
@@ -42,7 +42,7 @@ var TextView.textSizeDp: Dp
  * Note: if this TextView has the auto-size feature enabled than setting this value is no-op.
  */
 var TextView.textSizeSp: Sp
-    get() = textSizePx.toSp(context)
+    get() = textSizePx.toSp(resources)
     set(size) {
         setTextSize(TypedValue.COMPLEX_UNIT_SP, size.value)
     }
