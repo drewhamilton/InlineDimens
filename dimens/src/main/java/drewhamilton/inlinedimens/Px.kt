@@ -8,7 +8,7 @@ import android.util.DisplayMetrics
 /**
  * The floating-point representation of px dimens.
  */
-inline class Px(override val value: Float) : Dimen
+inline class Px(val value: Float)
 
 /**
  * Convert [this] to an integer px dimen.

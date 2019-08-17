@@ -8,7 +8,7 @@ import android.util.DisplayMetrics
 /**
  * The floating-point representation of sp dimens.
  */
-inline class Sp(override val value: Float) : Dimen
+inline class Sp(val value: Float)
 
 /**
  * Convert [this] to an integer sp dimen.
