@@ -4,7 +4,6 @@ package drewhamilton.inlinedimens.widget
 import android.util.TypedValue
 import android.widget.TextView
 import androidx.core.widget.TextViewCompat
-import drewhamilton.inlinedimens.DimenInt
 import drewhamilton.inlinedimens.Dp
 import drewhamilton.inlinedimens.DpInt
 import drewhamilton.inlinedimens.Px
@@ -58,7 +57,12 @@ var TextView.textSizeSp: Sp
  * Throws [IllegalArgumentException] if any of the configuration params are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithConfiguration(minSize: PxInt, maxSize: PxInt, stepGranularity: PxInt) =
-    setAutoSizeTextTypeUniformWithConfiguration(minSize, maxSize, stepGranularity, TypedValue.COMPLEX_UNIT_PX)
+    TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
+        this,
+        minSize.value, maxSize.value,
+        stepGranularity.value,
+        TypedValue.COMPLEX_UNIT_PX
+    )
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -68,7 +72,12 @@ fun TextView.setAutoSizeTextTypeUniformWithConfiguration(minSize: PxInt, maxSize
  * Throws [IllegalArgumentException] if any of the configuration params are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithConfiguration(minSize: DpInt, maxSize: DpInt, stepGranularity: DpInt) =
-    setAutoSizeTextTypeUniformWithConfiguration(minSize, maxSize, stepGranularity, TypedValue.COMPLEX_UNIT_DIP)
+    TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
+        this,
+        minSize.value, maxSize.value,
+        stepGranularity.value,
+        TypedValue.COMPLEX_UNIT_DIP
+    )
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -78,19 +87,12 @@ fun TextView.setAutoSizeTextTypeUniformWithConfiguration(minSize: DpInt, maxSize
  * Throws [IllegalArgumentException] if any of the configuration params are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithConfiguration(minSize: SpInt, maxSize: SpInt, stepGranularity: SpInt) =
-    setAutoSizeTextTypeUniformWithConfiguration(minSize, maxSize, stepGranularity, TypedValue.COMPLEX_UNIT_SP)
-
-private fun TextView.setAutoSizeTextTypeUniformWithConfiguration(
-    minSize: DimenInt,
-    maxSize: DimenInt,
-    stepGranularity: DimenInt,
-    unit: Int
-) = TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
-    this,
-    minSize.value, maxSize.value,
-    stepGranularity.value,
-    unit
-)
+    TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
+        this,
+        minSize.value, maxSize.value,
+        stepGranularity.value,
+        TypedValue.COMPLEX_UNIT_SP
+    )
 //endregion
 
 //region setAutoSizeTextTypeUniformWithPresetSizes
@@ -102,7 +104,11 @@ private fun TextView.setAutoSizeTextTypeUniformWithConfiguration(
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<PxInt>) =
-    setAutoSizeTextTypeUniformWithPresetSizes(presetSizes, TypedValue.COMPLEX_UNIT_PX)
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(
+        this,
+        IntArray(presetSizes.size) { index -> presetSizes[index].value },
+        TypedValue.COMPLEX_UNIT_PX
+    )
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -112,7 +118,11 @@ fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<PxInt>
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<DpInt>) =
-    setAutoSizeTextTypeUniformWithPresetSizes(presetSizes, TypedValue.COMPLEX_UNIT_DIP)
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(
+        this,
+        IntArray(presetSizes.size) { index -> presetSizes[index].value },
+        TypedValue.COMPLEX_UNIT_DIP
+    )
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -122,10 +132,9 @@ fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<DpInt>
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<SpInt>) =
-    setAutoSizeTextTypeUniformWithPresetSizes(presetSizes, TypedValue.COMPLEX_UNIT_SP)
-
-private fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<out DimenInt>, unit: Int) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.values(), unit)
-
-private fun Array<out DimenInt>.values() = IntArray(size) { index -> this[index].value }
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(
+        this,
+        IntArray(presetSizes.size) { index -> presetSizes[index].value },
+        TypedValue.COMPLEX_UNIT_SP
+    )
 //endregion
