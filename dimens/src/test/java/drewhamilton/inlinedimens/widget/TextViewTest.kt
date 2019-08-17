@@ -8,7 +8,6 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
-import drewhamilton.inlinedimens.DimenInt
 import drewhamilton.inlinedimens.Dp
 import drewhamilton.inlinedimens.DpInt
 import drewhamilton.inlinedimens.Px
@@ -300,5 +299,7 @@ class TextViewTest {
         sdkIntField.setInt(null, sdkInt)
     }
 
-    private fun Array<out DimenInt>.values() = IntArray(size) { index -> this[index].value }
+    private fun Array<PxInt>.values() = IntArray(size) { index -> this[index].value }
+    private fun Array<DpInt>.values() = IntArray(size) { index -> this[index].value }
+    private fun Array<SpInt>.values() = IntArray(size) { index -> this[index].value }
 }
