@@ -40,6 +40,8 @@ And convert between different units at will:
 val textSizePx = scaledTextSize.toPx()
 ```
 
+**Note:** Inline classes don't play nicely with Java source code, so this library is unusable in Java files.
+
 ## License
 ```
 Copyright 2019 Drew Hamilton

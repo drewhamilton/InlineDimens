@@ -1,4 +1,3 @@
-@file:JvmName("PxConversions")
 package drewhamilton.inlinedimens
 
 import android.content.Context

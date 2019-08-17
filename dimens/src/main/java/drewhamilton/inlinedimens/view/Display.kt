@@ -1,4 +1,3 @@
-@file:JvmName("DisplayDimens")
 package drewhamilton.inlinedimens.view
 
 import android.view.Display
