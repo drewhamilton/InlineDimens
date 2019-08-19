@@ -2,6 +2,7 @@ package drewhamilton.inlinedimens.view
 
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.core.view.ViewCompat
 import drewhamilton.inlinedimens.Px
 import drewhamilton.inlinedimens.PxInt
 import drewhamilton.inlinedimens.graphics.PxRect
@@ -95,9 +96,8 @@ val View.heightPx get() = PxInt(height)
  * When set, it is not guaranteed the view will be able to achieve this minimum width (for example, if its parent layout
  * constrains it with less available width).
  */
-@get:RequiresApi(16)
 var View.minimumWidthPx
-    get() = PxInt(minimumWidth)
+    get() = PxInt(ViewCompat.getMinimumWidth(this))
     set(minWidth) {
         minimumWidth = minWidth.value
     }
@@ -108,9 +108,8 @@ var View.minimumWidthPx
  * When set, it is not guaranteed the view will be able to achieve this minimum height (for example, if its parent
  * layout constrains it with less available height).
  */
-@get:RequiresApi(16)
 var View.minimumHeightPx
-    get() = PxInt(minimumHeight)
+    get() = PxInt(ViewCompat.getMinimumHeight(this))
     set(minHeight) {
         minimumHeight = minHeight.value
     }
@@ -219,24 +218,24 @@ var View.yPx
  *
  * Changing this value is equivalent to setting the [View.setTranslationZ] property to be the difference between the z
  * value passed in and the current [elevationPx] property.
+ *
+ * Always equals 0 on Android SDK < 21.
  */
-@get:RequiresApi(21)
-@set:RequiresApi(21)
 var View.zPx
-    get() = Px(z)
+    get() = Px(ViewCompat.getZ(this))
     set(z) {
-        this.z = z.value
+        ViewCompat.setZ(this, z.value)
     }
 
 /**
  * The base elevation of this view relative to its parent, in px.
+ *
+ * Always equals 0 on Android SDK < 21.
  */
-@get:RequiresApi(21)
-@set:RequiresApi(21)
 var View.elevationPx
-    get() = Px(elevation)
+    get() = Px(ViewCompat.getElevation(this))
     set(elevation) {
-        this.elevation = elevation.value
+        ViewCompat.setElevation(this, elevation.value)
     }
 
 /**
@@ -261,13 +260,13 @@ var View.translationYPx
 
 /**
  * The depth location of this view relative to its [elevationPx].
+ *
+ * Always equals 0 on SDK < 21.
  */
-@get:RequiresApi(21)
-@set:RequiresApi(21)
 var View.translationZPx
-    get() = Px(translationZ)
+    get() = Px(ViewCompat.getTranslationZ(this))
     set(translationZ) {
-        this.translationZ = translationZ.value
+        ViewCompat.setTranslationZ(this, translationZ.value)
     }
 //endregion
 
@@ -314,15 +313,13 @@ val View.paddingRightPx get() = PxInt(paddingRight)
  * The start padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
  * this value may include the space required to display the scrollbars as well.
  */
-@get:RequiresApi(17)
-val View.paddingStartPx get() = PxInt(paddingStart)
+val View.paddingStartPx get() = PxInt(ViewCompat.getPaddingStart(this))
 
 /**
  * The end padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
  * this value may include the space required to display the scrollbars as well.
  */
-@get:RequiresApi(17)
-val View.paddingEndPx get() = PxInt(paddingEnd)
+val View.paddingEndPx get() = PxInt(ViewCompat.getPaddingEnd(this))
 
 /**
  * Sets the padding. The view may add on the space required to display the scrollbars, depending on the style and
@@ -345,13 +342,12 @@ fun View.setPadding(
  *
  * Each parameter defaults to the current value, so a subset of sides can be padded easily.
  */
-@RequiresApi(17)
 fun View.setPaddingRelative(
     start: PxInt = paddingStartPx,
     top: PxInt = paddingTopPx,
     end: PxInt = paddingEndPx,
     bottom: PxInt = paddingBottomPx
-) = setPaddingRelative(start.value, top.value, end.value, bottom.value)
+) = ViewCompat.setPaddingRelative(this, start.value, top.value, end.value, bottom.value)
 //endregion
 
 // TODO MISSING: Implement functions that mutate int arrays such as getLocationInWindow and dispatchNestedScroll
