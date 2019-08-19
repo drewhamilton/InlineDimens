@@ -10,11 +10,6 @@ import android.util.DisplayMetrics
 inline class PxInt(val value: Int)
 
 /**
- * An array of [PxInt]. When compiled, instances of this class are inlined to int[] on the JVM.
- */
-inline class PxIntArray(val array: IntArray)
-
-/**
  * Convert [this] to a floating-point px dimen.
  */
 fun PxInt.toPxFloat() = Px(value.toFloat())

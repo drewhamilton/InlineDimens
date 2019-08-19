@@ -8,9 +8,11 @@ import drewhamilton.inlinedimens.Dp
 import drewhamilton.inlinedimens.DpInt
 import drewhamilton.inlinedimens.Px
 import drewhamilton.inlinedimens.PxInt
-import drewhamilton.inlinedimens.PxIntArray
 import drewhamilton.inlinedimens.Sp
 import drewhamilton.inlinedimens.SpInt
+import drewhamilton.inlinedimens.arrays.DpIntArray
+import drewhamilton.inlinedimens.arrays.PxIntArray
+import drewhamilton.inlinedimens.arrays.SpIntArray
 import drewhamilton.inlinedimens.toDp
 import drewhamilton.inlinedimens.toSp
 
@@ -22,12 +24,8 @@ import drewhamilton.inlinedimens.toSp
  *
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
-fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<PxInt>) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(
-        this,
-        IntArray(presetSizes.size) { index -> presetSizes[index].value },
-        TypedValue.COMPLEX_UNIT_PX
-    )
+fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: PxIntArray) =
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.ints, TypedValue.COMPLEX_UNIT_PX)
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -36,12 +34,8 @@ fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<PxInt>
  *
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
-fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<DpInt>) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(
-        this,
-        IntArray(presetSizes.size) { index -> presetSizes[index].value },
-        TypedValue.COMPLEX_UNIT_DIP
-    )
+fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: DpIntArray) =
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.ints, TypedValue.COMPLEX_UNIT_DIP)
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -50,12 +44,8 @@ fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<DpInt>
  *
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
-fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: Array<SpInt>) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(
-        this,
-        IntArray(presetSizes.size) { index -> presetSizes[index].value },
-        TypedValue.COMPLEX_UNIT_SP
-    )
+fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: SpIntArray) =
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.ints, TypedValue.COMPLEX_UNIT_SP)
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
