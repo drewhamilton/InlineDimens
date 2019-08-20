@@ -356,13 +356,13 @@ fun View.setPaddingRelative(
  * Computes the coordinates of this view on the screen. The argument must be an array of size 2. After the function
  * returns, the array contains the x and y location in that order.
  */
-fun View.getLocationOnScreen(outLocation: PxIntArray) = getLocationOnScreen(outLocation.ints)
+fun View.getLocationOnScreen(outLocation: PxIntArray) = getLocationOnScreen(outLocation.values)
 
 /**
  * Computes the coordinates of this view in its window. The argument must be an array of size 2. After the function
  * returns, the array contains the x and y location in that order, in px.
  */
-fun View.getLocationInWindow(outLocation: PxIntArray) = getLocationInWindow(outLocation.ints)
+fun View.getLocationInWindow(outLocation: PxIntArray) = getLocationInWindow(outLocation.values)
 //endregion
 
 //region Nested scrolling
@@ -393,7 +393,7 @@ fun View.dispatchNestedScroll(
     this,
     dxConsumed.value, dyConsumed.value,
     dxUnconsumed.value, dyUnconsumed.value,
-    offsetInWindow?.ints
+    offsetInWindow?.values
 )
 
 /**
@@ -413,7 +413,7 @@ fun View.dispatchNestedScroll(
  * @return true if the parent consumed some or all of the scroll delta
  */
 fun View.dispatchNestedPreScroll(dx: PxInt, dy: PxInt, consumed: PxIntArray?, offsetInWindow: PxIntArray?) =
-    ViewCompat.dispatchNestedPreScroll(this, dx.value, dy.value, consumed?.ints, offsetInWindow?.ints)
+    ViewCompat.dispatchNestedPreScroll(this, dx.value, dy.value, consumed?.values, offsetInWindow?.values)
 //endregion
 
 // TODO?: Implement "dispatch" functions that pixel velocity handling such as dispatchNestedFling

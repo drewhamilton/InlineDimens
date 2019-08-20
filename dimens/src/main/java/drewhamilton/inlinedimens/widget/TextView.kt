@@ -25,7 +25,7 @@ import drewhamilton.inlinedimens.toSp
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: PxIntArray) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.ints, TypedValue.COMPLEX_UNIT_PX)
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.values, TypedValue.COMPLEX_UNIT_PX)
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -35,7 +35,7 @@ fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: PxIntArray) 
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: DpIntArray) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.ints, TypedValue.COMPLEX_UNIT_DIP)
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.values, TypedValue.COMPLEX_UNIT_DIP)
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If
@@ -45,7 +45,7 @@ fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: DpIntArray) 
  * Throws [IllegalArgumentException] if all of the [presetSizes] are invalid.
  */
 fun TextView.setAutoSizeTextTypeUniformWithPresetSizes(presetSizes: SpIntArray) =
-    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.ints, TypedValue.COMPLEX_UNIT_SP)
+    TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(this, presetSizes.values, TypedValue.COMPLEX_UNIT_SP)
 
 /**
  * Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds. If

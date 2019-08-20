@@ -6,7 +6,7 @@ import drewhamilton.inlinedimens.iterators.PxIntIterator
 /**
  * An array of [PxInt]. When compiled, instances of this class are inlined to int[] on the JVM.
  */
-inline class PxIntArray(internal val ints: IntArray) {
+inline class PxIntArray(internal val values: IntArray) {
 
     constructor(size: Int, init: (index: Int) -> PxInt) : this(IntArray(size) { index -> init(index).value })
 
@@ -16,7 +16,7 @@ inline class PxIntArray(internal val ints: IntArray) {
      * If the [index] is out of bounds of this array, throws an [IndexOutOfBoundsException] except in Kotlin/JS where
      * the behavior is unspecified.
      */
-    operator fun get(index: Int): PxInt = PxInt(ints[index])
+    operator fun get(index: Int): PxInt = PxInt(values[index])
 
     /**
      * Sets the element at the given [index] to the given [value]. This method can be called using the index operator.
@@ -25,14 +25,14 @@ inline class PxIntArray(internal val ints: IntArray) {
      * the behavior is unspecified.
      */
     operator fun set(index: Int, value: PxInt) {
-        ints[index] = value.value
+        values[index] = value.value
     }
 
     /** Returns the number of elements in the array. */
-    val size: Int get() = ints.size
+    val size: Int get() = values.size
 
     /** Creates an iterator over the elements of the array. */
-    operator fun iterator(): PxIntIterator = PxIntIterator(ints.iterator())
+    operator fun iterator(): PxIntIterator = PxIntIterator(values.iterator())
 }
 
 fun Array<PxInt>.toPxIntArray() = PxIntArray(IntArray(size) { index -> this[index].value })
