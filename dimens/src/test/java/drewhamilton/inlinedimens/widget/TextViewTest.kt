@@ -15,6 +15,9 @@ import drewhamilton.inlinedimens.PxInt
 import drewhamilton.inlinedimens.Sp
 import drewhamilton.inlinedimens.SpInt
 import drewhamilton.inlinedimens.TestValues
+import drewhamilton.inlinedimens.arrays.toDpIntArray
+import drewhamilton.inlinedimens.arrays.toPxIntArray
+import drewhamilton.inlinedimens.arrays.toSpIntArray
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.lang.reflect.Field
@@ -212,28 +215,28 @@ class TextViewTest {
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Px on API 27 sets px text sizes`() {
         spoofSdkInt(27)
 
-        val pxArray = arrayOf(PxInt(1), PxInt(2))
+        val pxArray = arrayOf(PxInt(1), PxInt(2)).toPxIntArray()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(pxArray)
 
-        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(pxArray.values(), TypedValue.COMPLEX_UNIT_PX)
+        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(pxArray.values, TypedValue.COMPLEX_UNIT_PX)
         verifyNoMoreInteractions(mockTextView)
     }
 
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Px on API 26 AutoSizeableTextView sets px text sizes`() {
         spoofSdkInt(26)
 
-        val pxArray = arrayOf(PxInt(1), PxInt(2))
+        val pxArray = arrayOf(PxInt(1), PxInt(2)).toPxIntArray()
         val mockTextView: TextView = mock<AppCompatTextView>()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(pxArray)
 
-        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(pxArray.values(), TypedValue.COMPLEX_UNIT_PX)
+        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(pxArray.values, TypedValue.COMPLEX_UNIT_PX)
         verifyNoMoreInteractions(mockTextView)
     }
 
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Px on API 26 TextView is no-op`() {
         spoofSdkInt(26)
 
-        val pxArray = arrayOf(PxInt(1), PxInt(2))
+        val pxArray = arrayOf(PxInt(1), PxInt(2)).toPxIntArray()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(pxArray)
 
         verifyNoMoreInteractions(mockTextView)
@@ -242,28 +245,28 @@ class TextViewTest {
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Dp on API 27 sets dp text sizes`() {
         spoofSdkInt(27)
 
-        val dpArray = arrayOf(DpInt(1), DpInt(2))
+        val dpArray = arrayOf(DpInt(1), DpInt(2)).toDpIntArray()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(dpArray)
 
-        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(dpArray.values(), TypedValue.COMPLEX_UNIT_DIP)
+        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(dpArray.values, TypedValue.COMPLEX_UNIT_DIP)
         verifyNoMoreInteractions(mockTextView)
     }
 
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Dp on API 26 AutoSizeableTextView sets dp text sizes`() {
         spoofSdkInt(26)
 
-        val dpArray = arrayOf(DpInt(1), DpInt(2))
+        val dpArray = arrayOf(DpInt(1), DpInt(2)).toDpIntArray()
         val mockTextView: TextView = mock<AppCompatTextView>()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(dpArray)
 
-        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(dpArray.values(), TypedValue.COMPLEX_UNIT_DIP)
+        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(dpArray.values, TypedValue.COMPLEX_UNIT_DIP)
         verifyNoMoreInteractions(mockTextView)
     }
 
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Dp on API 26 TextView is no-op`() {
         spoofSdkInt(26)
 
-        val dpArray = arrayOf(DpInt(1), DpInt(2))
+        val dpArray = arrayOf(DpInt(1), DpInt(2)).toDpIntArray()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(dpArray)
 
         verifyNoMoreInteractions(mockTextView)
@@ -272,28 +275,28 @@ class TextViewTest {
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Sp on API 27 sets sp text sizes`() {
         spoofSdkInt(27)
 
-        val spArray = arrayOf(SpInt(1), SpInt(2))
+        val spArray = arrayOf(SpInt(1), SpInt(2)).toSpIntArray()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(spArray)
 
-        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(spArray.values(), TypedValue.COMPLEX_UNIT_SP)
+        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(spArray.values, TypedValue.COMPLEX_UNIT_SP)
         verifyNoMoreInteractions(mockTextView)
     }
 
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Sp on API 26 AutoSizeableTextView sets sp text sizes`() {
         spoofSdkInt(26)
 
-        val spArray = arrayOf(SpInt(1), SpInt(2))
+        val spArray = arrayOf(SpInt(1), SpInt(2)).toSpIntArray()
         val mockTextView: TextView = mock<AppCompatTextView>()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(spArray)
 
-        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(spArray.values(), TypedValue.COMPLEX_UNIT_SP)
+        verify(mockTextView).setAutoSizeTextTypeUniformWithPresetSizes(spArray.values, TypedValue.COMPLEX_UNIT_SP)
         verifyNoMoreInteractions(mockTextView)
     }
 
     @Test fun `setAutoSizeTextTypeUniformWithPresetSizes with Sp on API 26 TextView is no-op`() {
         spoofSdkInt(26)
 
-        val spArray = arrayOf(SpInt(1), SpInt(2))
+        val spArray = arrayOf(SpInt(1), SpInt(2)).toSpIntArray()
         mockTextView.setAutoSizeTextTypeUniformWithPresetSizes(spArray)
 
         verifyNoMoreInteractions(mockTextView)
@@ -310,8 +313,4 @@ class TextViewTest {
 
         sdkIntField.setInt(null, sdkInt)
     }
-
-    private fun Array<PxInt>.values() = IntArray(size) { index -> this[index].value }
-    private fun Array<DpInt>.values() = IntArray(size) { index -> this[index].value }
-    private fun Array<SpInt>.values() = IntArray(size) { index -> this[index].value }
 }
