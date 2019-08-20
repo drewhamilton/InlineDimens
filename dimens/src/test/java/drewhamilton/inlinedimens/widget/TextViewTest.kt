@@ -1,6 +1,5 @@
 package drewhamilton.inlinedimens.widget
 
-import android.os.Build
 import android.util.TypedValue
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
@@ -18,10 +17,9 @@ import drewhamilton.inlinedimens.TestValues
 import drewhamilton.inlinedimens.arrays.toDpIntArray
 import drewhamilton.inlinedimens.arrays.toPxIntArray
 import drewhamilton.inlinedimens.arrays.toSpIntArray
+import drewhamilton.inlinedimens.spoofSdkInt
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.lang.reflect.Field
-import java.lang.reflect.Modifier
 
 class TextViewTest {
 
@@ -302,15 +300,4 @@ class TextViewTest {
         verifyNoMoreInteractions(mockTextView)
     }
     //endregion
-
-    private fun spoofSdkInt(sdkInt: Int) {
-        val sdkIntField = Build.VERSION::class.java.getField("SDK_INT")
-        sdkIntField.isAccessible = true
-
-        val sdkIntModifiersField = Field::class.java.getDeclaredField("modifiers")
-        sdkIntModifiersField.isAccessible = true
-        sdkIntModifiersField.setInt(sdkIntField, sdkIntField.modifiers and Modifier.FINAL.inv())
-
-        sdkIntField.setInt(null, sdkInt)
-    }
 }

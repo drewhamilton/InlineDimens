@@ -10,11 +10,15 @@ import com.nhaarman.mockitokotlin2.whenever
 import drewhamilton.inlinedimens.Px
 import drewhamilton.inlinedimens.PxInt
 import drewhamilton.inlinedimens.graphics.PxRect
+import drewhamilton.inlinedimens.spoofSdkInt
+import org.junit.Before
 import org.junit.Test
 
 class ViewTest {
 
     private val mockView = mock<View>()
+
+    @Before fun setUp() = spoofSdkInt(28)
 
     //region Fading edge length
     @Test fun `verticalFadingEdgeLengthPx returns from View verticalFadingEdgeLength`() {
