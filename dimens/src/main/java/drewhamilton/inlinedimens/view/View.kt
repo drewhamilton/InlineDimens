@@ -388,7 +388,7 @@ fun View.getLocationInWindow(outLocation: PxIntArray) = getLocationInWindow(outL
 fun View.dispatchNestedScroll(
     dxConsumed: PxInt, dyConsumed: PxInt,
     dxUnconsumed: PxInt, dyUnconsumed: PxInt,
-    offsetInWindow: PxIntArray?
+    offsetInWindow: PxIntArray? = null
 ): Boolean = ViewCompat.dispatchNestedScroll(
     this,
     dxConsumed.value, dyConsumed.value,
@@ -412,8 +412,11 @@ fun View.dispatchNestedScroll(
  *        coordinate tracking.
  * @return true if the parent consumed some or all of the scroll delta
  */
-fun View.dispatchNestedPreScroll(dx: PxInt, dy: PxInt, consumed: PxIntArray?, offsetInWindow: PxIntArray?) =
-    ViewCompat.dispatchNestedPreScroll(this, dx.value, dy.value, consumed?.values, offsetInWindow?.values)
+fun View.dispatchNestedPreScroll(
+    dx: PxInt, dy: PxInt,
+    consumed: PxIntArray? = null,
+    offsetInWindow: PxIntArray? = null
+): Boolean = ViewCompat.dispatchNestedPreScroll(this, dx.value, dy.value, consumed?.values, offsetInWindow?.values)
 //endregion
 
 // TODO?: Implement "dispatch" functions that pixel velocity handling such as dispatchNestedFling
