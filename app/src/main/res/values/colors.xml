@@ -8,7 +8,8 @@
 
   <color name="grid_blue">#3350b0d6</color>
   <color name="solid_blue">#99b8d5</color>
-  
+
+  <color name="grey_darker">#2c2c2c</color>
   <color name="grey_dark">#555555</color>
   <color name="grey_light">#b0b0b0</color>
 
