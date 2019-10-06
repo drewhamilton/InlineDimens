@@ -9,12 +9,17 @@ import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
 import drewhamilton.inlinedimens.Px
 import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.arrays.PxIntArray
 import drewhamilton.inlinedimens.graphics.PxRect
+import drewhamilton.inlinedimens.spoofSdkInt
+import org.junit.Before
 import org.junit.Test
 
 class ViewTest {
 
     private val mockView = mock<View>()
+
+    @Before fun setUp() = spoofSdkInt(28)
 
     //region Fading edge length
     @Test fun `verticalFadingEdgeLengthPx returns from View verticalFadingEdgeLength`() {
@@ -322,6 +327,91 @@ class ViewTest {
         verify(mockView).paddingEnd
         verify(mockView).paddingBottom
         verify(mockView).setPaddingRelative(61, 62, 63, 64)
+        verifyNoMoreInteractions(mockView)
+    }
+    //endregion
+
+    //region Location
+    @Test fun `getLocationOnScreen forwards to View getLocationOnScreen`() {
+        val intArray = IntArray(5) { it }
+        val pxIntArray = PxIntArray(intArray)
+        mockView.getLocationOnScreen(pxIntArray)
+        verify(mockView).getLocationOnScreen(intArray)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `getLocationInWindow forwards to View getLocationInWindow`() {
+        val intArray = IntArray(6) { -it }
+        val pxIntArray = PxIntArray(intArray)
+        mockView.getLocationInWindow(pxIntArray)
+        verify(mockView).getLocationInWindow(intArray)
+        verifyNoMoreInteractions(mockView)
+    }
+    //endregion
+
+    //region Nested scrolling
+    @Test fun `dispatchNestedScroll with offsetInWindow forwards to View dispatchNestedScroll`() {
+        val intArray = IntArray(5) { it }
+        val pxIntArray = PxIntArray(intArray)
+        mockView.dispatchNestedScroll(
+            dxConsumed = PxInt(99), dyConsumed = PxInt(98),
+            dxUnconsumed = PxInt(97), dyUnconsumed = PxInt(96),
+            offsetInWindow = pxIntArray
+        )
+        verify(mockView).dispatchNestedScroll(99, 98, 97, 96, intArray)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `dispatchNestedScroll without offsetInWindow forwards to View dispatchNestedScroll`() {
+        mockView.dispatchNestedScroll(
+            dxConsumed = PxInt(99), dyConsumed = PxInt(98),
+            dxUnconsumed = PxInt(97), dyUnconsumed = PxInt(96)
+        )
+        verify(mockView).dispatchNestedScroll(99, 98, 97, 96, null)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `dispatchNestedPreScroll with consumed and offsetInWindow forwards to View dispatchNestedPreScroll`() {
+        val consumedIntArray = IntArray(5) { it }
+        val consumed = PxIntArray(consumedIntArray)
+        val offsetInWindowIntArray = IntArray(50) { it }
+        val offsetInWindow = PxIntArray(offsetInWindowIntArray)
+        mockView.dispatchNestedPreScroll(
+            dx = PxInt(1000), dy = PxInt(2000),
+            consumed = consumed,
+            offsetInWindow = offsetInWindow
+        )
+        verify(mockView).dispatchNestedPreScroll(1000, 2000, consumedIntArray, offsetInWindowIntArray)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `dispatchNestedPreScroll with consumed forwards to View dispatchNestedPreScroll`() {
+        val consumedIntArray = IntArray(500) { it }
+        val consumed = PxIntArray(consumedIntArray)
+        mockView.dispatchNestedPreScroll(
+            dx = PxInt(1000), dy = PxInt(2000),
+            consumed = consumed
+        )
+        verify(mockView).dispatchNestedPreScroll(1000, 2000, consumedIntArray, null)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `dispatchNestedPreScroll with offsetInWindow forwards to View dispatchNestedPreScroll`() {
+        val offsetInWindowIntArray = IntArray(500000) { it }
+        val offsetInWindow = PxIntArray(offsetInWindowIntArray)
+        mockView.dispatchNestedPreScroll(
+            dx = PxInt(1000), dy = PxInt(2000),
+            offsetInWindow = offsetInWindow
+        )
+        verify(mockView).dispatchNestedPreScroll(1000, 2000, null, offsetInWindowIntArray)
+        verifyNoMoreInteractions(mockView)
+    }
+
+    @Test fun `dispatchNestedPPreScroll without consumed or offsetInWindow forwards to View dispatchNestedPreScroll`() {
+        mockView.dispatchNestedPreScroll(
+            dx = PxInt(7000), dy = PxInt(8000)
+        )
+        verify(mockView).dispatchNestedPreScroll(7000, 8000, null, null)
         verifyNoMoreInteractions(mockView)
     }
     //endregion

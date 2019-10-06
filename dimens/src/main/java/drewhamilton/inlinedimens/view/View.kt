@@ -2,8 +2,10 @@ package drewhamilton.inlinedimens.view
 
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.core.view.ViewCompat
 import drewhamilton.inlinedimens.Px
 import drewhamilton.inlinedimens.PxInt
+import drewhamilton.inlinedimens.arrays.PxIntArray
 import drewhamilton.inlinedimens.graphics.PxRect
 
 //region Fading edge length
@@ -95,9 +97,8 @@ val View.heightPx get() = PxInt(height)
  * When set, it is not guaranteed the view will be able to achieve this minimum width (for example, if its parent layout
  * constrains it with less available width).
  */
-@get:RequiresApi(16)
 var View.minimumWidthPx
-    get() = PxInt(minimumWidth)
+    get() = PxInt(ViewCompat.getMinimumWidth(this))
     set(minWidth) {
         minimumWidth = minWidth.value
     }
@@ -108,9 +109,8 @@ var View.minimumWidthPx
  * When set, it is not guaranteed the view will be able to achieve this minimum height (for example, if its parent
  * layout constrains it with less available height).
  */
-@get:RequiresApi(16)
 var View.minimumHeightPx
-    get() = PxInt(minimumHeight)
+    get() = PxInt(ViewCompat.getMinimumHeight(this))
     set(minHeight) {
         minimumHeight = minHeight.value
     }
@@ -219,24 +219,24 @@ var View.yPx
  *
  * Changing this value is equivalent to setting the [View.setTranslationZ] property to be the difference between the z
  * value passed in and the current [elevationPx] property.
+ *
+ * Always equals 0 on Android SDK < 21.
  */
-@get:RequiresApi(21)
-@set:RequiresApi(21)
 var View.zPx
-    get() = Px(z)
+    get() = Px(ViewCompat.getZ(this))
     set(z) {
-        this.z = z.value
+        ViewCompat.setZ(this, z.value)
     }
 
 /**
  * The base elevation of this view relative to its parent, in px.
+ *
+ * Always equals 0 on Android SDK < 21.
  */
-@get:RequiresApi(21)
-@set:RequiresApi(21)
 var View.elevationPx
-    get() = Px(elevation)
+    get() = Px(ViewCompat.getElevation(this))
     set(elevation) {
-        this.elevation = elevation.value
+        ViewCompat.setElevation(this, elevation.value)
     }
 
 /**
@@ -261,13 +261,13 @@ var View.translationYPx
 
 /**
  * The depth location of this view relative to its [elevationPx].
+ *
+ * Always equals 0 on SDK < 21.
  */
-@get:RequiresApi(21)
-@set:RequiresApi(21)
 var View.translationZPx
-    get() = Px(translationZ)
+    get() = Px(ViewCompat.getTranslationZ(this))
     set(translationZ) {
-        this.translationZ = translationZ.value
+        ViewCompat.setTranslationZ(this, translationZ.value)
     }
 //endregion
 
@@ -314,15 +314,13 @@ val View.paddingRightPx get() = PxInt(paddingRight)
  * The start padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
  * this value may include the space required to display the scrollbars as well.
  */
-@get:RequiresApi(17)
-val View.paddingStartPx get() = PxInt(paddingStart)
+val View.paddingStartPx get() = PxInt(ViewCompat.getPaddingStart(this))
 
 /**
  * The end padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
  * this value may include the space required to display the scrollbars as well.
  */
-@get:RequiresApi(17)
-val View.paddingEndPx get() = PxInt(paddingEnd)
+val View.paddingEndPx get() = PxInt(ViewCompat.getPaddingEnd(this))
 
 /**
  * Sets the padding. The view may add on the space required to display the scrollbars, depending on the style and
@@ -345,15 +343,80 @@ fun View.setPadding(
  *
  * Each parameter defaults to the current value, so a subset of sides can be padded easily.
  */
-@RequiresApi(17)
 fun View.setPaddingRelative(
     start: PxInt = paddingStartPx,
     top: PxInt = paddingTopPx,
     end: PxInt = paddingEndPx,
     bottom: PxInt = paddingBottomPx
-) = setPaddingRelative(start.value, top.value, end.value, bottom.value)
+) = ViewCompat.setPaddingRelative(this, start.value, top.value, end.value, bottom.value)
 //endregion
 
-// TODO MISSING: Implement functions that mutate int arrays such as getLocationInWindow and dispatchNestedScroll
+//region Location
+/**
+ * Computes the coordinates of this view on the screen. The argument must be an array of size 2. After the function
+ * returns, the array contains the x and y location in that order.
+ */
+fun View.getLocationOnScreen(outLocation: PxIntArray) = getLocationOnScreen(outLocation.values)
 
-// TODO MISSING: Implement "dispatch" functions that pixel velocity handling such as dispatchNestedFling
+/**
+ * Computes the coordinates of this view in its window. The argument must be an array of size 2. After the function
+ * returns, the array contains the x and y location in that order, in px.
+ */
+fun View.getLocationInWindow(outLocation: PxIntArray) = getLocationInWindow(outLocation.values)
+//endregion
+
+//region Nested scrolling
+/**
+ * Dispatch one step of a nested scroll in progress.
+ *
+ * Implementations of views that support nested scrolling should call this to report info about a scroll in progress to
+ * the current nested scrolling parent. If a nested scroll is not currently in progress or nested scrolling is not
+ * enabled for this view this method does nothing.
+ *
+ * Compatible View implementations should also call [dispatchNestedPreScroll] before consuming a component of the scroll
+ * event themselves.
+ *
+ * @param dxConsumed Horizontal distance in px consumed by this view during this scroll step
+ * @param dyConsumed Vertical distance in px consumed by this view during this scroll step
+ * @param dxUnconsumed Horizontal scroll distance in px not consumed by this view
+ * @param dyUnconsumed Horizontal scroll distance in px not consumed by this view
+ * @param offsetInWindow If not null, on return this will contain the offset in local view coordinates of this view from
+ *        before this operation to after it completes. View implementations may use this to adjust expected input
+ *        coordinate tracking.
+ * @return true if the event was dispatched, false if it could not be dispatched.
+ */
+fun View.dispatchNestedScroll(
+    dxConsumed: PxInt, dyConsumed: PxInt,
+    dxUnconsumed: PxInt, dyUnconsumed: PxInt,
+    offsetInWindow: PxIntArray? = null
+): Boolean = ViewCompat.dispatchNestedScroll(
+    this,
+    dxConsumed.value, dyConsumed.value,
+    dxUnconsumed.value, dyUnconsumed.value,
+    offsetInWindow?.values
+)
+
+/**
+ * Dispatch one step of a nested scroll in progress before this view consumes any portion of it.
+ *
+ * Nested pre-scroll events are to nested scroll events what touch intercept is to touch. dispatchNestedPreScroll offers
+ * an opportunity for the parent view in a nested scrolling operation to consume some or all of the scroll operation
+ * before the child view consumes it.
+ *
+ * @param dx Horizontal scroll distance in pixels
+ * @param dy Vertical scroll distance in pixels
+ * @param consumed Output. If not null, consumed[0] will contain the consumed component of dx and consumed[1] the
+ *        consumed dy.
+ * @param offsetInWindow If not null, on return this will contain the offset in local view coordinates of this view from
+ *        before this operation to after it completes. View implementations may use this to adjust expected input
+ *        coordinate tracking.
+ * @return true if the parent consumed some or all of the scroll delta
+ */
+fun View.dispatchNestedPreScroll(
+    dx: PxInt, dy: PxInt,
+    consumed: PxIntArray? = null,
+    offsetInWindow: PxIntArray? = null
+): Boolean = ViewCompat.dispatchNestedPreScroll(this, dx.value, dy.value, consumed?.values, offsetInWindow?.values)
+//endregion
+
+// TODO?: Implement "dispatch" functions that pixel velocity handling such as dispatchNestedFling
