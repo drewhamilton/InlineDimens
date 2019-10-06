@@ -3,8 +3,8 @@ apply plugin: 'com.jfrog.bintray'
 
 ext {
     bintrayRepo = 'InlineDimens'
-    bintrayUser = project.hasProperty('personalBintrayUsername') ? personalBintrayUsername : 'dummy'
-    bintrayKey = project.hasProperty('personalBintrayApiKey') ? personalBintrayApiKey : 'dummy'
+    bintrayUser = project.hasProperty('personalBintrayUsername') ? personalBintrayUsername : 'x'
+    bintrayKey = project.hasProperty('personalBintrayApiKey') ? personalBintrayApiKey : 'x'
 
     publishedGroupId = 'drewhamilton.inlinedimens'
 

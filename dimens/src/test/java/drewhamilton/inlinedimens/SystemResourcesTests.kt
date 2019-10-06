@@ -11,7 +11,8 @@ import org.robolectric.annotation.Config
  * Tests of functions that use [Resources.getSystem], provided by Robolectric.
  */
 @RunWith(RobolectricTestRunner::class)
-@Config(qualifiers = "xxhdpi")
+// TODO WORKAROUND: Update when Robolectric supports SDK 29
+@Config(qualifiers = "xxhdpi", sdk = [28])
 class SystemResourcesTests {
 
     private val testInputFloat = 23.7f
