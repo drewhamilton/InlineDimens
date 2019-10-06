@@ -310,14 +310,18 @@ class TextViewTest {
     }
 
     @Test fun `set lastBaselineToBottomHeightPx forwards to set lastBaselineToBottomHeight`() {
+        spoofSdkInt(16)
+
         val mockFontMetricInt = mock<Paint.FontMetricsInt>()
         mockFontMetricInt.bottom = 35
         val mockPaint = mock<TextPaint>()
         whenever(mockPaint.fontMetricsInt).thenReturn(mockFontMetricInt)
         whenever(mockTextView.paint).thenReturn(mockPaint)
+        whenever(mockTextView.includeFontPadding).thenReturn(true)
 
         mockTextView.lastBaselineToBottomHeightPx = PxInt(71)
         verify(mockTextView).paint
+        verify(mockTextView).includeFontPadding
         verify(mockTextView).paddingLeft
         verify(mockTextView).paddingTop
         verify(mockTextView).paddingRight
