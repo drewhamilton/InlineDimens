@@ -330,7 +330,7 @@ class TextViewTest {
     }
     //endregion
 
-    //region textSize
+    //region Text size
     @Test fun `textSizePx gets text size as Px`() {
         whenever(mockTextView.textSize).thenReturn(22f)
         assertEquals(Px(22f), mockTextView.textSizePx)
@@ -370,6 +370,7 @@ class TextViewTest {
     }
     //endregion
 
+    //region View size
     @Test fun `minHeightPx gets from View minHeight`() {
         whenever(mockTextView.minHeight).thenReturn(85)
         assertThat(mockTextView.minHeightPx).isEqualTo(PxInt(85))
@@ -380,4 +381,73 @@ class TextViewTest {
         verify(mockTextView).minHeight = 58
         verifyNoMoreInteractions(mockTextView)
     }
+
+    @Test fun `maxHeightPx gets from View maxHeight`() {
+        whenever(mockTextView.maxHeight).thenReturn(95)
+        assertThat(mockTextView.maxHeightPx).isEqualTo(PxInt(95))
+    }
+
+    @Test fun `set maxHeightPx sets View maxHeight`() {
+        mockTextView.maxHeightPx = PxInt(59)
+        verify(mockTextView).maxHeight = 59
+        verifyNoMoreInteractions(mockTextView)
+    }
+
+    @Test fun `heightPx gets from View height`() {
+        whenever(mockTextView.height).thenReturn(105)
+        assertThat(mockTextView.heightPx).isEqualTo(PxInt(105))
+    }
+
+    @Test fun `set heightPx sets View height`() {
+        mockTextView.heightPx = PxInt(501)
+        verify(mockTextView).height = 501
+        verifyNoMoreInteractions(mockTextView)
+    }
+
+    @Test fun `minWidthPx gets from View minWidth`() {
+        whenever(mockTextView.minWidth).thenReturn(115)
+        assertThat(mockTextView.minWidthPx).isEqualTo(PxInt(115))
+    }
+
+    @Test fun `set minWidthPx sets View minWidth`() {
+        mockTextView.minWidthPx = PxInt(511)
+        verify(mockTextView).minWidth = 511
+        verifyNoMoreInteractions(mockTextView)
+    }
+
+    @Test fun `maxWidthPx gets from View maxWidth`() {
+        whenever(mockTextView.maxWidth).thenReturn(125)
+        assertThat(mockTextView.maxWidthPx).isEqualTo(PxInt(125))
+    }
+
+    @Test fun `set maxWidthPx sets View maxWidth`() {
+        mockTextView.maxWidthPx = PxInt(521)
+        verify(mockTextView).maxWidth = 521
+        verifyNoMoreInteractions(mockTextView)
+    }
+
+    @Test fun `widthPx gets from View width`() {
+        whenever(mockTextView.width).thenReturn(135)
+        assertThat(mockTextView.widthPx).isEqualTo(PxInt(135))
+    }
+
+    @Test fun `set widthPx sets View width`() {
+        mockTextView.widthPx = PxInt(531)
+        verify(mockTextView).width = 531
+        verifyNoMoreInteractions(mockTextView)
+    }
+    //endregion
+
+    //region Line spacing
+    @Test fun `setLineSpacing forwards to View function`() {
+        mockTextView.setLineSpacing(Px(83.2f), 2.3f)
+        verify(mockTextView).setLineSpacing(83.2f, 2.3f)
+        verifyNoMoreInteractions(mockTextView)
+    }
+
+    @Test fun `lineSpacingExtraPx wraps View lineSpacingExtra`() {
+        whenever(mockTextView.lineSpacingExtra).thenReturn(808f)
+        assertThat(mockTextView.lineSpacingExtraPx).isEqualTo(Px(808f))
+    }
+    //endregion
 }
