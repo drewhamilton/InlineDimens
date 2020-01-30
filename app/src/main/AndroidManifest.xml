@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="drewhamilton.inlinedimens.demo">
+    package="dev.drewhamilton.inlinedimens.demo">
 
   <application
       android:label="@string/appName"
@@ -11,7 +11,7 @@
       android:allowBackup="false"
       tools:ignore="GoogleAppIndexingWarning">
 
-    <activity android:name=".DemoActivity">
+    <activity android:name="dev.drewhamilton.inlinedimens.demo.DemoActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

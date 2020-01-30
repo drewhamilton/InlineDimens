@@ -6,7 +6,7 @@ ext {
     bintrayUser = project.hasProperty('personalBintrayUsername') ? personalBintrayUsername : 'x'
     bintrayKey = project.hasProperty('personalBintrayApiKey') ? personalBintrayApiKey : 'x'
 
-    publishedGroupId = 'drewhamilton.inlinedimens'
+    publishedGroupId = 'dev.drewhamilton.inlinedimens'
 
     siteUrl = 'https://github.com/drewhamilton/InlineDimens'
     gitUrl = 'https://github.com/drewhamilton/InlineDimens'
