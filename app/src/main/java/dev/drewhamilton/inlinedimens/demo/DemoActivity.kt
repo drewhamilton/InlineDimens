@@ -7,7 +7,12 @@ import dev.drewhamilton.inlinedimens.demo.databinding.DemoBinding
 import dev.drewhamilton.inlinedimens.graphics.PxPoint
 import dev.drewhamilton.inlinedimens.toDp
 import dev.drewhamilton.inlinedimens.toDpInt
+import dev.drewhamilton.inlinedimens.toPxInt
+import dev.drewhamilton.inlinedimens.toSpInt
 import dev.drewhamilton.inlinedimens.view.getRealSize
+import dev.drewhamilton.inlinedimens.widget.textSizeDp
+import dev.drewhamilton.inlinedimens.widget.textSizePx
+import dev.drewhamilton.inlinedimens.widget.textSizeSp
 
 class DemoActivity : AppCompatActivity() {
 
