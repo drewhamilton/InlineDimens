@@ -2,13 +2,20 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+ext {
+    artifactName = 'inlinedimens'
+    publishedDescription = 'Android dimension types as inline classes with easy conversions.'
+}
+version = libraryVersion
+apply from: "${rootProject.projectDir}/publish.gradle"
+
 android {
     compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 29
-        versionName libraryVersion
+        versionName version
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -46,8 +53,6 @@ android {
         unitTests.includeAndroidResources = true
     }
 }
-
-apply from: 'publish.gradle'
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
