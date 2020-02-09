@@ -2,6 +2,7 @@
 //  The module must define ext.artifactName, version, and ext.publishedDescription
 
 group = 'dev.drewhamilton.inlinedimens'
+def projectName = name
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set 'sources'
@@ -34,7 +35,7 @@ publishing {
             artifactId artifactName
             version version
 
-            artifact artifact("$buildDir/outputs/aar/$name-release.aar")
+            artifact artifact("$buildDir/outputs/aar/$projectName-release.aar")
             artifact sourcesJar
             artifact javadocJar
 
@@ -101,6 +102,9 @@ publishing {
 }
 
 apply plugin: 'signing'
+ext.'signing.keyId' = personalGpgKeyId
+ext.'signing.password' = personalGpgPassword
+ext.'signing.secretKeyRingFile' = personalGpgKeyringFile
 signing {
     sign publishing.publications
 }
