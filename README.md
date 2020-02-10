@@ -6,14 +6,15 @@ ensuring compile-time unit confidence without any runtime cost. Extension functi
 the Android framework directly with these unit-safe types, and to convert between them easily.
 
 ## Download
-[![Download](https://api.bintray.com/packages/drewhamilton/InlineDimens/InlineDimens/images/download.svg)](https://bintray.com/drewhamilton/InlineDimens)
 
-Inline Dimens is available in JCenter. It is experimental, and the API may undergo breaking changes before version
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.drewhamilton.inlinedimens/inlinedimens/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.drewhamilton.inlinedimens/inlinedimens)
+
+Inline Dimens is available on Maven Central. It is experimental, and the API may undergo breaking changes before version
 1.0.0.
 
 To use Inline Dimens, include the following in your Gradle dependencies:
 ```groovy
-implementation "drewhamilton.inlinedimens:inlinedimens:$version"
+implementation "dev.drewhamilton.inlinedimens:inlinedimens:$version"
 ```
 
 ## Usage
