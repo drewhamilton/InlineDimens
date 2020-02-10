@@ -102,9 +102,9 @@ publishing {
 }
 
 apply plugin: 'signing'
-ext.'signing.keyId' = personalGpgKeyId
-ext.'signing.password' = personalGpgPassword
-ext.'signing.secretKeyRingFile' = personalGpgKeyringFile
+ext.'signing.keyId' = hasProperty('personalGpgKeyId') ? personalGpgKeyId : 'x'
+ext.'signing.password' = hasProperty('personalGpgPassword') ? personalGpgPassword : 'x'
+ext.'signing.secretKeyRingFile' = hasProperty('personalGpgKeyringFile') ? personalGpgKeyringFile : 'x'
 signing {
     sign publishing.publications
 }
