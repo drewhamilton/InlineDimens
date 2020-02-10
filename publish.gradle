@@ -1,21 +1,110 @@
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+// Applied per published module
+//  The module must define ext.artifactName, version, and ext.publishedDescription
 
-ext {
-    bintrayRepo = 'InlineDimens'
-    bintrayUser = project.hasProperty('personalBintrayUsername') ? personalBintrayUsername : 'x'
-    bintrayKey = project.hasProperty('personalBintrayApiKey') ? personalBintrayApiKey : 'x'
+group = 'dev.drewhamilton.inlinedimens'
+def projectName = name
 
-    publishedGroupId = 'dev.drewhamilton.inlinedimens'
+task sourcesJar(type: Jar) {
+    archiveClassifier.set 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
 
-    siteUrl = 'https://github.com/drewhamilton/InlineDimens'
-    gitUrl = 'https://github.com/drewhamilton/InlineDimens'
+def javadocDestinationDir = "$buildDir/docs/javadoc"
+apply plugin: 'org.jetbrains.dokka-android'
+task dokkaJavadoc(type: dokka.class) {
+    outputFormat = 'javadoc'
+    outputDirectory = javadocDestinationDir
+    inputs.dir 'src/main/java'
+}
 
-    developerId = 'drewhamilton'
-    developerName = 'Drew Hamilton'
-    developerEmail = 'drew.hamilton.0+android@gmail.com'
+task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+    archiveClassifier.set 'javadoc'
+    from javadocDestinationDir
+}
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+apply plugin: 'maven-publish'
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId group
+            artifactId artifactName
+            version version
+
+            artifact artifact("$buildDir/outputs/aar/$projectName-release.aar")
+            artifact sourcesJar
+            artifact javadocJar
+
+            pom {
+                name = artifactName
+                description = publishedDescription
+
+                url = 'https://github.com/drewhamilton/InlineDimens'
+                licenses {
+                    license {
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'drewhamilton'
+                        name = 'Drew Hamilton'
+                        email = 'drew.hamilton.0+android@gmail.com'
+                    }
+                }
+
+                scm {
+                    connection = 'scm:git:github.com/drewhamilton/InlineDimens.git'
+                    developerConnection = 'scm:git:ssh://github.com/drewhamilton/InlineDimens.git'
+                    url = 'https://github.com/drewhamilton/InlineDimens/tree/master'
+                }
+
+                withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+
+                    project.configurations.implementation.allDependencies.each {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "MavenCentral"
+
+            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            def sonatypeIssuesUsername = project.hasProperty('personalSonatypeIssuesUsername')
+                    ? personalSonatypeIssuesUsername
+                    : 'x'
+            def sonatypeIssuesPassword = project.hasProperty('personalSonatypeIssuesPassword')
+                    ? personalSonatypeIssuesPassword
+                    : 'x'
+            credentials {
+                username sonatypeIssuesUsername
+                password sonatypeIssuesPassword
+            }
+        }
+    }
+}
+
+apply plugin: 'signing'
+ext.'signing.keyId' = hasProperty('personalGpgKeyId') ? personalGpgKeyId : 'x'
+ext.'signing.password' = hasProperty('personalGpgPassword') ? personalGpgPassword : 'x'
+ext.'signing.secretKeyRingFile' = hasProperty('personalGpgKeyringFile') ? personalGpgKeyringFile : 'x'
+signing {
+    sign publishing.publications
 }
