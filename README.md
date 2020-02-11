@@ -1,5 +1,5 @@
 # Inline Dimens
-[![Build Status](https://travis-ci.org/drewhamilton/InlineDimens.svg?branch=master)](https://travis-ci.org/drewhamilton/InlineDimens)
+![](https://github.com/drewhamilton/InlineDimens/workflows/build/badge.svg?branch=master)
 
 Never confuse px, dp, and sp at runtime again. Inline Dimens offers a separate inline class for each dimen type,
 ensuring compile-time unit confidence without any runtime cost. Extension functions provide the ability to interact with
