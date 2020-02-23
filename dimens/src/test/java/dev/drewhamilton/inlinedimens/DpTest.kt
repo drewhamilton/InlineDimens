@@ -6,7 +6,7 @@ import org.junit.Test
 class DpTest {
 
     private val testInput = 23.7f
-    private val testDp = Dp(testInput)
+    private val testDp = testInput.dp
 
     @Test fun `toDpInt converts via Float-toInt`() {
         assertThat(testDp.toDpInt().value)

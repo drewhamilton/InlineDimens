@@ -6,7 +6,7 @@ import org.junit.Test
 class DpIntTest {
 
     private val testInput = 24
-    private val testDpInt = DpInt(testInput)
+    private val testDpInt = testInput.dp
 
     @Test fun `toDpFloat converts via Int-toFloat`() {
         assertThat(testDpInt.toDpFloat().value)

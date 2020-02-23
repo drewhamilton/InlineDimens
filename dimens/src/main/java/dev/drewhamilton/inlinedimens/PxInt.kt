@@ -10,6 +10,11 @@ import android.util.DisplayMetrics
 inline class PxInt(val value: Int)
 
 /**
+ * Create a [PxInt], e.g. `16.px`.
+ */
+inline val Int.px get() = PxInt(this)
+
+/**
  * Convert [this] to a floating-point px dimen.
  */
 fun PxInt.toPxFloat() = Px(value.toFloat())

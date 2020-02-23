@@ -7,10 +7,9 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
-import dev.drewhamilton.inlinedimens.Px
-import dev.drewhamilton.inlinedimens.PxInt
 import dev.drewhamilton.inlinedimens.arrays.PxIntArray
 import dev.drewhamilton.inlinedimens.graphics.PxRect
+import dev.drewhamilton.inlinedimens.px
 import dev.drewhamilton.inlinedimens.spoofSdkInt
 import org.junit.Before
 import org.junit.Test
@@ -24,16 +23,16 @@ class ViewTest {
     //region Fading edge length
     @Test fun `verticalFadingEdgeLengthPx returns from View verticalFadingEdgeLength`() {
         whenever(mockView.verticalFadingEdgeLength).thenReturn(1)
-        assertThat(mockView.verticalFadingEdgeLengthPx).isEqualTo(PxInt(1))
+        assertThat(mockView.verticalFadingEdgeLengthPx).isEqualTo(1.px)
     }
 
     @Test fun `horizontalFadingEdgeLengthPx returns from View horizontalFadingEdgeLength`() {
         whenever(mockView.horizontalFadingEdgeLength).thenReturn(2)
-        assertThat(mockView.horizontalFadingEdgeLengthPx).isEqualTo(PxInt(2))
+        assertThat(mockView.horizontalFadingEdgeLengthPx).isEqualTo(2.px)
     }
 
     @Test fun `setFadingEdgeLength with PxInt forwards to setFadingEdgeLength with Int`() {
-        mockView.setFadingEdgeLength(PxInt(3))
+        mockView.setFadingEdgeLength(3.px)
         verify(mockView).setFadingEdgeLength(3)
         verifyNoMoreInteractions(mockView)
     }
@@ -41,11 +40,11 @@ class ViewTest {
 
     @Test fun `verticalScrollbarWidthPx returns from View verticalScrollbarWidth`() {
         whenever(mockView.verticalScrollbarWidth).thenReturn(4)
-        assertThat(mockView.verticalScrollbarWidthPx).isEqualTo(PxInt(4))
+        assertThat(mockView.verticalScrollbarWidthPx).isEqualTo(4.px)
     }
 
     @Test fun `showContextMenu with PxInt forwards to showContextMenu with Int`() {
-        mockView.showContextMenu(Px(5f), Px(6f))
+        mockView.showContextMenu(5f.px, 6f.px)
         verify(mockView).showContextMenu(5f, 6f)
         verifyNoMoreInteractions(mockView)
     }
@@ -53,22 +52,22 @@ class ViewTest {
     //region Scroll position
     @Test fun `scrollXPx returns from View scrollX`() {
         whenever(mockView.scrollX).thenReturn(7)
-        assertThat(mockView.scrollXPx).isEqualTo(PxInt(7))
+        assertThat(mockView.scrollXPx).isEqualTo(7.px)
     }
 
     @Test fun `scrollXPx writes to View scrollX`() {
-        mockView.scrollXPx = PxInt(8)
+        mockView.scrollXPx = 8.px
         verify(mockView).scrollX = 8
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `scrollYPx returns from View scrollY`() {
         whenever(mockView.scrollY).thenReturn(9)
-        assertThat(mockView.scrollYPx).isEqualTo(PxInt(9))
+        assertThat(mockView.scrollYPx).isEqualTo(9.px)
     }
 
     @Test fun `scrollYPx writes to View scrollY`() {
-        mockView.scrollYPx = PxInt(10)
+        mockView.scrollYPx = 10.px
         verify(mockView).scrollY = 10
         verifyNoMoreInteractions(mockView)
     }
@@ -77,32 +76,32 @@ class ViewTest {
     //region Size
     @Test fun `widthPx returns from View width`() {
         whenever(mockView.width).thenReturn(11)
-        assertThat(mockView.widthPx).isEqualTo(PxInt(11))
+        assertThat(mockView.widthPx).isEqualTo(11.px)
     }
 
     @Test fun `heightPx returns from View height`() {
         whenever(mockView.height).thenReturn(12)
-        assertThat(mockView.heightPx).isEqualTo(PxInt(12))
+        assertThat(mockView.heightPx).isEqualTo(12.px)
     }
 
     @Test fun `minimumWidthPx returns from View minimumWidth`() {
         whenever(mockView.minimumWidth).thenReturn(65)
-        assertThat(mockView.minimumWidthPx).isEqualTo(PxInt(65))
+        assertThat(mockView.minimumWidthPx).isEqualTo(65.px)
     }
 
     @Test fun `minimumWidthPx writes to View minimumWidth`() {
-        mockView.minimumWidthPx = PxInt(66)
+        mockView.minimumWidthPx = 66.px
         verify(mockView).minimumWidth = 66
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `minimumHeightPx returns from View minimumHeight`() {
         whenever(mockView.minimumHeight).thenReturn(67)
-        assertThat(mockView.minimumHeightPx).isEqualTo(PxInt(67))
+        assertThat(mockView.minimumHeightPx).isEqualTo(67.px)
     }
 
     @Test fun `minimumHeightPx writes to View minimumHeight`() {
-        mockView.minimumHeightPx = PxInt(68)
+        mockView.minimumHeightPx = 68.px
         verify(mockView).minimumHeight = 68
         verifyNoMoreInteractions(mockView)
     }
@@ -119,11 +118,11 @@ class ViewTest {
 
     @Test fun `cameraDistancePx returns from View cameraDistance`() {
         whenever(mockView.cameraDistance).thenReturn(17f)
-        assertThat(mockView.cameraDistancePx).isEqualTo(Px(17f))
+        assertThat(mockView.cameraDistancePx).isEqualTo(17f.px)
     }
 
     @Test fun `cameraDistancePx writes to View cameraDistance`() {
-        mockView.cameraDistancePx = Px(18f)
+        mockView.cameraDistancePx = 18f.px
         verify(mockView).cameraDistance = 18f
         verifyNoMoreInteractions(mockView)
     }
@@ -131,128 +130,128 @@ class ViewTest {
     //region Position
     @Test fun `topPx returns from View top`() {
         whenever(mockView.top).thenReturn(19)
-        assertThat(mockView.topPx).isEqualTo(PxInt(19))
+        assertThat(mockView.topPx).isEqualTo(19.px)
     }
 
     @Test fun `bottomPx returns from View bottom`() {
         whenever(mockView.bottom).thenReturn(20)
-        assertThat(mockView.bottomPx).isEqualTo(PxInt(20))
+        assertThat(mockView.bottomPx).isEqualTo(20.px)
     }
 
     @Test fun `leftPx returns from View left`() {
         whenever(mockView.left).thenReturn(21)
-        assertThat(mockView.leftPx).isEqualTo(PxInt(21))
+        assertThat(mockView.leftPx).isEqualTo(21.px)
     }
 
     @Test fun `rightPx returns from View right`() {
         whenever(mockView.right).thenReturn(22)
-        assertThat(mockView.rightPx).isEqualTo(PxInt(22))
+        assertThat(mockView.rightPx).isEqualTo(22.px)
     }
 
     @Test fun `xPx returns from View x`() {
         whenever(mockView.x).thenReturn(23f)
-        assertThat(mockView.xPx).isEqualTo(Px(23f))
+        assertThat(mockView.xPx).isEqualTo(23f.px)
     }
 
     @Test fun `xPx writes to View x`() {
-        mockView.xPx = Px(24f)
+        mockView.xPx = 24f.px
         verify(mockView).x = 24f
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `yPx returns from View y`() {
         whenever(mockView.y).thenReturn(25f)
-        assertThat(mockView.yPx).isEqualTo(Px(25f))
+        assertThat(mockView.yPx).isEqualTo(25f.px)
     }
 
     @Test fun `yPx writes to View y`() {
-        mockView.yPx = Px(26f)
+        mockView.yPx = 26f.px
         verify(mockView).y = 26f
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `zPx returns from View z`() {
         whenever(mockView.z).thenReturn(27f)
-        assertThat(mockView.zPx).isEqualTo(Px(27f))
+        assertThat(mockView.zPx).isEqualTo(27f.px)
     }
 
     @Test fun `zPx writes to View z`() {
-        mockView.zPx = Px(28f)
+        mockView.zPx = 28f.px
         verify(mockView).z = 28f
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `elevationPx returns from View elevation`() {
         whenever(mockView.elevation).thenReturn(29f)
-        assertThat(mockView.elevationPx).isEqualTo(Px(29f))
+        assertThat(mockView.elevationPx).isEqualTo(29f.px)
     }
 
     @Test fun `elevationPx writes to View elevation`() {
-        mockView.elevationPx = Px(30f)
+        mockView.elevationPx = 30f.px
         verify(mockView).elevation = 30f
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `translationXPx returns from View translationX`() {
         whenever(mockView.translationX).thenReturn(31f)
-        assertThat(mockView.translationXPx).isEqualTo(Px(31f))
+        assertThat(mockView.translationXPx).isEqualTo(31f.px)
     }
 
     @Test fun `translationXPx writes to View translationX`() {
-        mockView.translationXPx = Px(32f)
+        mockView.translationXPx = 32f.px
         verify(mockView).translationX = 32f
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `translationYPx returns from View translationY`() {
         whenever(mockView.translationY).thenReturn(33f)
-        assertThat(mockView.translationYPx).isEqualTo(Px(33f))
+        assertThat(mockView.translationYPx).isEqualTo(33f.px)
     }
 
     @Test fun `translationYPx writes to View translationY`() {
-        mockView.translationYPx = Px(34f)
+        mockView.translationYPx = 34f.px
         verify(mockView).translationY = 34f
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `translationZPx returns from View translationZ`() {
         whenever(mockView.translationZ).thenReturn(35f)
-        assertThat(mockView.translationZPx).isEqualTo(Px(35f))
+        assertThat(mockView.translationZPx).isEqualTo(35f.px)
     }
 
     @Test fun `translationZPx writes to View translationZ`() {
-        mockView.translationZPx = Px(36f)
+        mockView.translationZPx = 36f.px
         verify(mockView).translationZ = 36f
         verifyNoMoreInteractions(mockView)
     }
     //endregion
 
     @Test fun `offsetTopAndBottom with PxInt forwards to offsetTopAndBottom with Int`() {
-        mockView.offsetTopAndBottom(PxInt(37))
+        mockView.offsetTopAndBottom(37.px)
         verify(mockView).offsetTopAndBottom(37)
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `offsetLeftAndRight with PxInt forwards to offsetLeftAndRight with Int`() {
-        mockView.offsetLeftAndRight(PxInt(38))
+        mockView.offsetLeftAndRight(38.px)
         verify(mockView).offsetLeftAndRight(38)
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `scrollBy with both parameters forwards to scrollBy with both Ints`() {
-        mockView.scrollBy(PxInt(39), PxInt(40))
+        mockView.scrollBy(39.px, 40.px)
         verify(mockView).scrollBy(39, 40)
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `scrollBy with x forwards to scrollBy with x Int and y 0`() {
-        mockView.scrollBy(x = PxInt(41))
+        mockView.scrollBy(x = 41.px)
         verify(mockView).scrollBy(41, 0)
         verifyNoMoreInteractions(mockView)
     }
 
     @Test fun `scrollBy with y forwards to scrollBy with x 0 and y Int`() {
-        mockView.scrollBy(y = PxInt(42))
+        mockView.scrollBy(y = 42.px)
         verify(mockView).scrollBy(0, 42)
         verifyNoMoreInteractions(mockView)
     }
@@ -260,36 +259,36 @@ class ViewTest {
     //region Padding
     @Test fun `paddingTopPx returns from View paddingTop`() {
         whenever(mockView.paddingTop).thenReturn(43)
-        assertThat(mockView.paddingTopPx).isEqualTo(PxInt(43))
+        assertThat(mockView.paddingTopPx).isEqualTo(43.px)
     }
 
     @Test fun `paddingBottomPx returns from View paddingBottom`() {
         whenever(mockView.paddingBottom).thenReturn(44)
-        assertThat(mockView.paddingBottomPx).isEqualTo(PxInt(44))
+        assertThat(mockView.paddingBottomPx).isEqualTo(44.px)
     }
 
     @Test fun `paddingLeftPx returns from View paddingLeft`() {
         whenever(mockView.paddingLeft).thenReturn(45)
-        assertThat(mockView.paddingLeftPx).isEqualTo(PxInt(45))
+        assertThat(mockView.paddingLeftPx).isEqualTo(45.px)
     }
 
     @Test fun `paddingRightPx returns from View paddingRight`() {
         whenever(mockView.paddingRight).thenReturn(46)
-        assertThat(mockView.paddingRightPx).isEqualTo(PxInt(46))
+        assertThat(mockView.paddingRightPx).isEqualTo(46.px)
     }
 
     @Test fun `paddingStartPx returns from View paddingStart`() {
         whenever(mockView.paddingStart).thenReturn(47)
-        assertThat(mockView.paddingStartPx).isEqualTo(PxInt(47))
+        assertThat(mockView.paddingStartPx).isEqualTo(47.px)
     }
 
     @Test fun `paddingEndPx returns from View paddingEnd`() {
         whenever(mockView.paddingEnd).thenReturn(48)
-        assertThat(mockView.paddingEndPx).isEqualTo(PxInt(48))
+        assertThat(mockView.paddingEndPx).isEqualTo(48.px)
     }
 
     @Test fun `setPadding with all parameters forwards to setPadding with all Ints`() {
-        mockView.setPadding(PxInt(49), PxInt(50), PxInt(51), PxInt(52))
+        mockView.setPadding(49.px, 50.px, 51.px, 52.px)
         verify(mockView).setPadding(49, 50, 51, 52)
         verifyNoMoreInteractions(mockView)
     }
@@ -310,7 +309,7 @@ class ViewTest {
     }
 
     @Test fun `setPaddingRelative with all parameters forwards to setPaddingRelative with all Ints`() {
-        mockView.setPaddingRelative(PxInt(57), PxInt(58), PxInt(59), PxInt(60))
+        mockView.setPaddingRelative(57.px, 58.px, 59.px, 60.px)
         verify(mockView).setPaddingRelative(57, 58, 59, 60)
         verifyNoMoreInteractions(mockView)
     }
@@ -354,8 +353,8 @@ class ViewTest {
         val intArray = IntArray(5) { it }
         val pxIntArray = PxIntArray(intArray)
         mockView.dispatchNestedScroll(
-            dxConsumed = PxInt(99), dyConsumed = PxInt(98),
-            dxUnconsumed = PxInt(97), dyUnconsumed = PxInt(96),
+            dxConsumed = 99.px, dyConsumed = 98.px,
+            dxUnconsumed = 97.px, dyUnconsumed = 96.px,
             offsetInWindow = pxIntArray
         )
         verify(mockView).dispatchNestedScroll(99, 98, 97, 96, intArray)
@@ -364,8 +363,8 @@ class ViewTest {
 
     @Test fun `dispatchNestedScroll without offsetInWindow forwards to View dispatchNestedScroll`() {
         mockView.dispatchNestedScroll(
-            dxConsumed = PxInt(99), dyConsumed = PxInt(98),
-            dxUnconsumed = PxInt(97), dyUnconsumed = PxInt(96)
+            dxConsumed = 99.px, dyConsumed = 98.px,
+            dxUnconsumed = 97.px, dyUnconsumed = 96.px
         )
         verify(mockView).dispatchNestedScroll(99, 98, 97, 96, null)
         verifyNoMoreInteractions(mockView)
@@ -377,7 +376,7 @@ class ViewTest {
         val offsetInWindowIntArray = IntArray(50) { it }
         val offsetInWindow = PxIntArray(offsetInWindowIntArray)
         mockView.dispatchNestedPreScroll(
-            dx = PxInt(1000), dy = PxInt(2000),
+            dx = 1000.px, dy = 2000.px,
             consumed = consumed,
             offsetInWindow = offsetInWindow
         )
@@ -389,7 +388,7 @@ class ViewTest {
         val consumedIntArray = IntArray(500) { it }
         val consumed = PxIntArray(consumedIntArray)
         mockView.dispatchNestedPreScroll(
-            dx = PxInt(1000), dy = PxInt(2000),
+            dx = 1000.px, dy = 2000.px,
             consumed = consumed
         )
         verify(mockView).dispatchNestedPreScroll(1000, 2000, consumedIntArray, null)
@@ -400,7 +399,7 @@ class ViewTest {
         val offsetInWindowIntArray = IntArray(500000) { it }
         val offsetInWindow = PxIntArray(offsetInWindowIntArray)
         mockView.dispatchNestedPreScroll(
-            dx = PxInt(1000), dy = PxInt(2000),
+            dx = 1000.px, dy = 2000.px,
             offsetInWindow = offsetInWindow
         )
         verify(mockView).dispatchNestedPreScroll(1000, 2000, null, offsetInWindowIntArray)
@@ -409,7 +408,7 @@ class ViewTest {
 
     @Test fun `dispatchNestedPPreScroll without consumed or offsetInWindow forwards to View dispatchNestedPreScroll`() {
         mockView.dispatchNestedPreScroll(
-            dx = PxInt(7000), dy = PxInt(8000)
+            dx = 7000.px, dy = 8000.px
         )
         verify(mockView).dispatchNestedPreScroll(7000, 8000, null, null)
         verifyNoMoreInteractions(mockView)

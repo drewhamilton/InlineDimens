@@ -13,6 +13,7 @@ import dev.drewhamilton.inlinedimens.SpInt
 import dev.drewhamilton.inlinedimens.arrays.DpIntArray
 import dev.drewhamilton.inlinedimens.arrays.PxIntArray
 import dev.drewhamilton.inlinedimens.arrays.SpIntArray
+import dev.drewhamilton.inlinedimens.px
 import dev.drewhamilton.inlinedimens.toDp
 import dev.drewhamilton.inlinedimens.toSp
 
@@ -95,19 +96,19 @@ fun TextView.setAutoSizeTextTypeUniformWithConfiguration(minSize: SpInt, maxSize
 /**
  * The current auto-size step granularity in px.
  */
-val TextView.autoSizeStepGranularityPx get() = PxInt(TextViewCompat.getAutoSizeStepGranularity(this))
+val TextView.autoSizeStepGranularityPx get() = TextViewCompat.getAutoSizeStepGranularity(this).px
 
 /**
  * The current auto-size minimum text size in px (the default is 12sp). Note that if auto-size has not been configured
  * this returns -1.
  */
-val TextView.autoSizeMinTextSizePx get() = PxInt(TextViewCompat.getAutoSizeMinTextSize(this))
+val TextView.autoSizeMinTextSizePx get() = TextViewCompat.getAutoSizeMinTextSize(this).px
 
 /**
  * The current auto-size maximum text size in px (the default is 112sp). Note that if auto-size has not been configured
  * this returns -1.
  */
-val TextView.autoSizeMaxTextSizePx get() = PxInt(TextViewCompat.getAutoSizeMaxTextSize(this))
+val TextView.autoSizeMaxTextSizePx get() = TextViewCompat.getAutoSizeMaxTextSize(this).px
 
 /**
  * The current auto-size sizes array (in px).
@@ -121,7 +122,7 @@ val TextView.autoSizeTextAvailableSizesPx get() = PxIntArray(TextViewCompat.getA
  * taller or shorter than this height, and the layout may contain additional first- or last-line padding.
  */
 var TextView.lineHeightPx
-    get() = PxInt(lineHeight)
+    get() = lineHeight.px
     set(lineHeight) {
         TextViewCompat.setLineHeight(this, lineHeight.value)
     }
@@ -136,7 +137,7 @@ var TextView.lineHeightPx
  * greater than [TextView.getFirstBaselineToTopHeight], the top padding is not updated.
  */
 var TextView.firstBaselineToTopHeightPx
-    get() = PxInt(TextViewCompat.getFirstBaselineToTopHeight(this))
+    get() = TextViewCompat.getFirstBaselineToTopHeight(this).px
     set(firstBaselineToTopHeight) {
         TextViewCompat.setFirstBaselineToTopHeight(this, firstBaselineToTopHeight.value)
     }
@@ -151,7 +152,7 @@ var TextView.firstBaselineToTopHeightPx
  * greater than [TextView.getLastBaselineToBottomHeight], the top padding is not updated.
  */
 var TextView.lastBaselineToBottomHeightPx
-    get() = PxInt(TextViewCompat.getLastBaselineToBottomHeight(this))
+    get() = TextViewCompat.getLastBaselineToBottomHeight(this).px
     set(lastBaselineToBottomHeight) {
         TextViewCompat.setLastBaselineToBottomHeight(this, lastBaselineToBottomHeight.value)
     }
@@ -164,7 +165,7 @@ var TextView.lastBaselineToBottomHeightPx
  * Note: if this TextView has the auto-size feature enabled than setting this value is no-op.
  */
 var TextView.textSizePx: Px
-    get() = Px(textSize)
+    get() = textSize.px
     set(size) {
         setTextSize(TypedValue.COMPLEX_UNIT_PX, size.value)
     }
@@ -206,7 +207,7 @@ var TextView.textSizeSp: Sp
  */
 @get:RequiresApi(16)
 var TextView.minHeightPx
-    get() = PxInt(minHeight)
+    get() = minHeight.px
     set(minPixels) {
         minHeight = minPixels.value
     }
@@ -221,7 +222,7 @@ var TextView.minHeightPx
  */
 @get:RequiresApi(16)
 var TextView.maxHeightPx
-    get() = PxInt(maxHeight)
+    get() = maxHeight.px
     set(maxPixels) {
         maxHeight = maxPixels.value
     }
@@ -233,7 +234,7 @@ var TextView.maxHeightPx
  * this value overrides previous minimum/maximum height configurations such as [minHeightPx] or [maxHeightPx].
  */
 var TextView.heightPx
-    get() = PxInt(height)
+    get() = height.px
     set(pixels) {
         height = pixels.value
     }
@@ -251,7 +252,7 @@ var TextView.heightPx
  */
 @get:RequiresApi(16)
 var TextView.minWidthPx
-    get() = PxInt(minWidth)
+    get() = minWidth.px
     set(minPixels) {
         minWidth = minPixels.value
     }
@@ -266,7 +267,7 @@ var TextView.minWidthPx
  */
 @get:RequiresApi(16)
 var TextView.maxWidthPx
-    get() = PxInt(maxWidth)
+    get() = maxWidth.px
     set(maxPixels) {
         maxWidth = maxPixels.value
     }
@@ -278,7 +279,7 @@ var TextView.maxWidthPx
  * this value overrides previous minimum/maximum width configurations such as [minWidthPx] or [maxWidthPx].
  */
 var TextView.widthPx
-    get() = PxInt(width)
+    get() = width.px
     set(pixels) {
         width = pixels.value
     }
@@ -292,5 +293,5 @@ var TextView.widthPx
 fun TextView.setLineSpacing(add: Px, multiplier: Float) = setLineSpacing(add.value, multiplier)
 
 @get:RequiresApi(16)
-val TextView.lineSpacingExtraPx get() = Px(lineSpacingExtra)
+val TextView.lineSpacingExtraPx get() = lineSpacingExtra.px
 //endregion

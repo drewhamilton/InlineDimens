@@ -6,7 +6,7 @@ import org.junit.Test
 class PxTest {
 
     private val testInput = 98325.3f
-    private val testPx = Px(testInput)
+    private val testPx = testInput.px
 
     @Test fun `toPxInt converts via Float-toInt`() {
         assertThat(testPx.toPxInt().value)

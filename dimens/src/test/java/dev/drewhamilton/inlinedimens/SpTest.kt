@@ -6,7 +6,7 @@ import org.junit.Test
 class SpTest {
 
     private val testInput = 234.7f
-    private val testSp = Sp(testInput)
+    private val testSp = testInput.sp
 
     @Test fun `toSpInt converts via Float-toInt`() {
         assertThat(testSp.toSpInt().value)
