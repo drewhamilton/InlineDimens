@@ -10,6 +10,11 @@ import android.util.DisplayMetrics
 inline class Dp(val value: Float)
 
 /**
+ * Create a [Dp], e.g. `16f.dp`.
+ */
+inline val Float.dp get() = Dp(this)
+
+/**
  * Convert [this] to an integer dp dimen.
  */
 fun Dp.toDpInt() = DpInt(value.toInt())

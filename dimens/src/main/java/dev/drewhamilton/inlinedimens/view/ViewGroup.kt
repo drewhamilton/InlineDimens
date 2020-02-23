@@ -3,6 +3,7 @@ package dev.drewhamilton.inlinedimens.view
 import android.view.ViewGroup
 import androidx.core.view.MarginLayoutParamsCompat
 import dev.drewhamilton.inlinedimens.PxInt
+import dev.drewhamilton.inlinedimens.px
 
 //region LayoutParams
 /**
@@ -11,7 +12,7 @@ import dev.drewhamilton.inlinedimens.PxInt
  * in the return [PxInt] type.
  */
 var ViewGroup.LayoutParams.widthPx: PxInt
-    get() = PxInt(width)
+    get() = width.px
     set(widthPx) {
         width = widthPx.value
     }
@@ -22,7 +23,7 @@ var ViewGroup.LayoutParams.widthPx: PxInt
  * in the return [PxInt] type.
  */
 var ViewGroup.LayoutParams.heightPx: PxInt
-    get() = PxInt(height)
+    get() = height.px
     set(heightPx) {
         height = heightPx.value
     }
@@ -34,7 +35,7 @@ var ViewGroup.LayoutParams.heightPx: PxInt
  * reassigning a new value to this property.
  */
 var ViewGroup.MarginLayoutParams.leftMarginPx: PxInt
-    get() = PxInt(leftMargin)
+    get() = leftMargin.px
     set(leftMarginPx) {
         leftMargin = leftMarginPx.value
     }
@@ -44,7 +45,7 @@ var ViewGroup.MarginLayoutParams.leftMarginPx: PxInt
  * reassigning a new value to this property.
  */
 var ViewGroup.MarginLayoutParams.topMarginPx: PxInt
-    get() = PxInt(topMargin)
+    get() = topMargin.px
     set(topMarginPx) {
         topMargin = topMarginPx.value
     }
@@ -54,7 +55,7 @@ var ViewGroup.MarginLayoutParams.topMarginPx: PxInt
  * reassigning a new value to this property.
  */
 var ViewGroup.MarginLayoutParams.rightMarginPx: PxInt
-    get() = PxInt(rightMargin)
+    get() = rightMargin.px
     set(rightMarginPx) {
         rightMargin = rightMarginPx.value
     }
@@ -64,7 +65,7 @@ var ViewGroup.MarginLayoutParams.rightMarginPx: PxInt
  * reassigning a new value to this property.
  */
 var ViewGroup.MarginLayoutParams.bottomMarginPx: PxInt
-    get() = PxInt(bottomMargin)
+    get() = bottomMargin.px
     set(bottomMarginPx) {
         bottomMargin = bottomMarginPx.value
     }
@@ -77,7 +78,7 @@ var ViewGroup.MarginLayoutParams.bottomMarginPx: PxInt
  * direction of that view changes.
  */
 var ViewGroup.MarginLayoutParams.startMarginPx: PxInt
-    get() = PxInt(MarginLayoutParamsCompat.getMarginStart(this))
+    get() = MarginLayoutParamsCompat.getMarginStart(this).px
     set(startMarginPx) {
         MarginLayoutParamsCompat.setMarginStart(this, startMarginPx.value)
     }
@@ -90,7 +91,7 @@ var ViewGroup.MarginLayoutParams.startMarginPx: PxInt
  * direction of that view changes.
  */
 var ViewGroup.MarginLayoutParams.endMarginPx: PxInt
-    get() = PxInt(MarginLayoutParamsCompat.getMarginEnd(this))
+    get() = MarginLayoutParamsCompat.getMarginEnd(this).px
     set(endMarginPx) {
         MarginLayoutParamsCompat.setMarginEnd(this, endMarginPx.value)
     }

@@ -2,8 +2,7 @@ package dev.drewhamilton.inlinedimens.content.res
 
 import android.content.res.Resources
 import androidx.annotation.DimenRes
-import dev.drewhamilton.inlinedimens.Px
-import dev.drewhamilton.inlinedimens.PxInt
+import dev.drewhamilton.inlinedimens.px
 
 /**
  * Retrieve a dimensional in px for a particular resource [id]. If the dimen is specified in dp or sp, unit conversions
@@ -11,7 +10,7 @@ import dev.drewhamilton.inlinedimens.PxInt
  *
  * The value 0 is an invalid identifier. [Resources.NotFoundException] is thrown if the given [id] does not exist.
  */
-fun Resources.getDimensionPx(@DimenRes id: Int) = Px(getDimension(id))
+fun Resources.getDimensionPx(@DimenRes id: Int) = getDimension(id).px
 
 /**
  * Retrieve a dimensional in px for a particular resource [id] for use as an offset in raw pixels. This is the same as
@@ -20,7 +19,7 @@ fun Resources.getDimensionPx(@DimenRes id: Int) = Px(getDimension(id))
  *
  * The value 0 is an invalid identifier. [Resources.NotFoundException] is thrown if the given [id] does not exist.
  */
-fun Resources.getDimensionPxOffset(@DimenRes id: Int) = PxInt(getDimensionPixelOffset(id))
+fun Resources.getDimensionPxOffset(@DimenRes id: Int) = getDimensionPixelOffset(id).px
 
 /**
  * Retrieve a dimensional in px for a particular resource ID for use as a size in raw pixels. This is the same as
@@ -29,4 +28,4 @@ fun Resources.getDimensionPxOffset(@DimenRes id: Int) = PxInt(getDimensionPixelO
  *
  * The value 0 is an invalid identifier. [Resources.NotFoundException] is thrown if the given [id] does not exist.
  */
-fun Resources.getDimensionPxSize(@DimenRes id: Int) = PxInt(getDimensionPixelSize(id))
+fun Resources.getDimensionPxSize(@DimenRes id: Int) = getDimensionPixelSize(id).px

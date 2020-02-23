@@ -6,7 +6,7 @@ import org.junit.Test
 class SpIntTest {
 
     private val testInput = 932
-    private val testSpInt = SpInt(testInput)
+    private val testSpInt = testInput.sp
 
     @Test fun `toDpFloat converts via Int-toFloat`() {
         assertThat(testSpInt.toSpFloat().value)

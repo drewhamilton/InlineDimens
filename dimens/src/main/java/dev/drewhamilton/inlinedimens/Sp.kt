@@ -10,6 +10,11 @@ import android.util.DisplayMetrics
 inline class Sp(val value: Float)
 
 /**
+ * Create an [Sp], e.g. `16f.sp`.
+ */
+inline val Float.sp: Sp get() = Sp(this)
+
+/**
  * Convert [this] to an integer sp dimen.
  */
 fun Sp.toSpInt() = SpInt(value.toInt())

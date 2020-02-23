@@ -6,7 +6,7 @@ import org.junit.Test
 class PxIntTest {
 
     private val testInput = 83487
-    private val testPxInt = PxInt(testInput)
+    private val testPxInt = testInput.px
 
     @Test fun `toPxFloat converts via Int-toFloat`() {
         assertThat(testPxInt.toPxFloat().value)

@@ -2,6 +2,7 @@ package dev.drewhamilton.inlinedimens.graphics
 
 import android.graphics.Rect
 import dev.drewhamilton.inlinedimens.PxInt
+import dev.drewhamilton.inlinedimens.px
 
 /**
  * A [PxInt] unit-specific wrapper for [Rect].
@@ -18,25 +19,25 @@ inline class PxRect(internal val rect: Rect) {
     ) : this(Rect(left.value, top.value, right.value, bottom.value))
 
     var left: PxInt
-        get() = PxInt(rect.left)
+        get() = rect.left.px
         set(left) {
             rect.left = left.value
         }
 
     var top: PxInt
-        get() = PxInt(rect.top)
+        get() = rect.top.px
         set(top) {
             rect.top = top.value
         }
 
     var right: PxInt
-        get() = PxInt(rect.right)
+        get() = rect.right.px
         set(right) {
             rect.right = right.value
         }
 
     var bottom: PxInt
-        get() = PxInt(rect.bottom)
+        get() = rect.bottom.px
         set(bottom) {
             rect.bottom = bottom.value
         }

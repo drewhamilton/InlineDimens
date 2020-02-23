@@ -7,6 +7,7 @@ import dev.drewhamilton.inlinedimens.Px
 import dev.drewhamilton.inlinedimens.PxInt
 import dev.drewhamilton.inlinedimens.arrays.PxIntArray
 import dev.drewhamilton.inlinedimens.graphics.PxRect
+import dev.drewhamilton.inlinedimens.px
 
 //region Fading edge length
 /**
@@ -16,7 +17,7 @@ import dev.drewhamilton.inlinedimens.graphics.PxRect
  *
  * @attr ref android.R.styleable#View_fadingEdgeLength
  */
-val View.verticalFadingEdgeLengthPx get() = PxInt(verticalFadingEdgeLength)
+val View.verticalFadingEdgeLengthPx get() = verticalFadingEdgeLength.px
 
 /**
  * Returns the size in px of the horizontal faded edges used to indicate that more content in this view is visible.
@@ -25,7 +26,7 @@ val View.verticalFadingEdgeLengthPx get() = PxInt(verticalFadingEdgeLength)
  *
  * @attr ref android.R.styleable#View_fadingEdgeLength
  */
-val View.horizontalFadingEdgeLengthPx get() = PxInt(horizontalFadingEdgeLength)
+val View.horizontalFadingEdgeLengthPx get() = horizontalFadingEdgeLength.px
 
 /**
  * Set the [length] of the faded edge used to indicate that more content in this view is available. Will not change
@@ -38,7 +39,7 @@ fun View.setFadingEdgeLength(length: PxInt) = setFadingEdgeLength(length.value)
 /**
  * Returns the width in px of the vertical scrollbar, or 0 if there is no vertical scrollbar.
  */
-val View.verticalScrollbarWidthPx get() = PxInt(verticalScrollbarWidth)
+val View.verticalScrollbarWidthPx get() = verticalScrollbarWidth.px
 
 /**
  * Shows the context menu for this view anchored to the specified view-relative coordinate.
@@ -61,7 +62,7 @@ fun View.showContextMenu(x: Px, y: Px) = showContextMenu(x.value, y.value)
  * be invalidated.
  */
 var View.scrollXPx
-    get() = PxInt(scrollX)
+    get() = scrollX.px
     set(value) {
         scrollX = value.value
     }
@@ -74,7 +75,7 @@ var View.scrollXPx
  * be invalidated.
  */
 var View.scrollYPx
-    get() = PxInt(scrollY)
+    get() = scrollY.px
     set(value) {
         scrollY = value.value
     }
@@ -84,12 +85,12 @@ var View.scrollYPx
 /**
  * The width of your view, in px.
  */
-val View.widthPx get() = PxInt(width)
+val View.widthPx get() = width.px
 
 /**
  * The height of your view, in px.
  */
-val View.heightPx get() = PxInt(height)
+val View.heightPx get() = height.px
 
 /**
  * The minimum width of the view.
@@ -98,7 +99,7 @@ val View.heightPx get() = PxInt(height)
  * constrains it with less available width).
  */
 var View.minimumWidthPx
-    get() = PxInt(ViewCompat.getMinimumWidth(this))
+    get() = ViewCompat.getMinimumWidth(this).px
     set(minWidth) {
         minimumWidth = minWidth.value
     }
@@ -110,7 +111,7 @@ var View.minimumWidthPx
  * layout constrains it with less available height).
  */
 var View.minimumHeightPx
-    get() = PxInt(ViewCompat.getMinimumHeight(this))
+    get() = ViewCompat.getMinimumHeight(this).px
     set(minHeight) {
         minimumHeight = minHeight.value
     }
@@ -149,7 +150,7 @@ fun View.getDrawingRect(outRect: PxRect) = getDrawingRect(outRect.rect)
  */
 @get:RequiresApi(16)
 var View.cameraDistancePx: Px
-    get() = Px(cameraDistance)
+    get() = cameraDistance.px
     set(distance) {
         cameraDistance = distance.value
     }
@@ -161,7 +162,7 @@ var View.cameraDistancePx: Px
  * This property is not mutable because [View.setTop] is meant to be called by the layout system and should not
  * generally be called otherwise, because the property may be changed at any time by the layout.
  */
-val View.topPx get() = PxInt(top)
+val View.topPx get() = top.px
 
 /**
  * Bottom position of this view relative to its parent.
@@ -169,7 +170,7 @@ val View.topPx get() = PxInt(top)
  * This property is not mutable because [View.setBottom] is meant to be called by the layout system and should not
  * generally be called otherwise, because the property may be changed at any time by the layout.
  */
-val View.bottomPx get() = PxInt(bottom)
+val View.bottomPx get() = bottom.px
 
 /**
  * Left position of this view relative to its parent.
@@ -177,7 +178,7 @@ val View.bottomPx get() = PxInt(bottom)
  * This property is not mutable because [View.setLeft] is meant to be called by the layout system and should not
  * generally be called otherwise, because the property may be changed at any time by the layout.
  */
-val View.leftPx get() = PxInt(left)
+val View.leftPx get() = left.px
 
 /**
  * Right position of this view relative to its parent.
@@ -185,7 +186,7 @@ val View.leftPx get() = PxInt(left)
  * This property is not mutable because [View.setRight] is meant to be called by the layout system and should not
  * generally be called otherwise, because the property may be changed at any time by the layout.
  */
-val View.rightPx get() = PxInt(right)
+val View.rightPx get() = right.px
 
 /**
  * The visual x position of this view, in px. This is equivalent to the [translationXPx] property plus the current
@@ -195,7 +196,7 @@ val View.rightPx get() = PxInt(right)
  * value passed in and the current [leftPx] property.
  */
 var View.xPx
-    get() = Px(x)
+    get() = x.px
     set(x) {
         this.x = x.value
     }
@@ -208,7 +209,7 @@ var View.xPx
  * value passed in and the current [topPx] property.
  */
 var View.yPx
-    get() = Px(y)
+    get() = y.px
     set(y) {
         this.y = y.value
     }
@@ -223,7 +224,7 @@ var View.yPx
  * Always equals 0 on Android SDK < 21.
  */
 var View.zPx
-    get() = Px(ViewCompat.getZ(this))
+    get() = ViewCompat.getZ(this).px
     set(z) {
         ViewCompat.setZ(this, z.value)
     }
@@ -234,7 +235,7 @@ var View.zPx
  * Always equals 0 on Android SDK < 21.
  */
 var View.elevationPx
-    get() = Px(ViewCompat.getElevation(this))
+    get() = ViewCompat.getElevation(this).px
     set(elevation) {
         ViewCompat.setElevation(this, elevation.value)
     }
@@ -244,7 +245,7 @@ var View.elevationPx
  * wherever the object's layout placed it.
  */
 var View.translationXPx
-    get() = Px(translationX)
+    get() = translationX.px
     set(translationX) {
         this.translationX = translationX.value
     }
@@ -254,7 +255,7 @@ var View.translationXPx
  * wherever the object's layout placed it.
  */
 var View.translationYPx
-    get() = Px(translationY)
+    get() = translationY.px
     set(translationY) {
         this.translationY = translationY.value
     }
@@ -265,7 +266,7 @@ var View.translationYPx
  * Always equals 0 on SDK < 21.
  */
 var View.translationZPx
-    get() = Px(ViewCompat.getTranslationZ(this))
+    get() = ViewCompat.getTranslationZ(this).px
     set(translationZ) {
         ViewCompat.setTranslationZ(this, translationZ.value)
     }
@@ -287,40 +288,40 @@ fun View.offsetLeftAndRight(offset: PxInt) = offsetLeftAndRight(offset.value)
  *
  * [x] and [y] both default to 0 so you can choose a single axis along which to scroll.
  */
-fun View.scrollBy(x: PxInt = PxInt(0), y: PxInt = PxInt(0)) = scrollBy(x.value, y.value)
+fun View.scrollBy(x: PxInt = 0.px, y: PxInt = 0.px) = scrollBy(x.value, y.value)
 
 //region Padding
 /**
  * The top padding of this view.
  */
-val View.paddingTopPx get() = PxInt(paddingTop)
+val View.paddingTopPx get() = paddingTop.px
 
 /**
  * The bottom padding of this view.
  */
-val View.paddingBottomPx get() = PxInt(paddingBottom)
+val View.paddingBottomPx get() = paddingBottom.px
 
 /**
  * The left padding of this view.
  */
-val View.paddingLeftPx get() = PxInt(paddingLeft)
+val View.paddingLeftPx get() = paddingLeft.px
 
 /**
  * The right padding of this view.
  */
-val View.paddingRightPx get() = PxInt(paddingRight)
+val View.paddingRightPx get() = paddingRight.px
 
 /**
  * The start padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
  * this value may include the space required to display the scrollbars as well.
  */
-val View.paddingStartPx get() = PxInt(ViewCompat.getPaddingStart(this))
+val View.paddingStartPx get() = ViewCompat.getPaddingStart(this).px
 
 /**
  * The end padding of this view depending on its resolved layout direction. If there are inset and enabled scrollbars,
  * this value may include the space required to display the scrollbars as well.
  */
-val View.paddingEndPx get() = PxInt(ViewCompat.getPaddingEnd(this))
+val View.paddingEndPx get() = ViewCompat.getPaddingEnd(this).px
 
 /**
  * Sets the padding. The view may add on the space required to display the scrollbars, depending on the style and

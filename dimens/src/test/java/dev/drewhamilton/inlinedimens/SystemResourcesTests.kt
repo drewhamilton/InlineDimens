@@ -18,12 +18,12 @@ class SystemResourcesTests {
     private val testInputFloat = 23.7f
     private val testInputInt = 24
 
-    private val testPx = Px(testInputFloat)
-    private val testPxInt = PxInt(testInputInt)
-    private val testDp = Dp(testInputFloat)
-    private val testDpInt = DpInt(testInputInt)
-    private val testSp = Sp(testInputFloat)
-    private val testSpInt = SpInt(testInputInt)
+    private val testPx = testInputFloat.px
+    private val testPxInt = testInputInt.px
+    private val testDp = testInputFloat.dp
+    private val testDpInt = testInputInt.dp
+    private val testSp = testInputFloat.sp
+    private val testSpInt = testInputInt.sp
 
     //region Px
     @Test fun `Px toDp() divides value by density from system DisplayMetrics`() {

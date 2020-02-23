@@ -2,9 +2,8 @@ package dev.drewhamilton.inlinedimens.content.res
 
 import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockitokotlin2.whenever
-import dev.drewhamilton.inlinedimens.Px
-import dev.drewhamilton.inlinedimens.PxInt
 import dev.drewhamilton.inlinedimens.TestValues
+import dev.drewhamilton.inlinedimens.px
 import org.junit.Test
 
 class ResourcesTest {
@@ -17,18 +16,18 @@ class ResourcesTest {
     @Test fun `getDimensionPx gets from getDimension`() {
         whenever(TestValues.mockResources.getDimension(testId)).thenReturn(testDimension)
         assertThat(TestValues.mockResources.getDimensionPx(testId))
-            .isEqualTo(Px(testDimension))
+            .isEqualTo(testDimension.px)
     }
 
     @Test fun `getDimensionPxOffset gets from getDimensionPixelOffset`() {
         whenever(TestValues.mockResources.getDimensionPixelOffset(testId)).thenReturn(testPixelOffset)
         assertThat(TestValues.mockResources.getDimensionPxOffset(testId))
-            .isEqualTo(PxInt(testPixelOffset))
+            .isEqualTo(testPixelOffset.px)
     }
 
     @Test fun `getDimensionPxSize gets from getDimensionPixelSize`() {
         whenever(TestValues.mockResources.getDimensionPixelSize(testId)).thenReturn(testPixelSize)
         assertThat(TestValues.mockResources.getDimensionPxSize(testId))
-            .isEqualTo(PxInt(testPixelSize))
+            .isEqualTo(testPixelSize.px)
     }
 }
