@@ -1,7 +1,7 @@
 <resources>
   <string name="appName">Inline Dimens demo</string>
 
-  <string name="screenWidth">Screen width: %1$dpx/%2$ddp</string>
-  <string name="screenHeight">Screen height: %1$dpx/%2$ddp</string>
-  <string name="textSize">Text size: %1$dpx/%2$ddp/%3$dsp</string>
+  <string name="screenWidth">Screen width: %1$s/%2$s</string>
+  <string name="screenHeight">Screen height: %1$s/%2$s</string>
+  <string name="textSize">Text size: %1$s/%2$s/%3$s</string>
 </resources>
