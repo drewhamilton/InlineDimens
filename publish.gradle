@@ -2,7 +2,6 @@
 //  The module must define ext.artifactName, version, and ext.publishedDescription
 
 group = 'dev.drewhamilton.inlinedimens'
-def projectName = name
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set 'sources'
@@ -28,87 +27,65 @@ artifacts {
 }
 
 apply plugin: 'maven-publish'
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId group
-            artifactId artifactName
-            version version
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId group
+                artifactId artifactName
+                version version
 
-            artifact artifact("$buildDir/outputs/aar/$projectName-release.aar")
-            artifact sourcesJar
-            artifact javadocJar
+                from components.release
+                artifact sourcesJar
+                artifact javadocJar
 
-            pom {
-                name = artifactName
-                description = publishedDescription
+                pom {
+                    name = artifactName
+                    description = publishedDescription
 
-                url = 'https://github.com/drewhamilton/InlineDimens'
-                licenses {
-                    license {
-                        name = 'The Apache Software License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id = 'drewhamilton'
-                        name = 'Drew Hamilton'
-                        email = 'drew.hamilton.0+android@gmail.com'
-                    }
-                }
-
-                scm {
-                    connection = 'scm:git:github.com/drewhamilton/InlineDimens.git'
-                    developerConnection = 'scm:git:ssh://github.com/drewhamilton/InlineDimens.git'
-                    url = 'https://github.com/drewhamilton/InlineDimens/tree/master'
-                }
-
-                // TODO WORKAROUND: Figure out why OkHttp doesn't have to write this block
-                withXml {
-                    def dependenciesNode = asNode().appendNode('dependencies')
-
-                    def addDependency = { Dependency dep, String scope ->
-                        if (!isValid(dep)) return
-
-                        logger.info "$name dependency: $dep"
-
-                        final dependencyNode = dependenciesNode.appendNode('dependency')
-                                .appendNode('groupId', dep.group).parent()
-                                .appendNode('artifactId', extractDependencyArtifactId(dep)).parent()
-                                .appendNode('version', dep.version).parent()
-                                .appendNode('scope', scope).parent()
-
-                        if (isLocalDependency(dep))
-                            dependencyNode.appendNode('type', 'aar').parent()
+                    url = 'https://github.com/drewhamilton/InlineDimens'
+                    licenses {
+                        license {
+                            name = 'The Apache Software License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
                     }
 
-                    configurations.api.getDependencies().each { dep -> addDependency(dep, 'compile') }
-                    configurations.implementation.getDependencies().each { dep -> addDependency(dep, 'runtime') }
-                    configurations.compile.getDependencies().each { dep -> addDependency(dep, 'compile') }
+                    developers {
+                        developer {
+                            id = 'drewhamilton'
+                            name = 'Drew Hamilton'
+                            email = 'drew.hamilton.0+android@gmail.com'
+                        }
+                    }
+
+                    scm {
+                        connection = 'scm:git:github.com/drewhamilton/InlineDimens.git'
+                        developerConnection = 'scm:git:ssh://github.com/drewhamilton/InlineDimens.git'
+                        url = 'https://github.com/drewhamilton/InlineDimens/tree/master'
+                    }
                 }
             }
         }
-    }
 
-    repositories {
-        maven {
-            name = "MavenCentral"
+        repositories {
+            maven {
+                name = "MavenCentral"
 
-            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+                def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+                def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
-            def sonatypeIssuesUsername = project.hasProperty('personalSonatypeIssuesUsername')
-                    ? personalSonatypeIssuesUsername
-                    : 'x'
-            def sonatypeIssuesPassword = project.hasProperty('personalSonatypeIssuesPassword')
-                    ? personalSonatypeIssuesPassword
-                    : 'x'
-            credentials {
-                username sonatypeIssuesUsername
-                password sonatypeIssuesPassword
+                def sonatypeIssuesUsername = project.hasProperty('personalSonatypeIssuesUsername')
+                        ? personalSonatypeIssuesUsername
+                        : 'x'
+                def sonatypeIssuesPassword = project.hasProperty('personalSonatypeIssuesPassword')
+                        ? personalSonatypeIssuesPassword
+                        : 'x'
+                credentials {
+                    username sonatypeIssuesUsername
+                    password sonatypeIssuesPassword
+                }
             }
         }
     }
@@ -120,28 +97,4 @@ ext.'signing.password' = hasProperty('personalGpgPassword') ? personalGpgPasswor
 ext.'signing.secretKeyRingFile' = hasProperty('personalGpgKeyringFile') ? personalGpgKeyringFile : 'x'
 signing {
     sign publishing.publications
-}
-
-private static boolean isValid(Dependency dep) {
-    String artifactId = extractDependencyArtifactId(dep)
-    String version = dep.version
-    return dep.group != null &&
-            version != null && version != 'unspecified' &&
-            artifactId != null && artifactId != 'unspecified'
-}
-
-private static String extractDependencyArtifactId(dependency) {
-    def depArtifactId = dependency.name
-
-    // If ext.artifactName is explicitly defined, use that over the module name:
-    if (isLocalDependency(dependency)) {
-        def depProject = dependency.dependencyProject
-        if (depProject.hasProperty('artifactName'))
-            depArtifactId = depProject.artifactName
-    }
-    return depArtifactId
-}
-
-private static boolean isLocalDependency(dependency) {
-    return dependency.hasProperty('dependencyProject')
 }
