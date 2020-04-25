@@ -62,9 +62,18 @@ inline class SpInt(val value: Int) : Comparable<SpInt> {
 inline val Int.sp get() = SpInt(this)
 
 /**
- * Convert [this] to a floating-point sp dimen.
+ * Convert an integer sp dimen to a floating-point sp dimen.
  */
-fun SpInt.toSpFloat() = Sp(value.toFloat())
+fun SpInt.exact() = Sp(value.toFloat())
+
+/**
+ * Convert an integer sp dimen to a floating-point sp dimen.
+ */
+@Deprecated(
+    message = "Replaced with SpInt.exact()",
+    replaceWith = ReplaceWith("exact()")
+)
+fun SpInt.toSpFloat() = exact()
 
 /**
  * Multiply a scalar by an [SpInt].

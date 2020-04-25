@@ -62,9 +62,18 @@ inline class PxInt(val value: Int) : Comparable<PxInt> {
 inline val Int.px get() = PxInt(this)
 
 /**
- * Convert [this] to a floating-point px dimen.
+ * Convert an integer px dimen to a floating-point px dimen.
  */
-fun PxInt.toPxFloat() = Px(value.toFloat())
+fun PxInt.exact() = Px(value.toFloat())
+
+/**
+ * Convert an integer px dimen to a floating-point px dimen.
+ */
+@Deprecated(
+    message = "Replaced with PxInt.exact()",
+    replaceWith = ReplaceWith("exact()")
+)
+fun PxInt.toPxFloat() = exact()
 
 /**
  * Multiply a scalar by a [PxInt].
