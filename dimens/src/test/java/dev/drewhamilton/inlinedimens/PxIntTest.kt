@@ -82,6 +82,11 @@ class PxIntTest {
     @Test fun `toString returns well-formatted unit`() =
         assertThat(testPxInt.toString()).isEqualTo("83487px")
 
+    @Test fun `exact converts via Int-toFloat`() =
+        assertThat(testPxInt.exact().value).isEqualTo(testInput.toFloat())
+
+    @Suppress("DEPRECATION")
+    @Deprecated("Testing deprecated function")
     @Test fun `toPxFloat converts via Int-toFloat`() {
         assertThat(testPxInt.toPxFloat().value)
             .isEqualTo(testInput.toFloat())

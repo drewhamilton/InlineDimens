@@ -82,6 +82,23 @@ class PxTest {
     @Test fun `toString returns well-formatted unit`() =
         assertThat(testPx.toString()).isEqualTo("98325.3px")
 
+    @Test fun `toSize with normal value rounds value`() =
+        assertThat(testPx.toSize().value).isEqualTo(98325)
+
+    @Test fun `toSize with low value resolves to one`() =
+        assertThat(0.3.px.toSize().value).isEqualTo(1)
+
+    @Test fun `toSize with value zero resolves to zero`() =
+        assertThat(0f.px.toSize().value).isEqualTo(0)
+
+    @Test fun `toSize with low negative value resolves to negative one`() =
+        assertThat(-0.1.px.toSize().value).isEqualTo(-1)
+
+    @Test fun `toOffset converts via Float-toInt`() =
+        assertThat(testPx.toOffset().value).isEqualTo(testInput.toInt())
+
+    @Suppress("DEPRECATION")
+    @Deprecated("Testing deprecated function")
     @Test fun `toPxInt converts via Float-toInt`() =
         assertThat(testPx.toPxInt().value).isEqualTo(testInput.toInt())
 

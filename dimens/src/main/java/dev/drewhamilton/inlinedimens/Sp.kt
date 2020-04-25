@@ -3,6 +3,7 @@ package dev.drewhamilton.inlinedimens
 import android.content.Context
 import android.content.res.Resources
 import android.util.DisplayMetrics
+import kotlin.math.roundToInt
 
 /**
  * The floating-point representation of sp dimens.
@@ -67,9 +68,34 @@ inline val Float.sp: Sp get() = Sp(this)
 inline val Double.sp get() = Sp(this.toFloat())
 
 /**
+ * Convert a floating-point sp dimen to an integer sp dimen by converting the value to a size.
+ *
+ * A size conversion involves rounding the base value and ensuring that a non-zero base value is at least one sp.
+ */
+fun Sp.toSize(): SpInt {
+    val rounded = value.roundToInt()
+    val size = when {
+        rounded != 0 -> rounded
+        value == 0f -> 0
+        value > 0f -> 1
+        else -> -1
+    }
+    return SpInt(size)
+}
+
+/**
+ * Convert a floating-point sp dimen to an integer sp dimen by simply truncating the base value.
+ */
+fun Sp.toOffset() = SpInt(value.toInt())
+
+/**
  * Convert [this] to an integer sp dimen.
  */
-fun Sp.toSpInt() = SpInt(value.toInt())
+@Deprecated(
+    message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
+    replaceWith = ReplaceWith("toOffset()")
+)
+fun Sp.toSpInt() = toOffset()
 
 /**
  * Multiply a scalar by an [Sp].

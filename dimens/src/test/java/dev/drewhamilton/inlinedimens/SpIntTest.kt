@@ -82,6 +82,11 @@ class SpIntTest {
     @Test fun `toString returns well-formatted unit`() =
         assertThat(testSpInt.toString()).isEqualTo("932sp")
 
+    @Test fun `exact converts via Int-toFloat`() =
+        assertThat(testSpInt.exact().value).isEqualTo(testInput.toFloat())
+
+    @Suppress("DEPRECATION")
+    @Deprecated("Testing deprecated function")
     @Test fun `toDpFloat converts via Int-toFloat`() {
         assertThat(testSpInt.toSpFloat().value)
             .isEqualTo(testInput.toFloat())

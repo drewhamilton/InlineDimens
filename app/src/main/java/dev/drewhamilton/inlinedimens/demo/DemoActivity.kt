@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import dev.drewhamilton.inlinedimens.demo.databinding.DemoBinding
 import dev.drewhamilton.inlinedimens.graphics.PxPoint
 import dev.drewhamilton.inlinedimens.toDp
-import dev.drewhamilton.inlinedimens.toDpInt
-import dev.drewhamilton.inlinedimens.toPxInt
-import dev.drewhamilton.inlinedimens.toSpInt
+import dev.drewhamilton.inlinedimens.toSize
 import dev.drewhamilton.inlinedimens.view.getRealSize
 import dev.drewhamilton.inlinedimens.widget.textSizeDp
 import dev.drewhamilton.inlinedimens.widget.textSizePx
@@ -29,17 +27,17 @@ class DemoActivity : AppCompatActivity() {
 
         val screenWidth = screenSize.x
         val screenWidthPx: Int = screenWidth.value
-        val screenWidthDp: Int = screenWidth.toDp().toDpInt().value
+        val screenWidthDp: Int = screenWidth.toDp().toSize().value
         binding.screenWidthView.text = getString(R.string.screenWidth, screenWidthPx, screenWidthDp)
 
         val screenHeight = screenSize.y
         val screenHeightPx: Int = screenHeight.value
-        val screenHeightDp: Int = screenHeight.toDp().toDpInt().value
+        val screenHeightDp: Int = screenHeight.toDp().toSize().value
         binding.screenHeightView.text = getString(R.string.screenHeight, screenHeightPx, screenHeightDp)
 
-        val textSizePx: Int = binding.textSizeView.textSizePx.toPxInt().value
-        val textSizeDp: Int = binding.textSizeView.textSizeDp.toDpInt().value
-        val textSizeSp: Int = binding.textSizeView.textSizeSp.toSpInt().value
+        val textSizePx: Int = binding.textSizeView.textSizePx.toSize().value
+        val textSizeDp: Int = binding.textSizeView.textSizeDp.toSize().value
+        val textSizeSp: Int = binding.textSizeView.textSizeSp.toSize().value
         binding.textSizeView.text = getString(R.string.textSize, textSizePx, textSizeDp, textSizeSp)
     }
 

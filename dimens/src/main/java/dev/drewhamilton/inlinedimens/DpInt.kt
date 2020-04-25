@@ -66,7 +66,16 @@ inline val Int.dp get() = DpInt(this)
 /**
  * Convert an integer dp dimen to a floating-point dp dimen.
  */
-fun DpInt.toDpFloat() = Dp(value.toFloat())
+fun DpInt.exact() = Dp(value.toFloat())
+
+/**
+ * Convert an integer dp dimen to a floating-point dp dimen.
+ */
+@Deprecated(
+    message = "Replaced with DpInt.exact()",
+    replaceWith = ReplaceWith("exact()")
+)
+fun DpInt.toDpFloat() = exact()
 
 /**
  * Multiply a scalar by a [DpInt].
@@ -132,7 +141,7 @@ fun DpInt.toPx(resources: Resources) = toPx(resources.displayMetrics)
 /**
  * Convert [this] dp value to px based on [displayMetrics].
  */
-fun DpInt.toPx(displayMetrics: DisplayMetrics) = toDpFloat().toPx(displayMetrics.density)
+fun DpInt.toPx(displayMetrics: DisplayMetrics) = exact().toPx(displayMetrics.density)
 //endregion
 
 //region toSp
@@ -154,7 +163,7 @@ fun DpInt.toSp(resources: Resources) = toSp(resources.displayMetrics)
 /**
  * Convert [this] dp value to sp based on [displayMetrics].
  */
-fun DpInt.toSp(displayMetrics: DisplayMetrics) = toDpFloat().toSp(
+fun DpInt.toSp(displayMetrics: DisplayMetrics) = exact().toSp(
     density = displayMetrics.density,
     scaledDensity = displayMetrics.scaledDensity
 )

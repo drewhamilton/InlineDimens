@@ -82,6 +82,11 @@ class DpIntTest {
     @Test fun `toString returns well-formatted unit`() =
         assertThat(testDpInt.toString()).isEqualTo("24dp")
 
+    @Test fun `exact converts via Int-toFloat`() =
+        assertThat(testDpInt.exact().value).isEqualTo(testInput.toFloat())
+
+    @Suppress("DEPRECATION")
+    @Deprecated("Testing deprecated function")
     @Test fun `toDpFloat converts via Int-toFloat`() =
         assertThat(testDpInt.toDpFloat().value).isEqualTo(testInput.toFloat())
 

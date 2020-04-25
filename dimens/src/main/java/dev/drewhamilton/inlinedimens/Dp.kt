@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.util.DisplayMetrics
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.roundToInt
 
 /**
  * The floating-point representation of dp dimens.
@@ -69,9 +70,34 @@ inline val Float.dp get() = Dp(this)
 inline val Double.dp get() = Dp(this.toFloat())
 
 /**
+ * Convert a floating-point dp dimen to an integer dp dimen by converting the value to a size.
+ *
+ * A size conversion involves rounding the base value and ensuring that a non-zero base value is at least one dp.
+ */
+fun Dp.toSize(): DpInt {
+    val rounded = value.roundToInt()
+    val size = when {
+        rounded != 0 -> rounded
+        value == 0f -> 0
+        value > 0f -> 1
+        else -> -1
+    }
+    return DpInt(size)
+}
+
+/**
+ * Convert a floating-point dp dimen to an integer dp dimen by simply truncating the base value.
+ */
+fun Dp.toOffset() = DpInt(value.toInt())
+
+/**
  * Convert a floating-point dp dimen to an integer dp dimen.
  */
-fun Dp.toDpInt() = DpInt(value.toInt())
+@Deprecated(
+    message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
+    replaceWith = ReplaceWith("toOffset()")
+)
+fun Dp.toDpInt() = toOffset()
 
 /**
  * Multiply a scalar by a [Dp].

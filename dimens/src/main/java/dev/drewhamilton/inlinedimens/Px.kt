@@ -3,6 +3,7 @@ package dev.drewhamilton.inlinedimens
 import android.content.Context
 import android.content.res.Resources
 import android.util.DisplayMetrics
+import kotlin.math.roundToInt
 
 /**
  * The floating-point representation of px dimens.
@@ -67,9 +68,34 @@ inline val Float.px get() = Px(this)
 inline val Double.px get() = Px(this.toFloat())
 
 /**
+ * Convert a floating-point px dimen to an integer px dimen by converting the value to a size.
+ *
+ * A size conversion involves rounding the base value and ensuring that a non-zero base value is at least one px.
+ */
+fun Px.toSize(): PxInt {
+    val rounded = value.roundToInt()
+    val size = when {
+        rounded != 0 -> rounded
+        value == 0f -> 0
+        value > 0f -> 1
+        else -> -1
+    }
+    return PxInt(size)
+}
+
+/**
+ * Convert a floating-point px dimen to an integer px dimen by simply truncating the base value.
+ */
+fun Px.toOffset() = PxInt(value.toInt())
+
+/**
  * Convert [this] to an integer px dimen.
  */
-fun Px.toPxInt() = PxInt(value.toInt())
+@Deprecated(
+    message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
+    replaceWith = ReplaceWith("toOffset()")
+)
+fun Px.toPxInt() = toOffset()
 
 /**
  * Multiply a scalar by a [Px].
