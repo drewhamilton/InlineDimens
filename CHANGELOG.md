@@ -1,20 +1,31 @@
 # Changelog
 
+## 0.6.2
+_2020-04-25_
+
+Add operator functions to all dimension types, so arithmetic can be performed with them.
+
+Deprecate `toDpFloat` and `toDpInt` in favor of more precisely named `exact` and `toOffset`,
+respectively. Add `toSize` with similar rounding functionality to Android's
+`Resources.getDimensionPixelSize`.
+
+Update to Kotlin 1.3.72.
+
 ## 0.6.1
 _2020-02-23_
 
-Added extension properties on Int and Float for a nice dimen declaration syntax (e.g. `16.dp`,
+Add extension properties on Int and Float for a nice dimen declaration syntax (e.g. `16.dp`,
 `24f.px`).
 
 ## 0.6.0
 _2020-02-10_
 
-Moved to Maven Central. Changed group name and package name to `dev.drewhamilton.inlinedimens`.
+Move to Maven Central. Changed group name and package name to `dev.drewhamilton.inlinedimens`.
 
 ## 0.5.3
 _2019-10-7_
 
-Added basic LayoutParams extensions for height, width, and margins.
+Add basic LayoutParams extensions for height, width, and margins.
 
 ## 0.5.2
 _2019-10-6_
@@ -26,31 +37,31 @@ _2019-10-6_
 ## 0.5.1
 _2019-8-17_
 
-* Removed internal `Dimen` and `DimenInt` interfaces, which caused unwanted boxing in some
+* Remove internal `Dimen` and `DimenInt` interfaces, which caused unwanted boxing in some
   functions.
-* Removed `@file:JvmName` tags, as inline classes are unusable from Java anyway.
+* Remove `@file:JvmName` tags, as inline classes are unusable from Java anyway.
 
 ## 0.5.0
 _2019-8-16_
 
-Added extensions for public View dimension-related functions.
+Add extensions for public View dimension-related functions.
 
 ## 0.4.0
 _2019-8-6_
 
-Added parameter-free conversion methods, e.g. `Px.toDp()`.
+Add parameter-free conversion methods, e.g. `Px.toDp()`.
 
 ## 0.3.0
 _2019-8-4_
 
-* Added `Display` extensions.
-* Redesigned text size extensions.
-* Removed `BuildConfig`.
+* Add `Display` extensions.
+* Redesign text size extensions.
+* Remov `BuildConfig`.
 
 ## 0.2.0
 _2019-6-26_
 
-Added TextView extensions.
+Add TextView extensions.
 
 ## 0.1.0
 _2019-6-25_
