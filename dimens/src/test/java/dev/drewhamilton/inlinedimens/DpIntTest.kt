@@ -25,7 +25,7 @@ class DpIntTest {
         assertThat(testDpInt / 2).isEqualTo(Dp(testInput / 2f))
 
     @Test fun `div with DpInt divides into scalar`() =
-        assertThat(testDpInt / 3.dp).isEqualTo(testInput / 3)
+        assertThat(testDpInt / 3.dp).isEqualTo(testInput.toFloat() / 3)
 
     @Test fun `times with float multiplies DpInt by scalar`() =
         assertThat(testDpInt * 2.1f).isEqualTo(Dp(testInput * 2.1f))
@@ -78,6 +78,9 @@ class DpIntTest {
     @Test fun `coerceAtMost over maximum value chooses maximum value`() =
         assertThat(34.dp.coerceAtMost(9.dp)).isEqualTo(9.dp)
     //endregion
+
+    @Test fun `toString returns well-formatted unit`() =
+        assertThat(testDpInt.toString()).isEqualTo("24dp")
 
     @Test fun `toDpFloat converts via Int-toFloat`() =
         assertThat(testDpInt.toDpFloat().value).isEqualTo(testInput.toFloat())
