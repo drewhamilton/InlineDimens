@@ -1,0 +1,461 @@
+public final class dev/drewhamilton/inlinedimens/Dp {
+	public static final synthetic fun box-impl (F)Ldev/drewhamilton/inlinedimens/Dp;
+	public static fun constructor-impl (F)F
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (FLjava/lang/Object;)Z
+	public static final fun equals-impl0 (FF)Z
+	public final fun getValue ()F
+	public fun hashCode ()I
+	public static fun hashCode-impl (F)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (F)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()F
+}
+
+public final class dev/drewhamilton/inlinedimens/DpInt {
+	public static final synthetic fun box-impl (I)Ldev/drewhamilton/inlinedimens/DpInt;
+	public static fun constructor-impl (I)I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (ILjava/lang/Object;)Z
+	public static final fun equals-impl0 (II)Z
+	public final fun getValue ()I
+	public fun hashCode ()I
+	public static fun hashCode-impl (I)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()I
+}
+
+public final class dev/drewhamilton/inlinedimens/DpIntKt {
+	public static final fun getDp (I)I
+	public static final fun toDpFloat-JGqSb5Y (I)F
+	public static final fun toPx-E--pNc0 (ILandroid/content/res/Resources;)F
+	public static final fun toPx-JGqSb5Y (I)F
+	public static final fun toPx-v7WwyZA (ILandroid/util/DisplayMetrics;)F
+	public static final fun toPx-xsekgGA (ILandroid/content/Context;)F
+	public static final fun toSp-E--pNc0 (ILandroid/content/res/Resources;)F
+	public static final fun toSp-JGqSb5Y (I)F
+	public static final fun toSp-v7WwyZA (ILandroid/util/DisplayMetrics;)F
+	public static final fun toSp-xsekgGA (ILandroid/content/Context;)F
+}
+
+public final class dev/drewhamilton/inlinedimens/DpKt {
+	public static final fun getDp (F)F
+	public static final fun toDpInt-TnY8d-w (F)I
+	public static final fun toPx-2n9RM2o (FLandroid/content/res/Resources;)F
+	public static final fun toPx-N4qJS8Q (FLandroid/content/Context;)F
+	public static final fun toPx-TnY8d-w (F)F
+	public static final fun toPx-wRUKyM8 (FLandroid/util/DisplayMetrics;)F
+	public static final fun toSp-2n9RM2o (FLandroid/content/res/Resources;)F
+	public static final fun toSp-N4qJS8Q (FLandroid/content/Context;)F
+	public static final fun toSp-TnY8d-w (F)F
+	public static final fun toSp-wRUKyM8 (FLandroid/util/DisplayMetrics;)F
+}
+
+public final class dev/drewhamilton/inlinedimens/Px {
+	public static final synthetic fun box-impl (F)Ldev/drewhamilton/inlinedimens/Px;
+	public static fun constructor-impl (F)F
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (FLjava/lang/Object;)Z
+	public static final fun equals-impl0 (FF)Z
+	public final fun getValue ()F
+	public fun hashCode ()I
+	public static fun hashCode-impl (F)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (F)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()F
+}
+
+public final class dev/drewhamilton/inlinedimens/PxInt {
+	public static final synthetic fun box-impl (I)Ldev/drewhamilton/inlinedimens/PxInt;
+	public static fun constructor-impl (I)I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (ILjava/lang/Object;)Z
+	public static final fun equals-impl0 (II)Z
+	public final fun getValue ()I
+	public fun hashCode ()I
+	public static fun hashCode-impl (I)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()I
+}
+
+public final class dev/drewhamilton/inlinedimens/PxIntKt {
+	public static final fun getPx (I)I
+	public static final fun toDp-212CMWg (I)F
+	public static final fun toDp-8E7TeWs (ILandroid/content/Context;)F
+	public static final fun toDp-8LDateQ (ILandroid/util/DisplayMetrics;)F
+	public static final fun toDp-JwHxCbE (ILandroid/content/res/Resources;)F
+	public static final fun toPxFloat-212CMWg (I)F
+	public static final fun toSp-212CMWg (I)F
+	public static final fun toSp-8E7TeWs (ILandroid/content/Context;)F
+	public static final fun toSp-8LDateQ (ILandroid/util/DisplayMetrics;)F
+	public static final fun toSp-JwHxCbE (ILandroid/content/res/Resources;)F
+}
+
+public final class dev/drewhamilton/inlinedimens/PxKt {
+	public static final fun getPx (F)F
+	public static final fun toDp--OFvtLY (F)F
+	public static final fun toDp-76TUCtA (FLandroid/content/res/Resources;)F
+	public static final fun toDp-VmHXAts (FLandroid/util/DisplayMetrics;)F
+	public static final fun toDp-_p0n2bw (FLandroid/content/Context;)F
+	public static final fun toPxInt--OFvtLY (F)I
+	public static final fun toSp--OFvtLY (F)F
+	public static final fun toSp-76TUCtA (FLandroid/content/res/Resources;)F
+	public static final fun toSp-VmHXAts (FLandroid/util/DisplayMetrics;)F
+	public static final fun toSp-_p0n2bw (FLandroid/content/Context;)F
+}
+
+public final class dev/drewhamilton/inlinedimens/Sp {
+	public static final synthetic fun box-impl (F)Ldev/drewhamilton/inlinedimens/Sp;
+	public static fun constructor-impl (F)F
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (FLjava/lang/Object;)Z
+	public static final fun equals-impl0 (FF)Z
+	public final fun getValue ()F
+	public fun hashCode ()I
+	public static fun hashCode-impl (F)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (F)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()F
+}
+
+public final class dev/drewhamilton/inlinedimens/SpInt {
+	public static final synthetic fun box-impl (I)Ldev/drewhamilton/inlinedimens/SpInt;
+	public static fun constructor-impl (I)I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (ILjava/lang/Object;)Z
+	public static final fun equals-impl0 (II)Z
+	public final fun getValue ()I
+	public fun hashCode ()I
+	public static fun hashCode-impl (I)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()I
+}
+
+public final class dev/drewhamilton/inlinedimens/SpIntKt {
+	public static final fun getSp (I)I
+	public static final fun toDp-1syhwGc (I)F
+	public static final fun toDp-gDSzB2M (ILandroid/util/DisplayMetrics;)F
+	public static final fun toDp-vqDsFVU (ILandroid/content/res/Resources;)F
+	public static final fun toDp-zQWEt_o (ILandroid/content/Context;)F
+	public static final fun toPx-1syhwGc (I)F
+	public static final fun toPx-gDSzB2M (ILandroid/util/DisplayMetrics;)F
+	public static final fun toPx-vqDsFVU (ILandroid/content/res/Resources;)F
+	public static final fun toPx-zQWEt_o (ILandroid/content/Context;)F
+	public static final fun toSpFloat-1syhwGc (I)F
+}
+
+public final class dev/drewhamilton/inlinedimens/SpKt {
+	public static final fun getSp (F)F
+	public static final fun toDp-5IIdePQ (FLandroid/content/res/Resources;)F
+	public static final fun toDp-EYuHYtE (F)F
+	public static final fun toDp-Y7tHPgs (FLandroid/content/Context;)F
+	public static final fun toDp-drTqqUg (FLandroid/util/DisplayMetrics;)F
+	public static final fun toPx-5IIdePQ (FLandroid/content/res/Resources;)F
+	public static final fun toPx-EYuHYtE (F)F
+	public static final fun toPx-Y7tHPgs (FLandroid/content/Context;)F
+	public static final fun toPx-drTqqUg (FLandroid/util/DisplayMetrics;)F
+	public static final fun toSpInt-EYuHYtE (F)I
+}
+
+public final class dev/drewhamilton/inlinedimens/arrays/DpIntArray {
+	public static final synthetic fun box-impl ([I)Ldev/drewhamilton/inlinedimens/arrays/DpIntArray;
+	public static fun constructor-impl (ILkotlin/jvm/functions/Function1;)[I
+	public static fun constructor-impl ([I)[I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl ([ILjava/lang/Object;)Z
+	public static final fun equals-impl0 ([I[I)Z
+	public static final fun get-impl ([II)I
+	public static final fun getSize-impl ([I)I
+	public fun hashCode ()I
+	public static fun hashCode-impl ([I)I
+	public static final fun iterator-impl ([I)Lkotlin/collections/IntIterator;
+	public static final fun set-0rjQs0g ([III)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl ([I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()[I
+}
+
+public final class dev/drewhamilton/inlinedimens/arrays/DpIntArrayKt {
+	public static final fun toDpIntArray ([Ldev/drewhamilton/inlinedimens/DpInt;)[I
+}
+
+public final class dev/drewhamilton/inlinedimens/arrays/PxIntArray {
+	public static final synthetic fun box-impl ([I)Ldev/drewhamilton/inlinedimens/arrays/PxIntArray;
+	public static fun constructor-impl (ILkotlin/jvm/functions/Function1;)[I
+	public static fun constructor-impl ([I)[I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl ([ILjava/lang/Object;)Z
+	public static final fun equals-impl0 ([I[I)Z
+	public static final fun get-impl ([II)I
+	public static final fun getSize-impl ([I)I
+	public fun hashCode ()I
+	public static fun hashCode-impl ([I)I
+	public static final fun iterator-impl ([I)Lkotlin/collections/IntIterator;
+	public static final fun set-sdGWOLU ([III)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl ([I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()[I
+}
+
+public final class dev/drewhamilton/inlinedimens/arrays/PxIntArrayKt {
+	public static final fun toPxIntArray ([Ldev/drewhamilton/inlinedimens/PxInt;)[I
+}
+
+public final class dev/drewhamilton/inlinedimens/arrays/SpIntArray {
+	public static final synthetic fun box-impl ([I)Ldev/drewhamilton/inlinedimens/arrays/SpIntArray;
+	public static fun constructor-impl (ILkotlin/jvm/functions/Function1;)[I
+	public static fun constructor-impl ([I)[I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl ([ILjava/lang/Object;)Z
+	public static final fun equals-impl0 ([I[I)Z
+	public static final fun get-impl ([II)I
+	public static final fun getSize-impl ([I)I
+	public fun hashCode ()I
+	public static fun hashCode-impl ([I)I
+	public static final fun iterator-impl ([I)Lkotlin/collections/IntIterator;
+	public static final fun set-nuGhLN0 ([III)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl ([I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()[I
+}
+
+public final class dev/drewhamilton/inlinedimens/arrays/SpIntArrayKt {
+	public static final fun toSpIntArray ([Ldev/drewhamilton/inlinedimens/SpInt;)[I
+}
+
+public final class dev/drewhamilton/inlinedimens/content/res/ResourcesKt {
+	public static final fun getDimensionPx (Landroid/content/res/Resources;I)F
+	public static final fun getDimensionPxOffset (Landroid/content/res/Resources;I)I
+	public static final fun getDimensionPxSize (Landroid/content/res/Resources;I)I
+}
+
+public final class dev/drewhamilton/inlinedimens/graphics/PxPoint {
+	public static final synthetic fun box-impl (Landroid/graphics/Point;)Ldev/drewhamilton/inlinedimens/graphics/PxPoint;
+	public static fun constructor-impl ()Landroid/graphics/Point;
+	public static fun constructor-impl (II)Landroid/graphics/Point;
+	public static fun constructor-impl (Landroid/graphics/Point;)Landroid/graphics/Point;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Landroid/graphics/Point;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Landroid/graphics/Point;Landroid/graphics/Point;)Z
+	public static final fun getX-impl (Landroid/graphics/Point;)I
+	public static final fun getY-impl (Landroid/graphics/Point;)I
+	public fun hashCode ()I
+	public static fun hashCode-impl (Landroid/graphics/Point;)I
+	public static final fun setX-212CMWg (Landroid/graphics/Point;I)V
+	public static final fun setY-212CMWg (Landroid/graphics/Point;I)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Landroid/graphics/Point;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Landroid/graphics/Point;
+}
+
+public final class dev/drewhamilton/inlinedimens/graphics/PxRect {
+	public static final synthetic fun box-impl (Landroid/graphics/Rect;)Ldev/drewhamilton/inlinedimens/graphics/PxRect;
+	public static fun constructor-impl ()Landroid/graphics/Rect;
+	public static fun constructor-impl (IIII)Landroid/graphics/Rect;
+	public static fun constructor-impl (Landroid/graphics/Rect;)Landroid/graphics/Rect;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Landroid/graphics/Rect;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+	public static final fun getBottom-impl (Landroid/graphics/Rect;)I
+	public static final fun getLeft-impl (Landroid/graphics/Rect;)I
+	public static final fun getRight-impl (Landroid/graphics/Rect;)I
+	public static final fun getTop-impl (Landroid/graphics/Rect;)I
+	public fun hashCode ()I
+	public static fun hashCode-impl (Landroid/graphics/Rect;)I
+	public static final fun setBottom-212CMWg (Landroid/graphics/Rect;I)V
+	public static final fun setLeft-212CMWg (Landroid/graphics/Rect;I)V
+	public static final fun setRight-212CMWg (Landroid/graphics/Rect;I)V
+	public static final fun setTop-212CMWg (Landroid/graphics/Rect;I)V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Landroid/graphics/Rect;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Landroid/graphics/Rect;
+}
+
+public final class dev/drewhamilton/inlinedimens/iterators/DpIntIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final synthetic fun box-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/iterators/DpIntIterator;
+	public static fun constructor-impl (Lkotlin/collections/IntIterator;)Lkotlin/collections/IntIterator;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Lkotlin/collections/IntIterator;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Lkotlin/collections/IntIterator;Lkotlin/collections/IntIterator;)Z
+	public fun hasNext ()Z
+	public static fun hasNext-impl (Lkotlin/collections/IntIterator;)Z
+	public fun hashCode ()I
+	public static fun hashCode-impl (Lkotlin/collections/IntIterator;)I
+	public fun next ()Ldev/drewhamilton/inlinedimens/DpInt;
+	public synthetic fun next ()Ljava/lang/Object;
+	public static fun next-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/DpInt;
+	public static final fun nextDpInt-impl (Lkotlin/collections/IntIterator;)I
+	public fun remove ()V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Lkotlin/collections/IntIterator;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Lkotlin/collections/IntIterator;
+}
+
+public final class dev/drewhamilton/inlinedimens/iterators/PxIntIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final synthetic fun box-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/iterators/PxIntIterator;
+	public static fun constructor-impl (Lkotlin/collections/IntIterator;)Lkotlin/collections/IntIterator;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Lkotlin/collections/IntIterator;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Lkotlin/collections/IntIterator;Lkotlin/collections/IntIterator;)Z
+	public fun hasNext ()Z
+	public static fun hasNext-impl (Lkotlin/collections/IntIterator;)Z
+	public fun hashCode ()I
+	public static fun hashCode-impl (Lkotlin/collections/IntIterator;)I
+	public fun next ()Ldev/drewhamilton/inlinedimens/PxInt;
+	public synthetic fun next ()Ljava/lang/Object;
+	public static fun next-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/PxInt;
+	public static final fun nextPxInt-impl (Lkotlin/collections/IntIterator;)I
+	public fun remove ()V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Lkotlin/collections/IntIterator;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Lkotlin/collections/IntIterator;
+}
+
+public final class dev/drewhamilton/inlinedimens/iterators/SpIntIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final synthetic fun box-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/iterators/SpIntIterator;
+	public static fun constructor-impl (Lkotlin/collections/IntIterator;)Lkotlin/collections/IntIterator;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Lkotlin/collections/IntIterator;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Lkotlin/collections/IntIterator;Lkotlin/collections/IntIterator;)Z
+	public fun hasNext ()Z
+	public static fun hasNext-impl (Lkotlin/collections/IntIterator;)Z
+	public fun hashCode ()I
+	public static fun hashCode-impl (Lkotlin/collections/IntIterator;)I
+	public fun next ()Ldev/drewhamilton/inlinedimens/SpInt;
+	public synthetic fun next ()Ljava/lang/Object;
+	public static fun next-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/SpInt;
+	public static final fun nextSpInt-impl (Lkotlin/collections/IntIterator;)I
+	public fun remove ()V
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Lkotlin/collections/IntIterator;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Lkotlin/collections/IntIterator;
+}
+
+public final class dev/drewhamilton/inlinedimens/view/DisplayKt {
+	public static final fun getCurrentSizeRange-bUqLTP4 (Landroid/view/Display;Landroid/graphics/Point;Landroid/graphics/Point;)V
+	public static final fun getRealSize-5wDL54I (Landroid/view/Display;Landroid/graphics/Point;)V
+	public static final fun getRectSize-rYMRKHY (Landroid/view/Display;Landroid/graphics/Rect;)V
+	public static final fun getSize-5wDL54I (Landroid/view/Display;Landroid/graphics/Point;)V
+}
+
+public final class dev/drewhamilton/inlinedimens/view/ViewGroupKt {
+	public static final fun getBottomMarginPx (Landroid/view/ViewGroup$MarginLayoutParams;)I
+	public static final fun getEndMarginPx (Landroid/view/ViewGroup$MarginLayoutParams;)I
+	public static final fun getHeightPx (Landroid/view/ViewGroup$LayoutParams;)I
+	public static final fun getLeftMarginPx (Landroid/view/ViewGroup$MarginLayoutParams;)I
+	public static final fun getRightMarginPx (Landroid/view/ViewGroup$MarginLayoutParams;)I
+	public static final fun getStartMarginPx (Landroid/view/ViewGroup$MarginLayoutParams;)I
+	public static final fun getTopMarginPx (Landroid/view/ViewGroup$MarginLayoutParams;)I
+	public static final fun getWidthPx (Landroid/view/ViewGroup$LayoutParams;)I
+	public static final fun setBottomMarginPx-GOH4pUQ (Landroid/view/ViewGroup$MarginLayoutParams;I)V
+	public static final fun setEndMarginPx-GOH4pUQ (Landroid/view/ViewGroup$MarginLayoutParams;I)V
+	public static final fun setHeightPx-xOpMNXI (Landroid/view/ViewGroup$LayoutParams;I)V
+	public static final fun setLeftMarginPx-GOH4pUQ (Landroid/view/ViewGroup$MarginLayoutParams;I)V
+	public static final fun setMargins-QpfkvAU (Landroid/view/ViewGroup$MarginLayoutParams;IIII)V
+	public static final fun setRightMarginPx-GOH4pUQ (Landroid/view/ViewGroup$MarginLayoutParams;I)V
+	public static final fun setStartMarginPx-GOH4pUQ (Landroid/view/ViewGroup$MarginLayoutParams;I)V
+	public static final fun setTopMarginPx-GOH4pUQ (Landroid/view/ViewGroup$MarginLayoutParams;I)V
+	public static final fun setWidthPx-xOpMNXI (Landroid/view/ViewGroup$LayoutParams;I)V
+}
+
+public final class dev/drewhamilton/inlinedimens/view/ViewKt {
+	public static final fun dispatchNestedPreScroll-KjnX2ak (Landroid/view/View;II[I[I)Z
+	public static synthetic fun dispatchNestedPreScroll-KjnX2ak$default (Landroid/view/View;II[I[IILjava/lang/Object;)Z
+	public static final fun dispatchNestedScroll-MgoymRI (Landroid/view/View;IIII[I)Z
+	public static synthetic fun dispatchNestedScroll-MgoymRI$default (Landroid/view/View;IIII[IILjava/lang/Object;)Z
+	public static final fun getBottomPx (Landroid/view/View;)I
+	public static final fun getCameraDistancePx (Landroid/view/View;)F
+	public static final fun getDrawingRect-cBY2M5Y (Landroid/view/View;Landroid/graphics/Rect;)V
+	public static final fun getElevationPx (Landroid/view/View;)F
+	public static final fun getHeightPx (Landroid/view/View;)I
+	public static final fun getHorizontalFadingEdgeLengthPx (Landroid/view/View;)I
+	public static final fun getLeftPx (Landroid/view/View;)I
+	public static final fun getLocationInWindow-oAK__lQ (Landroid/view/View;[I)V
+	public static final fun getLocationOnScreen-oAK__lQ (Landroid/view/View;[I)V
+	public static final fun getMinimumHeightPx (Landroid/view/View;)I
+	public static final fun getMinimumWidthPx (Landroid/view/View;)I
+	public static final fun getPaddingBottomPx (Landroid/view/View;)I
+	public static final fun getPaddingEndPx (Landroid/view/View;)I
+	public static final fun getPaddingLeftPx (Landroid/view/View;)I
+	public static final fun getPaddingRightPx (Landroid/view/View;)I
+	public static final fun getPaddingStartPx (Landroid/view/View;)I
+	public static final fun getPaddingTopPx (Landroid/view/View;)I
+	public static final fun getRightPx (Landroid/view/View;)I
+	public static final fun getScrollXPx (Landroid/view/View;)I
+	public static final fun getScrollYPx (Landroid/view/View;)I
+	public static final fun getTopPx (Landroid/view/View;)I
+	public static final fun getTranslationXPx (Landroid/view/View;)F
+	public static final fun getTranslationYPx (Landroid/view/View;)F
+	public static final fun getTranslationZPx (Landroid/view/View;)F
+	public static final fun getVerticalFadingEdgeLengthPx (Landroid/view/View;)I
+	public static final fun getVerticalScrollbarWidthPx (Landroid/view/View;)I
+	public static final fun getWidthPx (Landroid/view/View;)I
+	public static final fun getXPx (Landroid/view/View;)F
+	public static final fun getYPx (Landroid/view/View;)F
+	public static final fun getZPx (Landroid/view/View;)F
+	public static final fun offsetLeftAndRight-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun offsetTopAndBottom-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun scrollBy-obwWEd0 (Landroid/view/View;II)V
+	public static synthetic fun scrollBy-obwWEd0$default (Landroid/view/View;IIILjava/lang/Object;)V
+	public static final fun setCameraDistancePx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setElevationPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setFadingEdgeLength-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun setMinimumHeightPx-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun setMinimumWidthPx-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun setPadding-YIeBUjc (Landroid/view/View;IIII)V
+	public static synthetic fun setPadding-YIeBUjc$default (Landroid/view/View;IIIIILjava/lang/Object;)V
+	public static final fun setPaddingRelative-YIeBUjc (Landroid/view/View;IIII)V
+	public static synthetic fun setPaddingRelative-YIeBUjc$default (Landroid/view/View;IIIIILjava/lang/Object;)V
+	public static final fun setScrollXPx-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun setScrollYPx-rqaLJp0 (Landroid/view/View;I)V
+	public static final fun setTranslationXPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setTranslationYPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setTranslationZPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setXPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setYPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun setZPx-zEHZlec (Landroid/view/View;F)V
+	public static final fun showContextMenu-jRrFay0 (Landroid/view/View;FF)Z
+}
+
+public final class dev/drewhamilton/inlinedimens/widget/TextViewKt {
+	public static final fun getAutoSizeMaxTextSizePx (Landroid/widget/TextView;)I
+	public static final fun getAutoSizeMinTextSizePx (Landroid/widget/TextView;)I
+	public static final fun getAutoSizeStepGranularityPx (Landroid/widget/TextView;)I
+	public static final fun getAutoSizeTextAvailableSizesPx (Landroid/widget/TextView;)[I
+	public static final fun getFirstBaselineToTopHeightPx (Landroid/widget/TextView;)I
+	public static final fun getHeightPx (Landroid/widget/TextView;)I
+	public static final fun getLastBaselineToBottomHeightPx (Landroid/widget/TextView;)I
+	public static final fun getLineHeightPx (Landroid/widget/TextView;)I
+	public static final fun getLineSpacingExtraPx (Landroid/widget/TextView;)F
+	public static final fun getMaxHeightPx (Landroid/widget/TextView;)I
+	public static final fun getMaxWidthPx (Landroid/widget/TextView;)I
+	public static final fun getMinHeightPx (Landroid/widget/TextView;)I
+	public static final fun getMinWidthPx (Landroid/widget/TextView;)I
+	public static final fun getTextSizeDp (Landroid/widget/TextView;)F
+	public static final fun getTextSizePx (Landroid/widget/TextView;)F
+	public static final fun getTextSizeSp (Landroid/widget/TextView;)F
+	public static final fun getWidthPx (Landroid/widget/TextView;)I
+	public static final fun setAutoSizeTextTypeUniformWithConfiguration--E_9MU8 (Landroid/widget/TextView;III)V
+	public static final fun setAutoSizeTextTypeUniformWithConfiguration-KnUiJD4 (Landroid/widget/TextView;III)V
+	public static final fun setAutoSizeTextTypeUniformWithConfiguration-S-xW7mI (Landroid/widget/TextView;III)V
+	public static final fun setAutoSizeTextTypeUniformWithPresetSizes-BJb5SHM (Landroid/widget/TextView;[I)V
+	public static final fun setAutoSizeTextTypeUniformWithPresetSizes-EQcXg44 (Landroid/widget/TextView;[I)V
+	public static final fun setAutoSizeTextTypeUniformWithPresetSizes-N9Kzw8s (Landroid/widget/TextView;[I)V
+	public static final fun setFirstBaselineToTopHeightPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setHeightPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setLastBaselineToBottomHeightPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setLineHeightPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setLineSpacing-ZevWcig (Landroid/widget/TextView;FF)V
+	public static final fun setMaxHeightPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setMaxWidthPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setMinHeightPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setMinWidthPx-87ND5TE (Landroid/widget/TextView;I)V
+	public static final fun setTextSizeDp-AydA90Y (Landroid/widget/TextView;F)V
+	public static final fun setTextSizePx-bdhzsOI (Landroid/widget/TextView;F)V
+	public static final fun setTextSizeSp-4Muz6Xk (Landroid/widget/TextView;F)V
+	public static final fun setWidthPx-87ND5TE (Landroid/widget/TextView;I)V
+}
+
