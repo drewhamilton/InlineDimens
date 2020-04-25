@@ -5,8 +5,8 @@ import androidx.annotation.DimenRes
 import dev.drewhamilton.inlinedimens.px
 
 /**
- * Retrieve a dimensional in px for a particular resource [id]. If the dimen is specified in dp or sp, unit conversions
- * are based on the current display metrics associated with [this] resources.
+ * Retrieve a dimen in px for a particular resource [id]. If the dimen is specified in dp or sp, unit conversions are
+ * based on the current display metrics associated with the resources.
  *
  * The value 0 is an invalid identifier. [Resources.NotFoundException] is thrown if the given [id] does not exist.
  */

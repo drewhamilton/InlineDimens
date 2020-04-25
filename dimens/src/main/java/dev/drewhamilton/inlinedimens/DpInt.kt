@@ -124,44 +124,44 @@ fun DpInt.coerceAtMost(maximumValue: DpInt) = DpInt(value.coerceAtMost(maximumVa
 
 //region toPx
 /**
- * Convert [this] dp value to px based on the system [Resources]' display metrics.
+ * Convert a dp value to px based on the system [Resources]' display metrics.
  */
 fun DpInt.toPx() = toPx(Resources.getSystem())
 
 /**
- * Convert [this] dp value to px based on [context]'s display metrics.
+ * Convert a dp value to px based on [context]'s display metrics.
  */
 fun DpInt.toPx(context: Context) = toPx(context.resources)
 
 /**
- * Convert [this] dp value to px based on [resources]' display metrics.
+ * Convert a dp value to px based on [resources]' display metrics.
  */
 fun DpInt.toPx(resources: Resources) = toPx(resources.displayMetrics)
 
 /**
- * Convert [this] dp value to px based on [displayMetrics].
+ * Convert a dp value to px based on [displayMetrics].
  */
 fun DpInt.toPx(displayMetrics: DisplayMetrics) = exact().toPx(displayMetrics.density)
 //endregion
 
 //region toSp
 /**
- * Convert [this] dp value to sp based on the system [Resources]' display metrics.
+ * Convert a dp value to sp based on the system [Resources]' display metrics.
  */
 fun DpInt.toSp() = toSp(Resources.getSystem())
 
 /**
- * Convert [this] dp value to sp based on [context]'s display metrics.
+ * Convert a dp value to sp based on [context]'s display metrics.
  */
 fun DpInt.toSp(context: Context) = toSp(context.resources)
 
 /**
- * Convert [this] dp value to sp based on [resources]' display metrics.
+ * Convert a dp value to sp based on [resources]' display metrics.
  */
 fun DpInt.toSp(resources: Resources) = toSp(resources.displayMetrics)
 
 /**
- * Convert [this] dp value to sp based on [displayMetrics].
+ * Convert a dp value to sp based on [displayMetrics].
  */
 fun DpInt.toSp(displayMetrics: DisplayMetrics) = exact().toSp(
     density = displayMetrics.density,
