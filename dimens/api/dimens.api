@@ -1,33 +1,62 @@
-public final class dev/drewhamilton/inlinedimens/Dp {
+public final class dev/drewhamilton/inlinedimens/Dp : java/lang/Comparable {
 	public static final synthetic fun box-impl (F)Ldev/drewhamilton/inlinedimens/Dp;
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public fun compareTo-TnY8d-w (F)I
+	public static fun compareTo-TnY8d-w (FF)I
 	public static fun constructor-impl (F)F
+	public static final fun div-TnY8d-w (FF)F
+	public static final fun div-impl (FF)F
+	public static final fun div-impl (FI)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (FLjava/lang/Object;)Z
 	public static final fun equals-impl0 (FF)Z
 	public final fun getValue ()F
 	public fun hashCode ()I
 	public static fun hashCode-impl (F)I
+	public static final fun minus-TnY8d-w (FF)F
+	public static final fun plus-TnY8d-w (FF)F
+	public static final fun times-impl (FF)F
+	public static final fun times-impl (FI)F
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (F)Ljava/lang/String;
+	public static final fun unaryMinus-impl (F)F
 	public final synthetic fun unbox-impl ()F
 }
 
-public final class dev/drewhamilton/inlinedimens/DpInt {
+public final class dev/drewhamilton/inlinedimens/DpInt : java/lang/Comparable {
 	public static final synthetic fun box-impl (I)Ldev/drewhamilton/inlinedimens/DpInt;
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public fun compareTo-JGqSb5Y (I)I
+	public static fun compareTo-JGqSb5Y (II)I
 	public static fun constructor-impl (I)I
+	public static final fun div-JGqSb5Y (II)F
+	public static final fun div-impl (IF)F
+	public static final fun div-impl (II)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (ILjava/lang/Object;)Z
 	public static final fun equals-impl0 (II)Z
 	public final fun getValue ()I
 	public fun hashCode ()I
 	public static fun hashCode-impl (I)I
+	public static final fun minus-JGqSb5Y (II)I
+	public static final fun plus-JGqSb5Y (II)I
+	public static final fun times-impl (IF)F
+	public static final fun times-impl (II)I
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
+	public static final fun unaryMinus-impl (I)I
 	public final synthetic fun unbox-impl ()I
 }
 
 public final class dev/drewhamilton/inlinedimens/DpIntKt {
+	public static final fun coerceAtLeast-0Bf2vQw (II)I
+	public static final fun coerceAtMost-0Bf2vQw (II)I
+	public static final fun coerceIn-pP1J9LM (III)I
 	public static final fun getDp (I)I
+	public static final fun max-0Bf2vQw (II)I
+	public static final fun min-0Bf2vQw (II)I
+	public static final fun times-0rjQs0g (II)I
+	public static final fun times-im4XvFA (FI)F
 	public static final fun toDpFloat-JGqSb5Y (I)F
 	public static final fun toPx-E--pNc0 (ILandroid/content/res/Resources;)F
 	public static final fun toPx-JGqSb5Y (I)F
@@ -40,7 +69,15 @@ public final class dev/drewhamilton/inlinedimens/DpIntKt {
 }
 
 public final class dev/drewhamilton/inlinedimens/DpKt {
+	public static final fun coerceAtLeast-4sLOSzQ (FF)F
+	public static final fun coerceAtMost-4sLOSzQ (FF)F
+	public static final fun coerceIn-GoVkSAc (FFF)F
+	public static final fun getDp (D)F
 	public static final fun getDp (F)F
+	public static final fun max-4sLOSzQ (FF)F
+	public static final fun min-4sLOSzQ (FF)F
+	public static final fun times-0bCDGXw (FF)F
+	public static final fun times-K46HDSY (IF)F
 	public static final fun toDpInt-TnY8d-w (F)I
 	public static final fun toPx-2n9RM2o (FLandroid/content/res/Resources;)F
 	public static final fun toPx-N4qJS8Q (FLandroid/content/Context;)F
@@ -52,36 +89,65 @@ public final class dev/drewhamilton/inlinedimens/DpKt {
 	public static final fun toSp-wRUKyM8 (FLandroid/util/DisplayMetrics;)F
 }
 
-public final class dev/drewhamilton/inlinedimens/Px {
+public final class dev/drewhamilton/inlinedimens/Px : java/lang/Comparable {
 	public static final synthetic fun box-impl (F)Ldev/drewhamilton/inlinedimens/Px;
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public fun compareTo--OFvtLY (F)I
+	public static fun compareTo--OFvtLY (FF)I
 	public static fun constructor-impl (F)F
+	public static final fun div--OFvtLY (FF)F
+	public static final fun div-impl (FF)F
+	public static final fun div-impl (FI)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (FLjava/lang/Object;)Z
 	public static final fun equals-impl0 (FF)Z
 	public final fun getValue ()F
 	public fun hashCode ()I
 	public static fun hashCode-impl (F)I
+	public static final fun minus--OFvtLY (FF)F
+	public static final fun plus--OFvtLY (FF)F
+	public static final fun times-impl (FF)F
+	public static final fun times-impl (FI)F
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (F)Ljava/lang/String;
+	public static final fun unaryMinus-impl (F)F
 	public final synthetic fun unbox-impl ()F
 }
 
-public final class dev/drewhamilton/inlinedimens/PxInt {
+public final class dev/drewhamilton/inlinedimens/PxInt : java/lang/Comparable {
 	public static final synthetic fun box-impl (I)Ldev/drewhamilton/inlinedimens/PxInt;
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public fun compareTo-212CMWg (I)I
+	public static fun compareTo-212CMWg (II)I
 	public static fun constructor-impl (I)I
+	public static final fun div-212CMWg (II)F
+	public static final fun div-impl (IF)F
+	public static final fun div-impl (II)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (ILjava/lang/Object;)Z
 	public static final fun equals-impl0 (II)Z
 	public final fun getValue ()I
 	public fun hashCode ()I
 	public static fun hashCode-impl (I)I
+	public static final fun minus-212CMWg (II)I
+	public static final fun plus-212CMWg (II)I
+	public static final fun times-impl (IF)F
+	public static final fun times-impl (II)I
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
+	public static final fun unaryMinus-impl (I)I
 	public final synthetic fun unbox-impl ()I
 }
 
 public final class dev/drewhamilton/inlinedimens/PxIntKt {
+	public static final fun coerceAtLeast-Oc1OQSs (II)I
+	public static final fun coerceAtMost-Oc1OQSs (II)I
+	public static final fun coerceIn-sY8d7LM (III)I
 	public static final fun getPx (I)I
+	public static final fun max-Oc1OQSs (II)I
+	public static final fun min-Oc1OQSs (II)I
+	public static final fun times-HdSBh_E (FI)F
+	public static final fun times-sdGWOLU (II)I
 	public static final fun toDp-212CMWg (I)F
 	public static final fun toDp-8E7TeWs (ILandroid/content/Context;)F
 	public static final fun toDp-8LDateQ (ILandroid/util/DisplayMetrics;)F
@@ -94,7 +160,15 @@ public final class dev/drewhamilton/inlinedimens/PxIntKt {
 }
 
 public final class dev/drewhamilton/inlinedimens/PxKt {
+	public static final fun coerceAtLeast-jsDAgHk (FF)F
+	public static final fun coerceAtMost-jsDAgHk (FF)F
+	public static final fun coerceIn-306gDXY (FFF)F
+	public static final fun getPx (D)F
 	public static final fun getPx (F)F
+	public static final fun max-jsDAgHk (FF)F
+	public static final fun min-jsDAgHk (FF)F
+	public static final fun times-WsYSclw (FF)F
+	public static final fun times-zq_et4I (IF)F
 	public static final fun toDp--OFvtLY (F)F
 	public static final fun toDp-76TUCtA (FLandroid/content/res/Resources;)F
 	public static final fun toDp-VmHXAts (FLandroid/util/DisplayMetrics;)F
@@ -106,36 +180,65 @@ public final class dev/drewhamilton/inlinedimens/PxKt {
 	public static final fun toSp-_p0n2bw (FLandroid/content/Context;)F
 }
 
-public final class dev/drewhamilton/inlinedimens/Sp {
+public final class dev/drewhamilton/inlinedimens/Sp : java/lang/Comparable {
 	public static final synthetic fun box-impl (F)Ldev/drewhamilton/inlinedimens/Sp;
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public fun compareTo-EYuHYtE (F)I
+	public static fun compareTo-EYuHYtE (FF)I
 	public static fun constructor-impl (F)F
+	public static final fun div-EYuHYtE (FF)F
+	public static final fun div-impl (FF)F
+	public static final fun div-impl (FI)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (FLjava/lang/Object;)Z
 	public static final fun equals-impl0 (FF)Z
 	public final fun getValue ()F
 	public fun hashCode ()I
 	public static fun hashCode-impl (F)I
+	public static final fun minus-EYuHYtE (FF)F
+	public static final fun plus-EYuHYtE (FF)F
+	public static final fun times-impl (FF)F
+	public static final fun times-impl (FI)F
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (F)Ljava/lang/String;
+	public static final fun unaryMinus-impl (F)F
 	public final synthetic fun unbox-impl ()F
 }
 
-public final class dev/drewhamilton/inlinedimens/SpInt {
+public final class dev/drewhamilton/inlinedimens/SpInt : java/lang/Comparable {
 	public static final synthetic fun box-impl (I)Ldev/drewhamilton/inlinedimens/SpInt;
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public fun compareTo-1syhwGc (I)I
+	public static fun compareTo-1syhwGc (II)I
 	public static fun constructor-impl (I)I
+	public static final fun div-1syhwGc (II)F
+	public static final fun div-impl (IF)F
+	public static final fun div-impl (II)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (ILjava/lang/Object;)Z
 	public static final fun equals-impl0 (II)Z
 	public final fun getValue ()I
 	public fun hashCode ()I
 	public static fun hashCode-impl (I)I
+	public static final fun minus-1syhwGc (II)I
+	public static final fun plus-1syhwGc (II)I
+	public static final fun times-impl (IF)F
+	public static final fun times-impl (II)I
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
+	public static final fun unaryMinus-impl (I)I
 	public final synthetic fun unbox-impl ()I
 }
 
 public final class dev/drewhamilton/inlinedimens/SpIntKt {
+	public static final fun coerceAtLeast-heVpChI (II)I
+	public static final fun coerceAtMost-heVpChI (II)I
+	public static final fun coerceIn-M2-9BAQ (III)I
 	public static final fun getSp (I)I
+	public static final fun max-heVpChI (II)I
+	public static final fun min-heVpChI (II)I
+	public static final fun times-QQF4nZM (FI)F
+	public static final fun times-nuGhLN0 (II)I
 	public static final fun toDp-1syhwGc (I)F
 	public static final fun toDp-gDSzB2M (ILandroid/util/DisplayMetrics;)F
 	public static final fun toDp-vqDsFVU (ILandroid/content/res/Resources;)F
@@ -148,7 +251,15 @@ public final class dev/drewhamilton/inlinedimens/SpIntKt {
 }
 
 public final class dev/drewhamilton/inlinedimens/SpKt {
+	public static final fun coerceAtLeast-9VT9SZE (FF)F
+	public static final fun coerceAtMost-9VT9SZE (FF)F
+	public static final fun coerceIn-_elg-r8 (FFF)F
+	public static final fun getSp (D)F
 	public static final fun getSp (F)F
+	public static final fun max-9VT9SZE (FF)F
+	public static final fun min-9VT9SZE (FF)F
+	public static final fun times-2kBGzMg (FF)F
+	public static final fun times-vnHTjoo (IF)F
 	public static final fun toDp-5IIdePQ (FLandroid/content/res/Resources;)F
 	public static final fun toDp-EYuHYtE (F)F
 	public static final fun toDp-Y7tHPgs (FLandroid/content/Context;)F

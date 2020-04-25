@@ -8,10 +8,82 @@ class SpTest {
     private val testInput = 234.7f
     private val testSp = testInput.sp
 
-    @Test fun `toSpInt converts via Float-toInt`() {
-        assertThat(testSp.toSpInt().value)
-            .isEqualTo(testInput.toInt())
+    //region Operators
+    @Test fun `plus adds Sp`() =
+        assertThat(testSp + testSp).isEqualTo(Sp(testInput + testInput))
+
+    @Test fun `minus subtracts Sp`() =
+        assertThat(testSp - 10f.sp).isEqualTo(Sp(testInput - 10f))
+
+    @Test fun `unaryMinus negates Sp`() =
+        assertThat(-testSp).isEqualTo(Sp(-testInput))
+
+    @Test fun `div with float divides Sp by scalar`() =
+        assertThat(testSp / 2.1f).isEqualTo(Sp(testInput / 2.1f))
+
+    @Test fun `div with integer divides Sp by scalar`() =
+        assertThat(testSp / 2).isEqualTo(Sp(testInput / 2))
+
+    @Test fun `div with Sp divides into scalar`() =
+        assertThat(testSp / 2.9.sp).isEqualTo(testInput / 2.9f)
+
+    @Test fun `times with float multiplies Sp by scalar`() =
+        assertThat(testSp * 2.1f).isEqualTo(Sp(testInput * 2.1f))
+
+    @Test fun `times with integer multiplies Sp by scalar`() =
+        assertThat(testSp * 2).isEqualTo(Sp(testInput * 2))
+
+    @Test fun `times with float receiver multiplies scalar by Sp`() =
+        assertThat(2.1f * testSp).isEqualTo(Sp(2.1f * testInput))
+
+    @Test fun `times with integer receiver multiplies scalar by Sp`() =
+        assertThat(2 * testSp).isEqualTo(Sp(2 * testInput))
+    //endregion
+
+    //region Comparisons
+    @Test fun `compareTo compares correctly`() {
+        assertThat(testSp).isGreaterThan(-testSp)
+        assertThat(-testSp).isLessThan(testSp)
+        assertThat(testSp).isEquivalentAccordingToCompareTo(testSp)
     }
+
+    @Test fun `min chooses the lower value`() {
+        assertThat(min(2f.sp, 3f.sp)).isEqualTo(2f.sp)
+        assertThat(min(2f.sp, (-3f).sp)).isEqualTo((-3f).sp)
+    }
+
+    @Test fun `max chooses the higher value`() {
+        assertThat(max(2f.sp, 3f.sp)).isEqualTo(3f.sp)
+        assertThat(max(2f.sp, (-3f).sp)).isEqualTo(2f.sp)
+    }
+
+    @Test fun `coerceIn between values chooses original value`() =
+        assertThat(3f.sp.coerceIn(0f.sp, 9f.sp)).isEqualTo(3f.sp)
+
+    @Test fun `coerceIn over maximum value chooses maximum value`() =
+        assertThat(19f.sp.coerceIn(0f.sp, 9f.sp)).isEqualTo(9f.sp)
+
+    @Test fun `coerceIn under minimum value chooses minimum value`() =
+        assertThat((-5f).sp.coerceIn(0f.sp, 9f.sp)).isEqualTo(0f.sp)
+
+    @Test fun `coerceAtLeast under minimum value chooses minimum value`() =
+        assertThat((-5f).sp.coerceAtLeast(0f.sp)).isEqualTo(0f.sp)
+
+    @Test fun `coerceAtLeast over minimum value chooses original value`() =
+        assertThat(5f.sp.coerceAtLeast(0f.sp)).isEqualTo(5f.sp)
+
+    @Test fun `coerceAtMost under maximum value chooses original value`() =
+        assertThat(5f.sp.coerceAtMost(9f.sp)).isEqualTo(5f.sp)
+
+    @Test fun `coerceAtMost over maximum value chooses maximum value`() =
+        assertThat(34f.sp.coerceAtMost(9f.sp)).isEqualTo(9f.sp)
+    //endregion
+
+    @Test fun `toString returns well-formatted unit`() =
+        assertThat(testSp.toString()).isEqualTo("234.7sp")
+
+    @Test fun `toSpInt converts via Float-toInt`() =
+        assertThat(testSp.toSpInt().value).isEqualTo(testInput.toInt())
 
     //region toPx
     @Test fun `toPx(Context) multiplies value by scaledDensity from DisplayMetrics`() {
