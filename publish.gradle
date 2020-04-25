@@ -10,7 +10,7 @@ task sourcesJar(type: Jar) {
 }
 
 def javadocDestinationDir = "$buildDir/docs/javadoc"
-apply plugin: 'org.jetbrains.dokka-android'
+apply plugin: 'org.jetbrains.dokka'
 task dokkaJavadoc(type: dokka.class) {
     outputFormat = 'javadoc'
     outputDirectory = javadocDestinationDir
