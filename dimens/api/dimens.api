@@ -52,6 +52,7 @@ public final class dev/drewhamilton/inlinedimens/DpIntKt {
 	public static final fun coerceAtLeast-0Bf2vQw (II)I
 	public static final fun coerceAtMost-0Bf2vQw (II)I
 	public static final fun coerceIn-pP1J9LM (III)I
+	public static final fun exact-JGqSb5Y (I)F
 	public static final fun getDp (I)I
 	public static final fun max-0Bf2vQw (II)I
 	public static final fun min-0Bf2vQw (II)I
@@ -79,10 +80,12 @@ public final class dev/drewhamilton/inlinedimens/DpKt {
 	public static final fun times-0bCDGXw (FF)F
 	public static final fun times-K46HDSY (IF)F
 	public static final fun toDpInt-TnY8d-w (F)I
+	public static final fun toOffset-TnY8d-w (F)I
 	public static final fun toPx-2n9RM2o (FLandroid/content/res/Resources;)F
 	public static final fun toPx-N4qJS8Q (FLandroid/content/Context;)F
 	public static final fun toPx-TnY8d-w (F)F
 	public static final fun toPx-wRUKyM8 (FLandroid/util/DisplayMetrics;)F
+	public static final fun toSize-TnY8d-w (F)I
 	public static final fun toSp-2n9RM2o (FLandroid/content/res/Resources;)F
 	public static final fun toSp-N4qJS8Q (FLandroid/content/Context;)F
 	public static final fun toSp-TnY8d-w (F)F
@@ -143,6 +146,7 @@ public final class dev/drewhamilton/inlinedimens/PxIntKt {
 	public static final fun coerceAtLeast-Oc1OQSs (II)I
 	public static final fun coerceAtMost-Oc1OQSs (II)I
 	public static final fun coerceIn-sY8d7LM (III)I
+	public static final fun exact-212CMWg (I)F
 	public static final fun getPx (I)I
 	public static final fun max-Oc1OQSs (II)I
 	public static final fun min-Oc1OQSs (II)I
@@ -173,7 +177,9 @@ public final class dev/drewhamilton/inlinedimens/PxKt {
 	public static final fun toDp-76TUCtA (FLandroid/content/res/Resources;)F
 	public static final fun toDp-VmHXAts (FLandroid/util/DisplayMetrics;)F
 	public static final fun toDp-_p0n2bw (FLandroid/content/Context;)F
+	public static final fun toOffset--OFvtLY (F)I
 	public static final fun toPxInt--OFvtLY (F)I
+	public static final fun toSize--OFvtLY (F)I
 	public static final fun toSp--OFvtLY (F)F
 	public static final fun toSp-76TUCtA (FLandroid/content/res/Resources;)F
 	public static final fun toSp-VmHXAts (FLandroid/util/DisplayMetrics;)F
@@ -234,6 +240,7 @@ public final class dev/drewhamilton/inlinedimens/SpIntKt {
 	public static final fun coerceAtLeast-heVpChI (II)I
 	public static final fun coerceAtMost-heVpChI (II)I
 	public static final fun coerceIn-M2-9BAQ (III)I
+	public static final fun exact-1syhwGc (I)F
 	public static final fun getSp (I)I
 	public static final fun max-heVpChI (II)I
 	public static final fun min-heVpChI (II)I
@@ -264,10 +271,12 @@ public final class dev/drewhamilton/inlinedimens/SpKt {
 	public static final fun toDp-EYuHYtE (F)F
 	public static final fun toDp-Y7tHPgs (FLandroid/content/Context;)F
 	public static final fun toDp-drTqqUg (FLandroid/util/DisplayMetrics;)F
+	public static final fun toOffset-EYuHYtE (F)I
 	public static final fun toPx-5IIdePQ (FLandroid/content/res/Resources;)F
 	public static final fun toPx-EYuHYtE (F)F
 	public static final fun toPx-Y7tHPgs (FLandroid/content/Context;)F
 	public static final fun toPx-drTqqUg (FLandroid/util/DisplayMetrics;)F
+	public static final fun toSize-EYuHYtE (F)I
 	public static final fun toSpInt-EYuHYtE (F)I
 }
 
