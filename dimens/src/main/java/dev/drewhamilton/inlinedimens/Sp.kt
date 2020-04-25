@@ -89,7 +89,7 @@ fun Sp.toSize(): SpInt {
 fun Sp.toOffset() = SpInt(value.toInt())
 
 /**
- * Convert [this] to an integer sp dimen.
+ * Convert an sp value to an integer sp dimen.
  */
 @Deprecated(
     message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
@@ -143,49 +143,49 @@ fun Sp.coerceAtMost(maximumValue: Sp) = Sp(value.coerceAtMost(maximumValue.value
 
 //region toPx
 /**
- * Convert [this] sp value to px based on the system [Resources]' display metrics.
+ * Convert an sp value to px based on the system [Resources]' display metrics.
  */
 fun Sp.toPx() = toPx(Resources.getSystem())
 
 /**
- * Convert [this] sp value to px based on [context]'s display metrics.
+ * Convert an sp value to px based on [context]'s display metrics.
  */
 fun Sp.toPx(context: Context) = toPx(context.resources)
 
 /**
- * Convert [this] sp value to px based on [resources]' display metrics.
+ * Convert an sp value to px based on [resources]' display metrics.
  */
 fun Sp.toPx(resources: Resources) = toPx(resources.displayMetrics)
 
 /**
- * Convert [this] sp value to px based on [displayMetrics].
+ * Convert an sp value to px based on [displayMetrics].
  */
 fun Sp.toPx(displayMetrics: DisplayMetrics) = toPx(displayMetrics.scaledDensity)
 
 /**
- * Convert [this] sp value to px based on the given [scaledDensity].
+ * Convert an sp value to px based on the given [scaledDensity].
  */
 internal fun Sp.toPx(scaledDensity: Float) = Px(value * scaledDensity)
 //endregion
 
 //region toDp
 /**
- * Convert [this] sp value to dp based on the system [Resources]' display metrics.
+ * Convert an sp value to dp based on the system [Resources]' display metrics.
  */
 fun Sp.toDp() = toDp(Resources.getSystem())
 
 /**
- * Convert [this] sp value to dp based on [context]'s display metrics.
+ * Convert an sp value to dp based on [context]'s display metrics.
  */
 fun Sp.toDp(context: Context) = toDp(context.resources)
 
 /**
- * Convert [this] sp value to dp based on [resources]' display metrics.
+ * Convert an sp value to dp based on [resources]' display metrics.
  */
 fun Sp.toDp(resources: Resources) = toDp(resources.displayMetrics)
 
 /**
- * Convert [this] sp value to dp based on [displayMetrics].
+ * Convert an sp value to dp based on [displayMetrics].
  */
 fun Sp.toDp(displayMetrics: DisplayMetrics) = toDp(
     density = displayMetrics.density,
@@ -193,7 +193,7 @@ fun Sp.toDp(displayMetrics: DisplayMetrics) = toDp(
 )
 
 /**
- * Convert [this] sp value to dp based on the given [density] and [scaledDensity].
+ * Convert an sp value to dp based on the given [density] and [scaledDensity].
  */
 internal fun Sp.toDp(density: Float, scaledDensity: Float) = Dp(value * scaledDensity / density)
 //endregion

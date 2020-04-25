@@ -89,7 +89,7 @@ fun Px.toSize(): PxInt {
 fun Px.toOffset() = PxInt(value.toInt())
 
 /**
- * Convert [this] to an integer px dimen.
+ * Convert a px value to an integer px dimen.
  */
 @Deprecated(
     message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
@@ -143,54 +143,54 @@ fun Px.coerceAtMost(maximumValue: Px) = Px(value.coerceAtMost(maximumValue.value
 
 //region toDp
 /**
- * Convert [this] px value to dp based on the system [Resources]' display metrics.
+ * Convert a px value to dp based on the system [Resources]' display metrics.
  */
 fun Px.toDp() = toDp(Resources.getSystem())
 
 /**
- * Convert [this] px value to dp based on [context]'s display metrics.
+ * Convert a px value to dp based on [context]'s display metrics.
  */
 fun Px.toDp(context: Context) = toDp(context.resources)
 
 /**
- * Convert [this] px value to dp based on [resources]' display metrics.
+ * Convert a px value to dp based on [resources]' display metrics.
  */
 fun Px.toDp(resources: Resources) = toDp(resources.displayMetrics)
 
 /**
- * Convert [this] px value to dp based on [displayMetrics].
+ * Convert a px value to dp based on [displayMetrics].
  */
 fun Px.toDp(displayMetrics: DisplayMetrics) = toDp(displayMetrics.density)
 
 /**
- * Convert [this] px value to dp based on the given [density].
+ * Convert a px value to dp based on the given [density].
  */
 internal fun Px.toDp(density: Float) = Dp(value / density)
 //endregion
 
 //region toSp
 /**
- * Convert [this] px value to sp based on the system [Resources]' display metrics.
+ * Convert a px value to sp based on the system [Resources]' display metrics.
  */
 fun Px.toSp() = toSp(Resources.getSystem())
 
 /**
- * Convert [this] px value to sp based on [context]'s display metrics.
+ * Convert a px value to sp based on [context]'s display metrics.
  */
 fun Px.toSp(context: Context) = toSp(context.resources)
 
 /**
- * Convert [this] px value to sp based on [resources]' display metrics.
+ * Convert a px value to sp based on [resources]' display metrics.
  */
 fun Px.toSp(resources: Resources) = toSp(resources.displayMetrics)
 
 /**
- * Convert [this] px value to sp based on [displayMetrics].
+ * Convert a px value to sp based on [displayMetrics].
  */
 fun Px.toSp(displayMetrics: DisplayMetrics) = toSp(displayMetrics.scaledDensity)
 
 /**
- * Convert [this] px value to sp based on the given [scaledDensity].
+ * Convert a px value to sp based on the given [scaledDensity].
  */
 internal fun Px.toSp(scaledDensity: Float) = Sp(value / scaledDensity)
 //endregion
