@@ -13,6 +13,9 @@
       <option name="XML_ATTRIBUTE_WRAP" value="2" />
       <option name="XML_KEEP_BLANK_LINES" value="1" />
     </XML>
+    <codeStyleSettings language="Markdown">
+      <option name="RIGHT_MARGIN" value="100" />
+    </codeStyleSettings>
     <codeStyleSettings language="XML">
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />

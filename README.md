@@ -1,16 +1,17 @@
 # Inline Dimens
 ![](https://github.com/drewhamilton/InlineDimens/workflows/CI/badge.svg?branch=master)
 
-Never confuse px, dp, and sp at runtime again. Inline Dimens offers a separate inline class for each dimen type,
-ensuring compile-time unit confidence without any runtime cost. Extension functions provide the ability to interact with
-the Android framework directly with these unit-safe types, and to convert between them easily.
+Never confuse px, dp, and sp at runtime again. Inline Dimens offers a separate inline class for each
+dimen type, ensuring compile-time unit confidence without any runtime cost. Extension functions
+provide the ability to interact with the Android framework directly with these unit-safe types, and
+to convert between them easily.
 
 ## Download
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.drewhamilton.inlinedimens/inlinedimens/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.drewhamilton.inlinedimens/inlinedimens)
 
-Inline Dimens is available on Maven Central. It is experimental, and the API may undergo breaking changes before version
-1.0.0.
+Inline Dimens is available on Maven Central. It is experimental, and the API may undergo breaking
+changes before version 1.0.0.
 
 To use Inline Dimens, include the following in your Gradle dependencies:
 ```groovy
@@ -30,8 +31,8 @@ android {
 }
 ```
 
-Then, work directly with unit-safe types in your code. For example, get a `TextView`'s text size in the unit of your
-choice:
+Then, work directly with unit-safe types in your code. For example, get a `TextView`'s text size in
+the unit of your choice:
 ```kotlin
 val scaledTextSize = textView.textSizeSp
 ```
@@ -41,7 +42,8 @@ And convert between different units at will:
 val textSizePx = scaledTextSize.toPx()
 ```
 
-**Note:** Inline classes don't play nicely with Java source code, so this library is unusable in Java files.
+**Note:** Inline classes don't play nicely with Java source code, so this library is unusable in
+Java files.
 
 ## License
 ```
