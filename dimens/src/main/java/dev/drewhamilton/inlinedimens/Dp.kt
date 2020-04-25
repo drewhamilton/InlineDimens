@@ -1,5 +1,3 @@
-@file:Suppress("NOTHING_TO_INLINE")
-
 package dev.drewhamilton.inlinedimens
 
 import android.content.Context
@@ -15,48 +13,47 @@ inline class Dp(val value: Float) : Comparable<Dp> {
     /**
      * Add two [Dp]s together.
      */
-    inline operator fun plus(other: Dp) = Dp(this.value + other.value)
+    operator fun plus(other: Dp) = Dp(this.value + other.value)
 
     /**
      * Subtract a [Dp] from another one.
      */
-    inline operator fun minus(other: Dp) = Dp(this.value - other.value)
+    operator fun minus(other: Dp) = Dp(this.value - other.value)
 
     /**
      * This is the same as multiplying the [Dp] by -1.0.
      */
-    inline operator fun unaryMinus() = Dp(-value)
+    operator fun unaryMinus() = Dp(-value)
 
     /**
      * Divide a [Dp] by a scalar.
      */
-    inline operator fun div(other: Float): Dp = Dp(value / other)
+    operator fun div(other: Float): Dp = Dp(value / other)
 
     /**
      * Divide a [Dp] by a scalar.
      */
-    inline operator fun div(other: Int): Dp = Dp(value / other)
+    operator fun div(other: Int): Dp = Dp(value / other)
 
     /**
      * Divide by another [Dp] to get a scalar.
      */
-    inline operator fun div(other: Dp): Float = value / other.value
+    operator fun div(other: Dp): Float = value / other.value
 
     /**
      * Multiply a [Dp] by a scalar.
      */
-    inline operator fun times(other: Float): Dp = Dp(value * other)
+    operator fun times(other: Float): Dp = Dp(value * other)
 
     /**
      * Multiply a [Dp] by a scalar.
      */
-    inline operator fun times(other: Int): Dp = Dp(value * other)
+    operator fun times(other: Int): Dp = Dp(value * other)
 
     /**
      * Support comparing [Dp] with comparison operators.
      */
-    @Suppress("OVERRIDE_BY_INLINE")
-    override inline operator fun compareTo(other: Dp) = value.compareTo(other.value)
+    override operator fun compareTo(other: Dp) = value.compareTo(other.value)
 
     override fun toString() = "${value}dp"
 }
@@ -79,23 +76,23 @@ fun Dp.toDpInt() = DpInt(value.toInt())
 /**
  * Multiply a scalar by a [Dp].
  */
-inline operator fun Float.times(other: Dp) = Dp(this * other.value)
+operator fun Float.times(other: Dp) = Dp(this * other.value)
 
 /**
  * Multiply a scalar by a [Dp].
  */
-inline operator fun Int.times(other: Dp) = Dp(this * other.value)
+operator fun Int.times(other: Dp) = Dp(this * other.value)
 
 //region Min/max
 /**
  * Determine the smaller [Dp].
  */
-inline fun min(a: Dp, b: Dp): Dp = Dp(min(a.value, b.value))
+fun min(a: Dp, b: Dp): Dp = Dp(min(a.value, b.value))
 
 /**
  * Determine the larger [Dp].
  */
-inline fun max(a: Dp, b: Dp): Dp = Dp(max(a.value, b.value))
+fun max(a: Dp, b: Dp): Dp = Dp(max(a.value, b.value))
 
 /**
  * Ensure that this value lies in the specified range [minimumValue]..[maximumValue].
@@ -103,21 +100,21 @@ inline fun max(a: Dp, b: Dp): Dp = Dp(max(a.value, b.value))
  * @return this value if it's in the range, or [minimumValue] if this value is less than [minimumValue], or
  * [maximumValue] if this value is greater than [maximumValue].
  */
-inline fun Dp.coerceIn(minimumValue: Dp, maximumValue: Dp) = Dp(value.coerceIn(minimumValue.value, maximumValue.value))
+fun Dp.coerceIn(minimumValue: Dp, maximumValue: Dp) = Dp(value.coerceIn(minimumValue.value, maximumValue.value))
 
 /**
  * Ensures that this value is not less than the specified [minimumValue].
  *
  * @return this value if it's greater than or equal to the [minimumValue] or the [minimumValue] otherwise.
  */
-inline fun Dp.coerceAtLeast(minimumValue: Dp) = Dp(value.coerceAtLeast(minimumValue.value))
+fun Dp.coerceAtLeast(minimumValue: Dp) = Dp(value.coerceAtLeast(minimumValue.value))
 
 /**
  * Ensure that this value is not greater than the specified [maximumValue].
  *
  * @return this value if it's less than or equal to the [maximumValue] or the [maximumValue] otherwise.
  */
-inline fun Dp.coerceAtMost(maximumValue: Dp) = Dp(value.coerceAtMost(maximumValue.value))
+fun Dp.coerceAtMost(maximumValue: Dp) = Dp(value.coerceAtMost(maximumValue.value))
 //endregion
 
 //region toPx

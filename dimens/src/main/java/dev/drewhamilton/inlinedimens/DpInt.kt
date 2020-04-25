@@ -1,5 +1,3 @@
-@file:Suppress("NOTHING_TO_INLINE")
-
 package dev.drewhamilton.inlinedimens
 
 import android.content.Context
@@ -15,48 +13,47 @@ inline class DpInt(val value: Int) : Comparable<DpInt> {
     /**
      * Add two [DpInt]s together.
      */
-    inline operator fun plus(other: DpInt) = DpInt(this.value + other.value)
+    operator fun plus(other: DpInt) = DpInt(this.value + other.value)
 
     /**
      * Subtract a [DpInt] from another one.
      */
-    inline operator fun minus(other: DpInt) = DpInt(this.value - other.value)
+    operator fun minus(other: DpInt) = DpInt(this.value - other.value)
 
     /**
      * This is the same as multiplying the [DpInt] by -1.0.
      */
-    inline operator fun unaryMinus() = DpInt(-value)
+    operator fun unaryMinus() = DpInt(-value)
 
     /**
      * Divide a [DpInt] by a scalar.
      */
-    inline operator fun div(other: Float): Dp = Dp(value / other)
+    operator fun div(other: Float): Dp = Dp(value / other)
 
     /**
      * Divide a [DpInt] by a scalar.
      */
-    inline operator fun div(other: Int): Dp = Dp(value.toFloat() / other)
+    operator fun div(other: Int): Dp = Dp(value.toFloat() / other)
 
     /**
      * Divide by another [DpInt] to get a scalar.
      */
-    inline operator fun div(other: DpInt): Float = value.toFloat() / other.value
+    operator fun div(other: DpInt): Float = value.toFloat() / other.value
 
     /**
      * Multiply a [DpInt] by a scalar.
      */
-    inline operator fun times(other: Float): Dp = Dp(value * other)
+    operator fun times(other: Float): Dp = Dp(value * other)
 
     /**
      * Multiply a [DpInt] by a scalar.
      */
-    inline operator fun times(other: Int): DpInt = DpInt(value * other)
+    operator fun times(other: Int): DpInt = DpInt(value * other)
 
     /**
      * Support comparing [DpInt] with comparison operators.
      */
-    @Suppress("OVERRIDE_BY_INLINE")
-    override inline operator fun compareTo(other: DpInt) = value.compareTo(other.value)
+    override operator fun compareTo(other: DpInt) = value.compareTo(other.value)
 
     override fun toString() = "${value}dp"
 }
@@ -74,23 +71,23 @@ fun DpInt.toDpFloat() = Dp(value.toFloat())
 /**
  * Multiply a scalar by a [DpInt].
  */
-inline operator fun Float.times(other: DpInt) = Dp(this * other.value)
+operator fun Float.times(other: DpInt) = Dp(this * other.value)
 
 /**
  * Multiply a scalar by a [DpInt].
  */
-inline operator fun Int.times(other: DpInt) = DpInt(this * other.value)
+operator fun Int.times(other: DpInt) = DpInt(this * other.value)
 
 //region Min/max
 /**
  * Determine the smaller [DpInt].
  */
-inline fun min(a: DpInt, b: DpInt): DpInt = DpInt(min(a.value, b.value))
+fun min(a: DpInt, b: DpInt): DpInt = DpInt(min(a.value, b.value))
 
 /**
  * Determine the larger [DpInt].
  */
-inline fun max(a: DpInt, b: DpInt): DpInt = DpInt(max(a.value, b.value))
+fun max(a: DpInt, b: DpInt): DpInt = DpInt(max(a.value, b.value))
 
 /**
  * Ensure that this value lies in the specified range [minimumValue]..[maximumValue].
@@ -98,7 +95,7 @@ inline fun max(a: DpInt, b: DpInt): DpInt = DpInt(max(a.value, b.value))
  * @return this value if it's in the range, or [minimumValue] if this value is less than [minimumValue], or
  * [maximumValue] if this value is greater than [maximumValue].
  */
-inline fun DpInt.coerceIn(minimumValue: DpInt, maximumValue: DpInt) =
+fun DpInt.coerceIn(minimumValue: DpInt, maximumValue: DpInt) =
     DpInt(value.coerceIn(minimumValue.value, maximumValue.value))
 
 /**
@@ -106,14 +103,14 @@ inline fun DpInt.coerceIn(minimumValue: DpInt, maximumValue: DpInt) =
  *
  * @return this value if it's greater than or equal to the [minimumValue] or the [minimumValue] otherwise.
  */
-inline fun DpInt.coerceAtLeast(minimumValue: DpInt) = DpInt(value.coerceAtLeast(minimumValue.value))
+fun DpInt.coerceAtLeast(minimumValue: DpInt) = DpInt(value.coerceAtLeast(minimumValue.value))
 
 /**
  * Ensure that this value is not greater than the specified [maximumValue].
  *
  * @return this value if it's less than or equal to the [maximumValue] or the [maximumValue] otherwise.
  */
-inline fun DpInt.coerceAtMost(maximumValue: DpInt) = DpInt(value.coerceAtMost(maximumValue.value))
+fun DpInt.coerceAtMost(maximumValue: DpInt) = DpInt(value.coerceAtMost(maximumValue.value))
 //endregion
 
 //region toPx
