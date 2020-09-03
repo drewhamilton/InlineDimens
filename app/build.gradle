@@ -29,7 +29,9 @@ android {
         freeCompilerArgs += ["-XXLanguage:+InlineClasses"]
     }
 
-    viewBinding.enabled = true
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
