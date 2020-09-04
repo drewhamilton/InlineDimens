@@ -4,9 +4,9 @@ public final class dev/drewhamilton/inlinedimens/Dp : java/lang/Comparable {
 	public fun compareTo-TnY8d-w (F)I
 	public static fun compareTo-TnY8d-w (FF)I
 	public static fun constructor-impl (F)F
+	public static final fun div--4l8wRw (FF)F
+	public static final fun div--4l8wRw (FI)F
 	public static final fun div-TnY8d-w (FF)F
-	public static final fun div-impl (FF)F
-	public static final fun div-impl (FI)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (FLjava/lang/Object;)Z
 	public static final fun equals-impl0 (FF)Z
@@ -15,11 +15,11 @@ public final class dev/drewhamilton/inlinedimens/Dp : java/lang/Comparable {
 	public static fun hashCode-impl (F)I
 	public static final fun minus-TnY8d-w (FF)F
 	public static final fun plus-TnY8d-w (FF)F
-	public static final fun times-impl (FF)F
-	public static final fun times-impl (FI)F
+	public static final fun times--4l8wRw (FF)F
+	public static final fun times--4l8wRw (FI)F
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (F)Ljava/lang/String;
-	public static final fun unaryMinus-impl (F)F
+	public static final fun unaryMinus--4l8wRw (F)F
 	public final synthetic fun unbox-impl ()F
 }
 
@@ -29,9 +29,9 @@ public final class dev/drewhamilton/inlinedimens/DpInt : java/lang/Comparable {
 	public fun compareTo-JGqSb5Y (I)I
 	public static fun compareTo-JGqSb5Y (II)I
 	public static fun constructor-impl (I)I
+	public static final fun div--4l8wRw (IF)F
+	public static final fun div--4l8wRw (II)F
 	public static final fun div-JGqSb5Y (II)F
-	public static final fun div-impl (IF)F
-	public static final fun div-impl (II)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (ILjava/lang/Object;)Z
 	public static final fun equals-impl0 (II)Z
@@ -40,11 +40,11 @@ public final class dev/drewhamilton/inlinedimens/DpInt : java/lang/Comparable {
 	public static fun hashCode-impl (I)I
 	public static final fun minus-JGqSb5Y (II)I
 	public static final fun plus-JGqSb5Y (II)I
-	public static final fun times-impl (IF)F
-	public static final fun times-impl (II)I
+	public static final fun times--4l8wRw (IF)F
+	public static final fun times-FFePOD0 (II)I
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
-	public static final fun unaryMinus-impl (I)I
+	public static final fun unaryMinus-FFePOD0 (I)I
 	public final synthetic fun unbox-impl ()I
 }
 
@@ -99,8 +99,8 @@ public final class dev/drewhamilton/inlinedimens/Px : java/lang/Comparable {
 	public static fun compareTo--OFvtLY (FF)I
 	public static fun constructor-impl (F)F
 	public static final fun div--OFvtLY (FF)F
-	public static final fun div-impl (FF)F
-	public static final fun div-impl (FI)F
+	public static final fun div-9DCfLu4 (FF)F
+	public static final fun div-9DCfLu4 (FI)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (FLjava/lang/Object;)Z
 	public static final fun equals-impl0 (FF)Z
@@ -109,11 +109,11 @@ public final class dev/drewhamilton/inlinedimens/Px : java/lang/Comparable {
 	public static fun hashCode-impl (F)I
 	public static final fun minus--OFvtLY (FF)F
 	public static final fun plus--OFvtLY (FF)F
-	public static final fun times-impl (FF)F
-	public static final fun times-impl (FI)F
+	public static final fun times-9DCfLu4 (FF)F
+	public static final fun times-9DCfLu4 (FI)F
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (F)Ljava/lang/String;
-	public static final fun unaryMinus-impl (F)F
+	public static final fun unaryMinus-9DCfLu4 (F)F
 	public final synthetic fun unbox-impl ()F
 }
 
@@ -124,8 +124,8 @@ public final class dev/drewhamilton/inlinedimens/PxInt : java/lang/Comparable {
 	public static fun compareTo-212CMWg (II)I
 	public static fun constructor-impl (I)I
 	public static final fun div-212CMWg (II)F
-	public static final fun div-impl (IF)F
-	public static final fun div-impl (II)F
+	public static final fun div-9DCfLu4 (IF)F
+	public static final fun div-9DCfLu4 (II)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (ILjava/lang/Object;)Z
 	public static final fun equals-impl0 (II)Z
@@ -134,11 +134,11 @@ public final class dev/drewhamilton/inlinedimens/PxInt : java/lang/Comparable {
 	public static fun hashCode-impl (I)I
 	public static final fun minus-212CMWg (II)I
 	public static final fun plus-212CMWg (II)I
-	public static final fun times-impl (IF)F
-	public static final fun times-impl (II)I
+	public static final fun times-9DCfLu4 (IF)F
+	public static final fun times-A-zkQbI (II)I
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
-	public static final fun unaryMinus-impl (I)I
+	public static final fun unaryMinus-A-zkQbI (I)I
 	public final synthetic fun unbox-impl ()I
 }
 
@@ -192,9 +192,9 @@ public final class dev/drewhamilton/inlinedimens/Sp : java/lang/Comparable {
 	public fun compareTo-EYuHYtE (F)I
 	public static fun compareTo-EYuHYtE (FF)I
 	public static fun constructor-impl (F)F
+	public static final fun div-5eNmuv8 (FF)F
+	public static final fun div-5eNmuv8 (FI)F
 	public static final fun div-EYuHYtE (FF)F
-	public static final fun div-impl (FF)F
-	public static final fun div-impl (FI)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (FLjava/lang/Object;)Z
 	public static final fun equals-impl0 (FF)Z
@@ -203,11 +203,11 @@ public final class dev/drewhamilton/inlinedimens/Sp : java/lang/Comparable {
 	public static fun hashCode-impl (F)I
 	public static final fun minus-EYuHYtE (FF)F
 	public static final fun plus-EYuHYtE (FF)F
-	public static final fun times-impl (FF)F
-	public static final fun times-impl (FI)F
+	public static final fun times-5eNmuv8 (FF)F
+	public static final fun times-5eNmuv8 (FI)F
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (F)Ljava/lang/String;
-	public static final fun unaryMinus-impl (F)F
+	public static final fun unaryMinus-5eNmuv8 (F)F
 	public final synthetic fun unbox-impl ()F
 }
 
@@ -218,8 +218,8 @@ public final class dev/drewhamilton/inlinedimens/SpInt : java/lang/Comparable {
 	public static fun compareTo-1syhwGc (II)I
 	public static fun constructor-impl (I)I
 	public static final fun div-1syhwGc (II)F
-	public static final fun div-impl (IF)F
-	public static final fun div-impl (II)F
+	public static final fun div-5eNmuv8 (IF)F
+	public static final fun div-5eNmuv8 (II)F
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (ILjava/lang/Object;)Z
 	public static final fun equals-impl0 (II)Z
@@ -228,11 +228,11 @@ public final class dev/drewhamilton/inlinedimens/SpInt : java/lang/Comparable {
 	public static fun hashCode-impl (I)I
 	public static final fun minus-1syhwGc (II)I
 	public static final fun plus-1syhwGc (II)I
-	public static final fun times-impl (IF)F
-	public static final fun times-impl (II)I
+	public static final fun times-5eNmuv8 (IF)F
+	public static final fun times-9XSNYKM (II)I
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (I)Ljava/lang/String;
-	public static final fun unaryMinus-impl (I)I
+	public static final fun unaryMinus-9XSNYKM (I)I
 	public final synthetic fun unbox-impl ()I
 }
 
@@ -287,11 +287,11 @@ public final class dev/drewhamilton/inlinedimens/arrays/DpIntArray {
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl ([ILjava/lang/Object;)Z
 	public static final fun equals-impl0 ([I[I)Z
-	public static final fun get-impl ([II)I
+	public static final fun get-FFePOD0 ([II)I
 	public static final fun getSize-impl ([I)I
 	public fun hashCode ()I
 	public static fun hashCode-impl ([I)I
-	public static final fun iterator-impl ([I)Lkotlin/collections/IntIterator;
+	public static final fun iterator-nGNL94U ([I)Lkotlin/collections/IntIterator;
 	public static final fun set-0rjQs0g ([III)V
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl ([I)Ljava/lang/String;
@@ -309,11 +309,11 @@ public final class dev/drewhamilton/inlinedimens/arrays/PxIntArray {
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl ([ILjava/lang/Object;)Z
 	public static final fun equals-impl0 ([I[I)Z
-	public static final fun get-impl ([II)I
+	public static final fun get-A-zkQbI ([II)I
 	public static final fun getSize-impl ([I)I
 	public fun hashCode ()I
 	public static fun hashCode-impl ([I)I
-	public static final fun iterator-impl ([I)Lkotlin/collections/IntIterator;
+	public static final fun iterator-EMrKqrk ([I)Lkotlin/collections/IntIterator;
 	public static final fun set-sdGWOLU ([III)V
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl ([I)Ljava/lang/String;
@@ -331,11 +331,11 @@ public final class dev/drewhamilton/inlinedimens/arrays/SpIntArray {
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl ([ILjava/lang/Object;)Z
 	public static final fun equals-impl0 ([I[I)Z
-	public static final fun get-impl ([II)I
+	public static final fun get-9XSNYKM ([II)I
 	public static final fun getSize-impl ([I)I
 	public fun hashCode ()I
 	public static fun hashCode-impl ([I)I
-	public static final fun iterator-impl ([I)Lkotlin/collections/IntIterator;
+	public static final fun iterator-0p3aGpo ([I)Lkotlin/collections/IntIterator;
 	public static final fun set-nuGhLN0 ([III)V
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl ([I)Ljava/lang/String;
@@ -360,8 +360,8 @@ public final class dev/drewhamilton/inlinedimens/graphics/PxPoint {
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Landroid/graphics/Point;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Landroid/graphics/Point;Landroid/graphics/Point;)Z
-	public static final fun getX-impl (Landroid/graphics/Point;)I
-	public static final fun getY-impl (Landroid/graphics/Point;)I
+	public static final fun getX-A-zkQbI (Landroid/graphics/Point;)I
+	public static final fun getY-A-zkQbI (Landroid/graphics/Point;)I
 	public fun hashCode ()I
 	public static fun hashCode-impl (Landroid/graphics/Point;)I
 	public static final fun setX-212CMWg (Landroid/graphics/Point;I)V
@@ -379,10 +379,10 @@ public final class dev/drewhamilton/inlinedimens/graphics/PxRect {
 	public fun equals (Ljava/lang/Object;)Z
 	public static fun equals-impl (Landroid/graphics/Rect;Ljava/lang/Object;)Z
 	public static final fun equals-impl0 (Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
-	public static final fun getBottom-impl (Landroid/graphics/Rect;)I
-	public static final fun getLeft-impl (Landroid/graphics/Rect;)I
-	public static final fun getRight-impl (Landroid/graphics/Rect;)I
-	public static final fun getTop-impl (Landroid/graphics/Rect;)I
+	public static final fun getBottom-A-zkQbI (Landroid/graphics/Rect;)I
+	public static final fun getLeft-A-zkQbI (Landroid/graphics/Rect;)I
+	public static final fun getRight-A-zkQbI (Landroid/graphics/Rect;)I
+	public static final fun getTop-A-zkQbI (Landroid/graphics/Rect;)I
 	public fun hashCode ()I
 	public static fun hashCode-impl (Landroid/graphics/Rect;)I
 	public static final fun setBottom-212CMWg (Landroid/graphics/Rect;I)V
@@ -404,10 +404,10 @@ public final class dev/drewhamilton/inlinedimens/iterators/DpIntIterator : java/
 	public static fun hasNext-impl (Lkotlin/collections/IntIterator;)Z
 	public fun hashCode ()I
 	public static fun hashCode-impl (Lkotlin/collections/IntIterator;)I
-	public fun next ()Ldev/drewhamilton/inlinedimens/DpInt;
 	public synthetic fun next ()Ljava/lang/Object;
-	public static fun next-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/DpInt;
-	public static final fun nextDpInt-impl (Lkotlin/collections/IntIterator;)I
+	public fun next-FFePOD0 ()I
+	public static fun next-FFePOD0 (Lkotlin/collections/IntIterator;)I
+	public static final fun nextDpInt-FFePOD0 (Lkotlin/collections/IntIterator;)I
 	public fun remove ()V
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (Lkotlin/collections/IntIterator;)Ljava/lang/String;
@@ -424,10 +424,10 @@ public final class dev/drewhamilton/inlinedimens/iterators/PxIntIterator : java/
 	public static fun hasNext-impl (Lkotlin/collections/IntIterator;)Z
 	public fun hashCode ()I
 	public static fun hashCode-impl (Lkotlin/collections/IntIterator;)I
-	public fun next ()Ldev/drewhamilton/inlinedimens/PxInt;
 	public synthetic fun next ()Ljava/lang/Object;
-	public static fun next-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/PxInt;
-	public static final fun nextPxInt-impl (Lkotlin/collections/IntIterator;)I
+	public fun next-A-zkQbI ()I
+	public static fun next-A-zkQbI (Lkotlin/collections/IntIterator;)I
+	public static final fun nextPxInt-A-zkQbI (Lkotlin/collections/IntIterator;)I
 	public fun remove ()V
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (Lkotlin/collections/IntIterator;)Ljava/lang/String;
@@ -444,10 +444,10 @@ public final class dev/drewhamilton/inlinedimens/iterators/SpIntIterator : java/
 	public static fun hasNext-impl (Lkotlin/collections/IntIterator;)Z
 	public fun hashCode ()I
 	public static fun hashCode-impl (Lkotlin/collections/IntIterator;)I
-	public fun next ()Ldev/drewhamilton/inlinedimens/SpInt;
 	public synthetic fun next ()Ljava/lang/Object;
-	public static fun next-impl (Lkotlin/collections/IntIterator;)Ldev/drewhamilton/inlinedimens/SpInt;
-	public static final fun nextSpInt-impl (Lkotlin/collections/IntIterator;)I
+	public fun next-9XSNYKM ()I
+	public static fun next-9XSNYKM (Lkotlin/collections/IntIterator;)I
+	public static final fun nextSpInt-9XSNYKM (Lkotlin/collections/IntIterator;)I
 	public fun remove ()V
 	public fun toString ()Ljava/lang/String;
 	public static fun toString-impl (Lkotlin/collections/IntIterator;)Ljava/lang/String;
