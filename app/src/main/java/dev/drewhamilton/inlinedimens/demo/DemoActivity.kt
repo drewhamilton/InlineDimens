@@ -14,15 +14,13 @@ import dev.drewhamilton.inlinedimens.widget.textSizeSp
 
 class DemoActivity : AppCompatActivity() {
 
-    private lateinit var binding: DemoBinding
-
     @SuppressLint("StringFormatMatches")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DemoBinding.inflate(layoutInflater)
+        val binding = DemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val screenSize = windowManager.defaultDisplay.getRealSize()
+        val screenSize = display.getRealSize()
 
         val screenWidth = screenSize.x
         binding.screenWidthView.text = getString(R.string.screenWidth, screenWidth, screenWidth.toDp())
@@ -35,9 +33,9 @@ class DemoActivity : AppCompatActivity() {
         }
     }
 
-    private fun Display.getRealSize(): PxPoint {
+    private fun Display?.getRealSize(): PxPoint {
         val size = PxPoint()
-        getRealSize(size)
+        this?.getRealSize(size)
         return size
     }
 }
