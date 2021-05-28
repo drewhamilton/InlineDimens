@@ -8,17 +8,14 @@ task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
 }
 
-def javadocDestinationDir = "$buildDir/docs/javadoc"
 apply plugin: 'org.jetbrains.dokka'
-task dokkaJavadoc(type: dokka.class) {
-    outputFormat = 'javadoc'
-    outputDirectory = javadocDestinationDir
+dokkaJavadoc {
     inputs.dir 'src/main/java'
 }
 
 task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
     archiveClassifier.set 'javadoc'
-    from javadocDestinationDir
+    from dokkaJavadoc.outputDirectory
 }
 
 artifacts {
