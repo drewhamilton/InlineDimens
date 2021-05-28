@@ -9,11 +9,11 @@ version = libraryVersion
 apply from: "${rootProject.projectDir}/publish.gradle"
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionName version
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -54,8 +54,6 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
     testImplementation 'junit:junit:4.13.2'
