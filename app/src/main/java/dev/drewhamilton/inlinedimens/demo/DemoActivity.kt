@@ -1,6 +1,7 @@
 package dev.drewhamilton.inlinedimens.demo
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.view.Display
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,7 @@ class DemoActivity : AppCompatActivity() {
         val binding = DemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val screenSize = display.getRealSize()
+        val screenSize = displayCompat.getRealSize()
 
         val screenWidth = screenSize.x
         binding.screenWidthView.text = getString(R.string.screenWidth, screenWidth, screenWidth.toDp())
@@ -32,6 +33,10 @@ class DemoActivity : AppCompatActivity() {
             text = getString(R.string.textSize, textSizePx, textSizeDp, textSizeSp)
         }
     }
+
+    private val displayCompat: Display?
+        get() = if (Build.VERSION.SDK_INT >= 30) display else @Suppress("DEPRECATION") windowManager?.defaultDisplay
+
 
     private fun Display?.getRealSize(): PxPoint {
         val size = PxPoint()
