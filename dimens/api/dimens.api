@@ -58,7 +58,6 @@ public final class dev/drewhamilton/inlinedimens/DpIntKt {
 	public static final fun min-HLOxw18 (II)I
 	public static final fun times-pvnO8yg (FI)F
 	public static final fun times-pvnO8yg (II)I
-	public static final fun toDpFloat-JGqSb5Y (I)F
 	public static final fun toPx-JGqSb5Y (I)F
 	public static final fun toPx-csPCyyU (ILandroid/content/Context;)F
 	public static final fun toPx-csPCyyU (ILandroid/content/res/Resources;)F
@@ -79,7 +78,6 @@ public final class dev/drewhamilton/inlinedimens/DpKt {
 	public static final fun min-s9KULO8 (FF)F
 	public static final fun times-81xQDfE (FF)F
 	public static final fun times-81xQDfE (IF)F
-	public static final fun toDpInt-TnY8d-w (F)I
 	public static final fun toOffset-TnY8d-w (F)I
 	public static final fun toPx-TnY8d-w (F)F
 	public static final fun toPx-dCdYr0M (FLandroid/content/Context;)F
@@ -156,7 +154,6 @@ public final class dev/drewhamilton/inlinedimens/PxIntKt {
 	public static final fun toDp-fii2X-s (ILandroid/content/Context;)F
 	public static final fun toDp-fii2X-s (ILandroid/content/res/Resources;)F
 	public static final fun toDp-fii2X-s (ILandroid/util/DisplayMetrics;)F
-	public static final fun toPxFloat-212CMWg (I)F
 	public static final fun toSp-212CMWg (I)F
 	public static final fun toSp-fii2X-s (ILandroid/content/Context;)F
 	public static final fun toSp-fii2X-s (ILandroid/content/res/Resources;)F
@@ -178,7 +175,6 @@ public final class dev/drewhamilton/inlinedimens/PxKt {
 	public static final fun toDp-sea0Rqk (FLandroid/content/res/Resources;)F
 	public static final fun toDp-sea0Rqk (FLandroid/util/DisplayMetrics;)F
 	public static final fun toOffset--OFvtLY (F)I
-	public static final fun toPxInt--OFvtLY (F)I
 	public static final fun toSize--OFvtLY (F)I
 	public static final fun toSp--OFvtLY (F)F
 	public static final fun toSp-sea0Rqk (FLandroid/content/Context;)F
@@ -254,7 +250,6 @@ public final class dev/drewhamilton/inlinedimens/SpIntKt {
 	public static final fun toPx-DI0ftFk (ILandroid/content/Context;)F
 	public static final fun toPx-DI0ftFk (ILandroid/content/res/Resources;)F
 	public static final fun toPx-DI0ftFk (ILandroid/util/DisplayMetrics;)F
-	public static final fun toSpFloat-1syhwGc (I)F
 }
 
 public final class dev/drewhamilton/inlinedimens/SpKt {
@@ -277,7 +272,6 @@ public final class dev/drewhamilton/inlinedimens/SpKt {
 	public static final fun toPx-0PXavdo (FLandroid/util/DisplayMetrics;)F
 	public static final fun toPx-EYuHYtE (F)F
 	public static final fun toSize-EYuHYtE (F)I
-	public static final fun toSpInt-EYuHYtE (F)I
 }
 
 public final class dev/drewhamilton/inlinedimens/arrays/DpIntArray {
@@ -538,6 +532,10 @@ public final class dev/drewhamilton/inlinedimens/view/ViewKt {
 	public static final fun setYPx-tMAAAtY (Landroid/view/View;F)V
 	public static final fun setZPx-tMAAAtY (Landroid/view/View;F)V
 	public static final fun showContextMenu-OkOJY28 (Landroid/view/View;FF)Z
+}
+
+public final class dev/drewhamilton/inlinedimens/view/WindowMetricsKt {
+	public static final fun getBoundsPx (Landroid/view/WindowMetrics;)Landroid/graphics/Rect;
 }
 
 public final class dev/drewhamilton/inlinedimens/widget/TextViewKt {
