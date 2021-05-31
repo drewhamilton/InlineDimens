@@ -12,7 +12,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(manifest = Config.NONE, sdk = [30])
+@Config(manifest = Config.NONE)
 class WindowMetricsTest {
 
     private val mockWindowMetrics = mock<WindowMetrics>()
