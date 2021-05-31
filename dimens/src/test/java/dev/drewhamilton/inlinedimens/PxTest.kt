@@ -97,11 +97,6 @@ class PxTest {
     @Test fun `toOffset converts via Float-toInt`() =
         assertThat(testPx.toOffset().value).isEqualTo(testInput.toInt())
 
-    @Suppress("DEPRECATION")
-    @Deprecated("Testing deprecated function")
-    @Test fun `toPxInt converts via Float-toInt`() =
-        assertThat(testPx.toPxInt().value).isEqualTo(testInput.toInt())
-
     //region toDp
     @Test fun `toDp(Context) divides value by density from DisplayMetrics`() {
         assertThat(testPx.toDp(TestValues.mockContext).value)

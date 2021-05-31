@@ -9,8 +9,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-// TODO WORKAROUND: Update when Robolectric supports SDK 29
-@Config(sdk = [28])
+@Config(manifest = Config.NONE)
 class LayoutParamsTest {
 
     //region LayoutParams

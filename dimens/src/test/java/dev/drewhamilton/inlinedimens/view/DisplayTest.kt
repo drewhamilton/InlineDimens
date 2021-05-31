@@ -14,11 +14,12 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(manifest = Config.NONE, sdk = [28])
+@Config(manifest = Config.NONE)
 class DisplayTest {
 
     private val mockDisplay = mock<Display>()
 
+    @Suppress("DEPRECATION") // Testing deprecated function
     @Test fun `getSize with PxPoint forwards to getSize with Point`() {
         val point = Point(1, 2)
         val pxPoint = PxPoint(point)
@@ -28,6 +29,7 @@ class DisplayTest {
         verifyNoMoreInteractions(mockDisplay)
     }
 
+    @Suppress("DEPRECATION") // Testing deprecated function
     @Test fun `getRectSize with PxRect forwards to getRectSize with Rect`() {
         val rect = Rect(1, 2, 3, 4)
         val pxRect = PxRect(rect)

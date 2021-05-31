@@ -97,11 +97,6 @@ class SpTest {
     @Test fun `toOffset converts via Float-toInt`() =
         assertThat(testSp.toOffset().value).isEqualTo(testInput.toInt())
 
-    @Suppress("DEPRECATION")
-    @Deprecated("Testing deprecated function")
-    @Test fun `toSpInt converts via Float-toInt`() =
-        assertThat(testSp.toSpInt().value).isEqualTo(testInput.toInt())
-
     //region toPx
     @Test fun `toPx(Context) multiplies value by scaledDensity from DisplayMetrics`() {
         assertThat(testSp.toPx(TestValues.mockContext).value)

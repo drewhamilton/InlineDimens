@@ -91,15 +91,6 @@ fun Dp.toSize(): DpInt {
 fun Dp.toOffset() = DpInt(value.toInt())
 
 /**
- * Convert a floating-point dp dimen to an integer dp dimen.
- */
-@Deprecated(
-    message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
-    replaceWith = ReplaceWith("toOffset()")
-)
-fun Dp.toDpInt() = toOffset()
-
-/**
  * Multiply a scalar by a [Dp].
  */
 operator fun Float.times(other: Dp) = Dp(this * other.value)
