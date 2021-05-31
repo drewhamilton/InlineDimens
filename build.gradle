@@ -1,17 +1,16 @@
 buildscript {
-    ext.kotlin_version = '1.4.0'
+    ext.kotlin_version = '1.4.32'
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.2.1'
 
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'org.jetbrains.dokka:dokka-gradle-plugin:0.10.1'
-        classpath 'org.jetbrains.kotlinx:binary-compatibility-validator:0.2.3'
+        classpath 'org.jetbrains.dokka:dokka-gradle-plugin:1.4.32'
+        classpath 'org.jetbrains.kotlinx:binary-compatibility-validator:0.5.0'
     }
 }
 
@@ -24,19 +23,17 @@ allprojects { project ->
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
 
     project.plugins.withType(com.android.build.gradle.LibraryPlugin) {
         project.android.libraryVariants.all { variant ->
-            // TODO WORKAROUND: replace with https://issuetracker.google.com/issues/72050365 once released.
             variant.generateBuildConfigProvider.get().enabled = false
         }
     }
 }
 
 ext {
-    libraryVersion = '0.6.2'
+    libraryVersion = '0.7.0-SNAPSHOT'
 
     keystore = project.hasProperty('personalKeystore') ? personalKeystore : 'x'
     keystorePassword = project.hasProperty('personalKeystorePassword') ? personalKeystorePassword : 'x'

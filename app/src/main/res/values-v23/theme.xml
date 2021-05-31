@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="Theme.InlineDimensDemo" parent="Base.Theme.InlineDimensDemo">
+    <item name="android:statusBarColor">?colorPrimaryDark</item>
+  </style>
+</resources>
