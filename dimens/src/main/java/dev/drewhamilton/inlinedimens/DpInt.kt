@@ -69,15 +69,6 @@ inline val Int.dp get() = DpInt(this)
 fun DpInt.exact() = Dp(value.toFloat())
 
 /**
- * Convert an integer dp dimen to a floating-point dp dimen.
- */
-@Deprecated(
-    message = "Replaced with DpInt.exact()",
-    replaceWith = ReplaceWith("exact()")
-)
-fun DpInt.toDpFloat() = exact()
-
-/**
  * Multiply a scalar by a [DpInt].
  */
 operator fun Float.times(other: DpInt) = Dp(this * other.value)

@@ -67,15 +67,6 @@ inline val Int.px get() = PxInt(this)
 fun PxInt.exact() = Px(value.toFloat())
 
 /**
- * Convert an integer px dimen to a floating-point px dimen.
- */
-@Deprecated(
-    message = "Replaced with PxInt.exact()",
-    replaceWith = ReplaceWith("exact()")
-)
-fun PxInt.toPxFloat() = exact()
-
-/**
  * Multiply a scalar by a [PxInt].
  */
 operator fun Float.times(other: PxInt) = Px(this * other.value)
@@ -139,7 +130,7 @@ fun PxInt.toDp(resources: Resources) = toDp(resources.displayMetrics)
 /**
  * Convert a px value to dp based on [displayMetrics].
  */
-fun PxInt.toDp(displayMetrics: DisplayMetrics) = toPxFloat().toDp(displayMetrics.density)
+fun PxInt.toDp(displayMetrics: DisplayMetrics) = exact().toDp(displayMetrics.density)
 //endregion
 
 //region toSp
@@ -161,5 +152,5 @@ fun PxInt.toSp(resources: Resources) = toSp(resources.displayMetrics)
 /**
  * Convert a px value to sp based on [displayMetrics].
  */
-fun PxInt.toSp(displayMetrics: DisplayMetrics) = toPxFloat().toSp(displayMetrics.scaledDensity)
+fun PxInt.toSp(displayMetrics: DisplayMetrics) = exact().toSp(displayMetrics.scaledDensity)
 //endregion

@@ -89,15 +89,6 @@ fun Sp.toSize(): SpInt {
 fun Sp.toOffset() = SpInt(value.toInt())
 
 /**
- * Convert an sp value to an integer sp dimen.
- */
-@Deprecated(
-    message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
-    replaceWith = ReplaceWith("toOffset()")
-)
-fun Sp.toSpInt() = toOffset()
-
-/**
  * Multiply a scalar by an [Sp].
  */
 operator fun Float.times(other: Sp) = Sp(this * other.value)

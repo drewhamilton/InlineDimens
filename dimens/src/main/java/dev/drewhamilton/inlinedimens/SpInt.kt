@@ -67,15 +67,6 @@ inline val Int.sp get() = SpInt(this)
 fun SpInt.exact() = Sp(value.toFloat())
 
 /**
- * Convert an integer sp dimen to a floating-point sp dimen.
- */
-@Deprecated(
-    message = "Replaced with SpInt.exact()",
-    replaceWith = ReplaceWith("exact()")
-)
-fun SpInt.toSpFloat() = exact()
-
-/**
  * Multiply a scalar by an [SpInt].
  */
 operator fun Float.times(other: SpInt) = Sp(this * other.value)
@@ -139,7 +130,7 @@ fun SpInt.toPx(resources: Resources) = toPx(resources.displayMetrics)
 /**
  * Convert an sp value to px based on [displayMetrics].
  */
-fun SpInt.toPx(displayMetrics: DisplayMetrics) = toSpFloat().toPx(displayMetrics.scaledDensity)
+fun SpInt.toPx(displayMetrics: DisplayMetrics) = exact().toPx(displayMetrics.scaledDensity)
 //endregion
 
 //region toDp
@@ -161,7 +152,7 @@ fun SpInt.toDp(resources: Resources) = toDp(resources.displayMetrics)
 /**
  * Convert an sp value to dp based on [displayMetrics].
  */
-fun SpInt.toDp(displayMetrics: DisplayMetrics) = toSpFloat().toDp(
+fun SpInt.toDp(displayMetrics: DisplayMetrics) = exact().toDp(
     density = displayMetrics.density,
     scaledDensity = displayMetrics.scaledDensity
 )

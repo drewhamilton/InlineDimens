@@ -89,15 +89,6 @@ fun Px.toSize(): PxInt {
 fun Px.toOffset() = PxInt(value.toInt())
 
 /**
- * Convert a px value to an integer px dimen.
- */
-@Deprecated(
-    message = "Use toOffset to simply truncate the base value, or toSize to round to a size value",
-    replaceWith = ReplaceWith("toOffset()")
-)
-fun Px.toPxInt() = toOffset()
-
-/**
  * Multiply a scalar by a [Px].
  */
 operator fun Float.times(other: Px) = Px(this * other.value)

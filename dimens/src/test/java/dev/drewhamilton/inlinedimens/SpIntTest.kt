@@ -85,13 +85,6 @@ class SpIntTest {
     @Test fun `exact converts via Int-toFloat`() =
         assertThat(testSpInt.exact().value).isEqualTo(testInput.toFloat())
 
-    @Suppress("DEPRECATION")
-    @Deprecated("Testing deprecated function")
-    @Test fun `toDpFloat converts via Int-toFloat`() {
-        assertThat(testSpInt.toSpFloat().value)
-            .isEqualTo(testInput.toFloat())
-    }
-
     //region toPx
     @Test fun `toPx(Context) multiplies value by scaledDensity from DisplayMetrics`() {
         assertThat(testSpInt.toPx(TestValues.mockContext).value)
