@@ -7,7 +7,8 @@ import dev.drewhamilton.inlinedimens.px
 /**
  * A [PxInt] unit-specific wrapper for [Point].
  */
-inline class PxPoint(internal val point: Point) {
+@JvmInline
+value class PxPoint(internal val point: Point) {
 
     constructor() : this(Point())
 

@@ -6,7 +6,8 @@ import dev.drewhamilton.inlinedimens.iterators.DpIntIterator
 /**
  * An array of [DpInt]. When compiled, instances of this class are inlined to int[] on the JVM.
  */
-inline class DpIntArray(internal val values: IntArray) {
+@JvmInline
+value class DpIntArray(internal val values: IntArray) {
 
     constructor(size: Int, init: (index: Int) -> DpInt) : this(IntArray(size) { index -> init(index).value })
 

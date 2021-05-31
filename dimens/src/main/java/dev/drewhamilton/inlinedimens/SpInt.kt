@@ -7,7 +7,8 @@ import android.util.DisplayMetrics
 /**
  * The integer representation of sp dimens.
  */
-inline class SpInt(val value: Int) : Comparable<SpInt> {
+@JvmInline
+value class SpInt(val value: Int) : Comparable<SpInt> {
     /**
      * Add two [SpInt]s together.
      */

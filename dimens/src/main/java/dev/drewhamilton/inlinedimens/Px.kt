@@ -8,7 +8,8 @@ import kotlin.math.roundToInt
 /**
  * The floating-point representation of px dimens.
  */
-inline class Px(val value: Float) : Comparable<Px> {
+@JvmInline
+value class Px(val value: Float) : Comparable<Px> {
     /**
      * Add two [Px]s together.
      */

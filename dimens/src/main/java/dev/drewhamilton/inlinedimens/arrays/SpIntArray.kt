@@ -6,7 +6,8 @@ import dev.drewhamilton.inlinedimens.iterators.SpIntIterator
 /**
  * An array of [SpInt]. When compiled, instances of this class are inlined to int[] on the JVM.
  */
-inline class SpIntArray(internal val values: IntArray) {
+@JvmInline
+value class SpIntArray(internal val values: IntArray) {
 
     constructor(size: Int, init: (index: Int) -> SpInt) : this(IntArray(size) { index -> init(index).value })
 

@@ -5,7 +5,8 @@ import dev.drewhamilton.inlinedimens.SpInt
 /**
  * An iterator over a sequence of values of type [SpInt].
  */
-inline class SpIntIterator(private val intIterator: IntIterator) : Iterator<SpInt> {
+@JvmInline
+value class SpIntIterator(private val intIterator: IntIterator) : Iterator<SpInt> {
     override fun hasNext() = intIterator.hasNext()
     override fun next() = SpInt(intIterator.next())
 
