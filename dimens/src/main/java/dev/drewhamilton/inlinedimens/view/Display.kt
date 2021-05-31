@@ -25,14 +25,30 @@ import dev.drewhamilton.inlinedimens.graphics.PxRect
  * Typically for the purposes of layout apps should make a request from activity context to obtain size available for
  * the app content.
  */
+@Deprecated(
+    message = "Use `WindowMetrics.boundsPx` instead.",
+    replaceWith = ReplaceWith(
+        "outSize = (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).currentWindowMetrics.boundsPx",
+        "android.content.Context",
+        "android.view.WindowManager",
+    ),
+)
 fun Display.getSize(outSize: PxPoint) =
-    getSize(outSize.point)
+    @Suppress("DEPRECATION") getSize(outSize.point)
 
 /**
  * Fills [outSize] with the size of the display as a rectangle, in [PxInt].
  */
+@Deprecated(
+    message = "Use `WindowMetrics.boundsPx` instead.",
+    replaceWith = ReplaceWith(
+        "outSize = (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).currentWindowMetrics.boundsPx",
+        "android.content.Context",
+        "android.view.WindowManager",
+    ),
+)
 fun Display.getRectSize(outSize: PxRect) =
-    getRectSize(outSize.rect)
+    @Suppress("DEPRECATION") getRectSize(outSize.rect)
 
 /**
  * Return the range of display sizes an application can expect to encounter under normal operation, as long as there is
