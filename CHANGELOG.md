@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.0
+_2021-05-31_
+
+Update to Kotlin 1.4.32. This causes binary incompatibilities with 0.6.x because the Kotlin
+name-mangling logic has changed since Kotlin 1.3.72.
+
+Remove the deprecated `to*Float` and `to*Int` functions for all 3 unit types and all 3 unit-int
+types.
+
+Add `WindowMetrics.boundsPx` extension. Deprecate the extensions this replaces, `Display.getSize`
+and `Display.getRectSize`.
+
 ## 0.6.2
 _2020-04-25_
 

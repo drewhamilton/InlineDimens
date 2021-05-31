@@ -43,7 +43,7 @@ val textSizePx = scaledTextSize.toPx()
 ```
 
 **Note:** Inline classes don't play nicely with Java source code, so this library is unusable in
-Java files.
+Java source.
 
 ## License
 ```
