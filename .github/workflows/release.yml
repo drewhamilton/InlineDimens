@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    branches: main
+    tags: '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: Assemble for release
+        run: ./gradlew clean assembleRelease --stacktrace
+      - name: Publish
+        env:
+          ORG_GRADLE_PROJECT_personalSonatypeIssuesUsername: ${{ secrets.ORG_GRADLE_PROJECT_personalSonatypeIssuesUsername }}
+          ORG_GRADLE_PROJECT_personalSonatypeIssuesPassword: ${{ secrets.ORG_GRADLE_PROJECT_personalSonatypeIssuesPassword }}
+          ORG_GRADLE_PROJECT_personalGpgKey: ${{ secrets.ORG_GRADLE_PROJECT_personalGpgKey }}
+          ORG_GRADLE_PROJECT_personalGpgPassword: ${{ secrets.ORG_GRADLE_PROJECT_personalGpgPassword }}
+        run: ./gradlew publishReleasePublicationToMavenCentralRepository --stacktrace
