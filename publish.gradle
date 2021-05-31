@@ -59,7 +59,7 @@ afterEvaluate {
                     scm {
                         connection = 'scm:git:github.com/drewhamilton/InlineDimens.git'
                         developerConnection = 'scm:git:ssh://github.com/drewhamilton/InlineDimens.git'
-                        url = 'https://github.com/drewhamilton/InlineDimens/tree/master'
+                        url = 'https://github.com/drewhamilton/InlineDimens/tree/main'
                     }
                 }
             }
