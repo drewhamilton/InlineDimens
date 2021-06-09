@@ -7,7 +7,8 @@ import android.util.DisplayMetrics
 /**
  * The integer representation of px dimens.
  */
-inline class PxInt(val value: Int) : Comparable<PxInt> {
+@JvmInline
+value class PxInt(val value: Int) : Comparable<PxInt> {
     /**
      * Add two [PxInt]s together.
      */

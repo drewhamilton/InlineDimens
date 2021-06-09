@@ -5,7 +5,8 @@ import dev.drewhamilton.inlinedimens.PxInt
 /**
  * An iterator over a sequence of values of type [PxInt].
  */
-inline class PxIntIterator(private val intIterator: IntIterator) : Iterator<PxInt> {
+@JvmInline
+value class PxIntIterator(private val intIterator: IntIterator) : Iterator<PxInt> {
     override fun hasNext() = intIterator.hasNext()
     override fun next() = PxInt(intIterator.next())
 

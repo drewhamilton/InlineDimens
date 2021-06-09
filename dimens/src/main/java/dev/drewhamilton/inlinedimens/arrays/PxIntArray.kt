@@ -6,7 +6,8 @@ import dev.drewhamilton.inlinedimens.iterators.PxIntIterator
 /**
  * An array of [PxInt]. When compiled, instances of this class are inlined to int[] on the JVM.
  */
-inline class PxIntArray(internal val values: IntArray) {
+@JvmInline
+value class PxIntArray(internal val values: IntArray) {
 
     constructor(size: Int, init: (index: Int) -> PxInt) : this(IntArray(size) { index -> init(index).value })
 

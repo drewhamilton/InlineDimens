@@ -8,7 +8,8 @@ import kotlin.math.roundToInt
 /**
  * The floating-point representation of sp dimens.
  */
-inline class Sp(val value: Float) : Comparable<Sp> {
+@JvmInline
+value class Sp(val value: Float) : Comparable<Sp> {
     /**
      * Add two [Sp]s together.
      */

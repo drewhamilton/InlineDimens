@@ -10,7 +10,8 @@ import kotlin.math.roundToInt
 /**
  * The floating-point representation of dp dimens.
  */
-inline class Dp(val value: Float) : Comparable<Dp> {
+@JvmInline
+value class Dp(val value: Float) : Comparable<Dp> {
     /**
      * Add two [Dp]s together.
      */

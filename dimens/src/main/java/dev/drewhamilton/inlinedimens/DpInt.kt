@@ -9,7 +9,8 @@ import kotlin.math.min
 /**
  * The integer representation of dp dimens.
  */
-inline class DpInt(val value: Int) : Comparable<DpInt> {
+@JvmInline
+value class DpInt(val value: Int) : Comparable<DpInt> {
     /**
      * Add two [DpInt]s together.
      */

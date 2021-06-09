@@ -7,7 +7,8 @@ import dev.drewhamilton.inlinedimens.px
 /**
  * A [PxInt] unit-specific wrapper for [Rect].
  */
-inline class PxRect(internal val rect: Rect) {
+@JvmInline
+value class PxRect(internal val rect: Rect) {
 
     constructor() : this(Rect())
 
